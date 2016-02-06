@@ -3,7 +3,7 @@ defmodule Community.Factory do
 
   def factory(:job) do
     %Community.Job{
-      approved: true,
+      approved: false,
       city: "some content",
       company: "some content",
       company_url: "http://www.example.com",
