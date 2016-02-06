@@ -13,7 +13,7 @@ defmodule Community.JobControllerTest do
 
     conn = post conn, "/jobs", job: job_params
 
-    # assert get_flash(conn, :info) == "Job created"
+    assert get_flash(conn, :info) == "Job created"
     assert redirected_to(conn, 302) =~ "/"
     #assert that something was created in the db
   end
