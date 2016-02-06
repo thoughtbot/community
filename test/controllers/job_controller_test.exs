@@ -20,13 +20,12 @@ defmodule Community.JobControllerTest do
   end
 
   test "GET /jobs shows approved posts", %{conn: conn} do
-    approved = create(:job, %{
-      approved: true,
+    approved = build(:job, %{
       city: "Dvegas",
       company: "big company name",
       title: "approved",
-    })
-    not_approved = create(:job, %{approved: false, title: "SPAM"})
+    }) |> approve |> create
+    not_approved = create(:job, %{title: "SPAM"})
 
     conn = get conn, "/jobs"
     refute html_response(conn, 200) =~ not_approved.title

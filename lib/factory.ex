@@ -13,4 +13,8 @@ defmodule Community.Factory do
       title: "title",
     }
   end
+
+  def approve(job) do
+    %{job | approved: true}
+  end
 end
