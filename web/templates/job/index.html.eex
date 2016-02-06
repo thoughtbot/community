@@ -2,6 +2,8 @@
   <%= for job <- @jobs  do %>
     <li>
       <%= job.title %>
+      <%= job.city %>
+      <%= job.company %>
     </li>
   <% end %>
 </ul>
