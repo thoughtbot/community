@@ -14,9 +14,10 @@ defmodule Community.JobController do
         conn
         |> put_flash(:info, "Job created")
         |> redirect(to: "/")
-      {:error, _job} ->
+      {:error, changeset} ->
         conn
         |> put_flash(:error, "Job not created")
+        |> render("new.html", changeset: changeset)
     end
   end
 end
