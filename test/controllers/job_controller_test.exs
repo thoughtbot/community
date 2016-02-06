@@ -1,5 +1,7 @@
 defmodule Community.JobControllerTest do
   use Community.ConnCase
+  alias Community.Repo
+  alias Community.Job
 
   test "POST /jobs with valid params", %{conn: conn} do
     job_params = %{
@@ -15,6 +17,7 @@ defmodule Community.JobControllerTest do
 
     assert get_flash(conn, :info) == "Job created"
     assert redirected_to(conn, 302) =~ "/"
-    #assert that something was created in the db
+    last_job = Repo.one(Job)
+    assert last_job.title == "designer"
   end
 end
