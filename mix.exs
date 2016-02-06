@@ -41,8 +41,10 @@ defmodule Community.Mixfile do
   defp deps do
     [
      {:cowboy, "~> 1.0"},
+     {:eiconv, github: "zotonic/eiconv"},
      {:ex_machina, "~> 0.6.1"},
      {:gettext, "~> 0.9"},
+     {:mailman, "~> 0.1.0"},
      {:phoenix, "~> 1.1.4"},
      {:phoenix_ecto, "~> 2.0"},
      {:phoenix_html, "~> 2.4"},
