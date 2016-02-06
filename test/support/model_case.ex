@@ -22,6 +22,7 @@ defmodule Community.ModelCase do
       import Ecto.Changeset
       import Ecto.Query, only: [from: 1, from: 2]
       import Community.ModelCase
+      import Community.Factory
     end
   end
 
