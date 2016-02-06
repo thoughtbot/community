@@ -24,4 +24,12 @@ defmodule Community.JobTest do
     https_attributes = fields_for(:job, %{company_url: "https://"})
     assert  Job.changeset(%Job{}, https_attributes).valid?
   end
+
+  test "approved only includes entires where approved is true" do
+    approved_entry = create(:job, %{approved: true})
+    _non_approved_entry = create(:job, %{approved: false})
+
+    approved = Job |> Job.approved |> Repo.all
+    assert approved == [approved_entry]
+  end
 end
