@@ -1,0 +1,28 @@
+
+<%= form_for @changeset, job_path(@conn, :create), fn form -> %>
+  <%= if form.errors != [] do %>
+    <div class="alert alert-danger">
+    <p>Oops, something went wrong! Please check the errors below:</p> <ul>
+    <%= for {attr, message} <- form.errors do %>
+      <li><%= humanize(attr) %> <%= message %></li>
+    <% end %> </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label form, :title, "Job Title" %>
+    <%= text_input form, :title, placeholder: "Senior UX Designer", class: "form-control" %>
+    <%= label form, :company, "Company Name" %>
+    <%= text_input form, :company, placeholder: "thoughtbot", class: "form-control" %>
+    <%= label form, :company_url, "Company URL" %>
+    <%= text_input form, :company_url, placeholder: "http://thoughtbot.com", class: "form-control" %>
+    <%= label form, :city %>
+    <%= text_input form, :city, placeholder: "Raleigh", class: "form-control" %>
+    <%= label form, :description %>
+    <%= textarea form, :description, class: "form-control" %>
+    <%= label form, :instructions %>
+    <%= textarea form, :instructions, class: "form-control" %>
+   </div>
+
+   <%= submit "Create Job", class: "btn btn-primary" %>
+ <% end %>
