@@ -1,5 +1,6 @@
 defmodule Community.Job do
   use Community.Web, :model
+  import Ecto.Query
 
   schema "jobs" do
     field :title, :string
@@ -27,5 +28,9 @@ defmodule Community.Job do
     model
     |> cast(params, @required_fields, @optional_fields)
     |> validate_format(:company_url, ~r/http(s)?.*/, message: "must start with http(s)")
+  end
+
+  def approved(model) do
+    where(model, approved: true)
   end
 end

@@ -18,4 +18,13 @@ defmodule Community.JobControllerTest do
     assert get_flash(conn, :error) == "Job not created"
     assert Repo.one(Job) == nil
   end
+
+  test "GET /jobs shows approved posts", %{conn: conn} do
+    approved = create(:job, %{approved: true, title: "approved"})
+    not_approved = create(:job, %{approved: false, title: "SPAM"})
+
+    conn = get conn, "/jobs"
+    assert html_response(conn, 200) =~ approved.title
+    refute html_response(conn, 200) =~ not_approved.title
+  end
 end

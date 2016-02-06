@@ -1,0 +1,7 @@
+<ul>
+  <%= for job <- @jobs  do %>
+    <li>
+      <%= job.title %>
+    </li>
+  <% end %>
+</ul>
