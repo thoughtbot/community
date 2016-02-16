@@ -52,7 +52,12 @@ exports.config = {
     babel: {
       // Do not use ES6 compiler in vendor code
       ignore: [/web\/static\/vendor/]
-    }
+    },
+    sass: {
+      options: {
+        includePaths: ["node_modules/bourbon/app/assets/stylesheets", "node_modules/normalize.css"]
+      },
+    },
   },
 
   modules: {
