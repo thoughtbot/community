@@ -5,16 +5,9 @@
 
 <div class="row marketing">
   <div class="col-lg-6">
-    <h4>Resources</h4>
     <ul>
       <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="http://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
+        <a href="<%= member_path(@conn, :index) %>">Member Directory</a>
       </li>
     </ul>
   </div>

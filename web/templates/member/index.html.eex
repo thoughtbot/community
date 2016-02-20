@@ -1,0 +1,1 @@
+<a href="<%= member_path(@conn, :new) %>">Add yourself to the directory</a>

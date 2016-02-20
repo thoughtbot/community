@@ -15,8 +15,7 @@ defmodule Community.Job do
     timestamps
   end
 
-  @required_fields ~w(title company city company_url description instructions approved preview)
-  @optional_fields ~w()
+  @allowed_fields ~w(title company city company_url description instructions approved preview)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
@@ -24,10 +23,16 @@ defmodule Community.Job do
   If no params are provided, an invalid changeset is returned
   with no validation performed.
   """
-  def changeset(model, params \\ :empty) do
+  def changeset(model, params \\ :invalid) do
     model
-    |> cast(params, @required_fields, @optional_fields)
+    |> cast(params, @allowed_fields)
     |> validate_format(:company_url, ~r/http(s)?.*/, message: "must start with http(s)")
+    |> validate_required(:city)
+    |> validate_required(:company)
+    |> validate_required(:company_url)
+    |> validate_required(:description)
+    |> validate_required(:instructions)
+    |> validate_required(:title)
   end
 
   def approved(model) do

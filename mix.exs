@@ -43,6 +43,7 @@ defmodule Community.Mixfile do
       {:cowboy, "~> 1.0"},
       {:ex_machina, "~> 0.6.1"},
       {:gettext, "~> 0.9"},
+      {:hound, "~> 0.8"},
       {:phoenix, "~> 1.1.4"},
       {:phoenix_ecto, "~> 3.0.0-beta"},
       {:phoenix_html, "~> 2.4"},

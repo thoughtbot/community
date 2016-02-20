@@ -1,6 +1,5 @@
 defmodule Community.JobControllerTest do
   use Community.ConnCase
-  alias Community.Repo
   alias Community.Job
 
   test "POST /jobs with valid params", %{conn: conn} do

@@ -1,3 +1,4 @@
+Application.ensure_all_started(:hound)
 ExUnit.start
 
 Mix.Task.run "ecto.create", ~w(-r Community.Repo --quiet)

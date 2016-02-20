@@ -14,6 +14,15 @@ defmodule Community.Factory do
     }
   end
 
+  def factory(:member) do
+    %Community.Member{
+      approved: false,
+      company_name: "thoughtbot",
+      email: sequence(:email, &"email-#{&1}@example.com"),
+      name: "Ralph Robot",
+    }
+  end
+
   def approve(job) do
     %{job | approved: true}
   end

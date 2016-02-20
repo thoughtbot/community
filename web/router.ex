@@ -18,6 +18,7 @@ defmodule Community.Router do
 
     get "/", PageController, :index
     resources "/jobs", JobController, only: [:index, :new, :create]
+    resources "/members", MemberController, only: [:index, :new, :create]
   end
 
   # Other scopes may use custom stacks.
