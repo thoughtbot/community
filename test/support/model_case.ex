@@ -27,11 +27,7 @@ defmodule Community.ModelCase do
   end
 
   setup tags do
-    unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Community.Repo, [])
-    end
-
-    :ok
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Community.Repo)
   end
 
   @doc """
