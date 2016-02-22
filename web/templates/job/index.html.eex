@@ -1,9 +1,19 @@
-<ul>
-  <%= for job <- @jobs  do %>
-    <li>
-      <%= job.title %>
-      <%= job.city %>
-      <%= job.company %>
-    </li>
-  <% end %>
-</ul>
+<section class="section">
+  <header class="section-description">
+    <h4>Job Board</h4>
+    <p>Find the best UI, UX, and visual design jobs local to Raleigh,&nbsp;NC.<p>
+    <p>Jobs are free to post, and will stay online for 30&nbsp;days.</p>
+  </header>
+
+  <ol class="section-content slats">
+    <%= for job <- @jobs  do %>
+      <li class="slat">
+        <div class="slat-hgroup">
+          <h3 class="slat-title"><%= job.title %></h3>
+          <h4 class="slat-subtitle"><%= job.company %></h4>
+        </div>
+        <p class="slat-meta"><%= job.city %></p>
+      </li>
+    <% end %>
+  </ol>
+</section>

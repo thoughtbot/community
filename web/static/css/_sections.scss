@@ -1,0 +1,17 @@
+.section {
+  display: flex;
+}
+
+.section-description {
+  margin-right: $large-spacing * 2;
+  max-width: 20em;
+
+  p {
+    color: $light-font-color;
+    font-size: $small-font-size;
+  }
+}
+
+.section-content {
+  flex: 1;
+}

@@ -1,0 +1,25 @@
+.slat {
+  @include padding($base-spacing null);
+  border-bottom: $base-border;
+  display: flex;
+}
+
+.slat-hgroup {
+  flex: 1;
+}
+
+.slat-title {
+  font-size: $large-font-size;
+  font-weight: 400;
+  margin-bottom: $small-spacing / 2;
+}
+
+.slat-subtitle {
+  color: $light-font-color;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.slat-meta {
+  color: $light-font-color;
+}

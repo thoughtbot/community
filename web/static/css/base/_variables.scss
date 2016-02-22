@@ -1,9 +1,13 @@
 // Typography
-$base-font-family: $helvetica;
+$font-stack-system: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$base-font-family: $font-stack-system;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
 $base-font-size: 1em;
+$small-font-size: 0.875em;
+$large-font-size: 1.25em;
+$x-large-font-size: 1.5em;
 
 // Line height
 $base-line-height: 1.5;
@@ -13,17 +17,20 @@ $heading-line-height: 1.2;
 $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
+$large-spacing: $base-spacing * 2;
 $base-z-index: 0;
 
 // Colors
 $blue: #1565c0;
-$dark-gray: #333;
+$dark-gray: #2e3e4d;
 $medium-gray: #999;
 $light-gray: #ddd;
+$almost-white: #fafafa;
 
 // Font Colors
 $base-font-color: $dark-gray;
 $action-color: $blue;
+$light-font-color: rgba($base-font-color, 0.75);
 
 // Border
 $base-border-color: $light-gray;
@@ -34,8 +41,7 @@ $base-background-color: #fff;
 $secondary-background-color: tint($base-border-color, 75%);
 
 // Forms
-$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
-$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+$form-box-shadow: inset 0 1px 1px rgba(#000, 0.06);
 
 // Animations
 $base-duration: 150ms;

@@ -1,0 +1,20 @@
+.site-header {
+  @include padding($large-spacing null);
+  align-items: center;
+  border-bottom: $base-border;
+  display: flex;
+  margin-bottom: $large-spacing;
+
+  nav {
+    flex: 1;
+  }
+}
+
+.site-logo {
+  font-size: $x-large-font-size;
+  margin-bottom: $small-spacing / 2;
+
+  a {
+    color: $base-font-color;
+  }
+}

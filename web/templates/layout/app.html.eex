@@ -13,13 +13,17 @@
 
   <body>
     <div class="container">
-      <header class="header">
+      <header class="site-header">
         <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+          <h1 class="site-logo"><%= link("Raleigh Design", to: "/") %></h1>
+          <ul class="site-navigation">
+            <li><%= link("Member Directory", to: member_path(@conn, :index)) %></li>
+            <li><%= link("Job Board", to: job_path(@conn, :index)) %></li>
           </ul>
         </nav>
-        <span class="logo"></span>
+        <%= if assigns[:page_action] do %>
+          <%= link(assigns[:page_action][:text], to: assigns[:page_action][:url], class: "button") %>
+        <% end %>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
@@ -28,8 +32,7 @@
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
-
-    </div> <!-- /container -->
+    </div>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
