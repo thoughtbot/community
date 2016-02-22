@@ -36,6 +36,10 @@ defmodule Community.Web do
 
       import Community.Router.Helpers
       import Community.Gettext
+
+      def add_page_action(conn, text: text, url: url) do
+        assign(conn, :page_action, %Community.Link{text: text, url: url})
+      end
     end
   end
 

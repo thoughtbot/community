@@ -21,9 +21,7 @@
             <li><%= link("Job Board", to: job_path(@conn, :index)) %></li>
           </ul>
         </nav>
-        <%= if assigns[:page_action] do %>
-          <%= link(assigns[:page_action][:text], to: assigns[:page_action][:url], class: "button") %>
-        <% end %>
+        <%= page_action_link(assigns) %>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>

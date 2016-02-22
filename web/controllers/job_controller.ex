@@ -5,7 +5,7 @@ defmodule Community.JobController do
   def index(conn, _params) do
     conn
     |> assign(:jobs, approved_jobs)
-    |> assign(:page_action, %{text: "Post a Job for Free", url: "/jobs/new"})
+    |> add_page_action(text: "Post a Job for Free", url: "/jobs/new")
     |> render("index.html")
   end
 
