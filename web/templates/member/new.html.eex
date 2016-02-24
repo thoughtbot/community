@@ -1,15 +1,26 @@
-<h1>New Member</h1>
-<%= form_for @changeset, member_path(@conn, :create), fn form -> %>
+<section class="section">
+  <div class="section-description">
+    <h4>New Member</h4>
+    <p>You facilisi. Duis eu consectetur lorem. Nunc vel mollis purus, a
+    fringilla odio. Nulla consectetur lorem quis ligula mollis ultrices non id
+    tortor, et egestas enim nisi ac mauris.the&nbsp;web.</p>
+    <%= link("← Back to the Directory", to: member_path(@conn, :index), class: "back-link") %>
+  </div>
 
-  <%= render Community.SharedView, "_form_errors.html", form: @changeset %>
-  <%= label form, :name, "Name" %>
-  <%= text_input form, :name, placeholder: "Designer McAwesome" %>
+  <div class="section-content">
+    <%= form_for @changeset, member_path(@conn, :create), fn form -> %>
 
-  <%= label form, :email, "Email" %>
-  <%= text_input form, :email, placeholder: "designer@example.com " %>
+      <%= render Community.SharedView, "_form_errors.html", form: @changeset %>
+      <%= label form, :name, "Name" %>
+      <%= text_input form, :name, placeholder: "Designer McAwesome" %>
 
-  <%= label form, :company_name, "Company name" %>
-  <%= text_input form, :company_name, placeholder: "Awesome Startup" %>
+      <%= label form, :email, "Email" %>
+      <%= text_input form, :email, placeholder: "designer@example.com " %>
 
-   <%= submit "Save", data: [role: "member-save" ] %>
- <% end %>
+      <%= label form, :company_name, "Company name" %>
+      <%= text_input form, :company_name, placeholder: "Awesome Startup" %>
+
+      <%= submit "Save", data: [role: "member-save" ] %>
+    <% end %>
+  </div>
+</section>

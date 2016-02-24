@@ -4,6 +4,7 @@ defmodule Community.MemberController do
 
   def index(conn, _params) do
     conn
+    |> add_page_action(text: "Add yourself to the directory", url: "/members/new")
     |> render("index.html")
   end
 

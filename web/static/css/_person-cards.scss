@@ -1,0 +1,74 @@
+.person-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.person-card {
+  @include margin(null 2% 2% null);
+  @include padding($large-spacing $base-spacing null);
+  background-color: $white;
+  border-radius: $base-border-radius;
+  box-shadow: 0 3px 12px rgba($dark-gray, 0.1);
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+.person-card-image {
+  @include margin(null auto $base-spacing);
+  @include size($large-spacing * 2);
+  border-radius: 50%;
+  display: block;
+}
+
+.person-card-name {
+  font-size: $large-font-size;
+  font-weight: 400;
+  margin-bottom: $small-spacing / 3;
+  text-align: center;
+}
+
+.person-card-job {
+  flex: 1;
+  font-size: $x-small-font-size;
+  margin-bottom: $large-spacing;
+  text-align: center;
+}
+
+.person-card-meta {
+  @include padding($small-spacing null);
+  align-items: center;
+  border-top: $base-border;
+  display: flex;
+  justify-content: space-between;
+}
+
+.person-card-hire-link {
+  font-size: $x-small-font-size;
+}
+
+.person-card-social-item {
+  display: inline-block;
+
+  & + & {
+    margin-left: $small-spacing / 2;
+  }
+}
+
+.person-card-social-link {
+  color: $lighter-font-color;
+
+  &:hover,
+  &:focus {
+    color: $action-color;
+  }
+
+  svg {
+    @include size(1em);
+    fill: currentColor;
+  }
+}

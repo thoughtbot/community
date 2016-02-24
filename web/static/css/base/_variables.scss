@@ -6,6 +6,7 @@ $heading-font-family: $base-font-family;
 // Font Sizes
 $base-font-size: 1em;
 $small-font-size: 0.875em;
+$x-small-font-size: 0.8125em;
 $large-font-size: 1.25em;
 $x-large-font-size: 1.5em;
 
@@ -25,12 +26,14 @@ $blue: #1565c0;
 $dark-gray: #2e3e4d;
 $medium-gray: #999;
 $light-gray: #ddd;
-$almost-white: #fafafa;
+$almost-white: #f3f5f8;
+$white: #fff;
 
 // Font Colors
 $base-font-color: $dark-gray;
 $action-color: $blue;
 $light-font-color: rgba($base-font-color, 0.75);
+$lighter-font-color: rgba($base-font-color, 0.5);
 
 // Border
 $base-border-color: $light-gray;

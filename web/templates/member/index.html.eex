@@ -1,1 +1,33 @@
-<a href="<%= member_path(@conn, :new) %>">Add yourself to the directory</a>
+<section class="section">
+  <header class="section-description">
+    <h4>Member Directory</h4>
+    <p>Ut vulputate vel nulla et mattis. Nullam venenatis sem aliquet, vehicula
+    libero vel, consequat elit. Suspendisse fermentum enim at lacinia iaculis.
+    Cras rutrum.</p>
+  </header>
+
+  <ol class="section-content person-cards">
+    <%= for n <- 1..10 do %>
+      <li class="person-card">
+        <img class="person-card-image" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg">
+        <h4 class="person-card-name">Lloyd Gonzalez</h4>
+        <p class="person-card-job">Design Director at thoughtbot</p>
+        <div class="person-card-meta">
+          <a class="person-card-hire-link" href="#">Available for Hire</a>
+          <ul>
+            <li class="person-card-social-item">
+              <a class="person-card-social-link" href="#">
+                <%= Community.SharedView.svg("twitter") %>
+              </a>
+            </li>
+            <li class="person-card-social-item">
+              <a class="person-card-social-link" href="#">
+                <%= Community.SharedView.svg("dribbble") %>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    <% end %>
+  </ol>
+</section>
