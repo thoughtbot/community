@@ -17,3 +17,5 @@ config :community, Community.Repo,
   database: "community_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :community, sql_sandbox: true

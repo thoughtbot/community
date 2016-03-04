@@ -12,12 +12,14 @@ defmodule Community.AcceptanceCase do
       alias Community.Repo
 
       @endpoint Community.Endpoint
-
-      hound_session
     end
   end
 
-  setup do
+  setup _tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Community.Repo)
+    Hound.start_session()
+    path = Phoenix.Ecto.SQL.Sandbox.path_for(Community.Repo, self())
+    Hound.Helpers.Navigation.navigate_to(path)
+    :ok
   end
 end
