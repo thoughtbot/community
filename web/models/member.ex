@@ -1,5 +1,6 @@
 defmodule Community.Member do
   use Community.Web, :model
+  import Ecto.Query
 
   schema "members" do
     field :name, :string
@@ -17,11 +18,15 @@ defmodule Community.Member do
   If no params are provided, an invalid changeset is returned
   with no validation performed.
   """
-  def changeset(model, params \\ :invalid) do
+  def changeset(model, params \\ %{}) do
     model
     |> cast(params, @allowed_fields)
     |> validate_required(:name)
     |> validate_required(:email)
     |> validate_required(:company_name)
+  end
+
+  def approved(model) do
+    where(model, approved: true)
   end
 end

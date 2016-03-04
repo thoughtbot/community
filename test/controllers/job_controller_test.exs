@@ -7,14 +7,14 @@ defmodule Community.JobControllerTest do
 
     assert get_flash(conn, :info) == "Job created"
     assert redirected_to(conn, 302) =~ "/"
-    assert Repo.last(Job).title == "designer"
+    assert Repo.one(Job).title == "designer"
   end
 
   test "POST /jobs with invalid params", %{conn: conn} do
     conn = post conn, "/jobs", job: %{}
 
     assert get_flash(conn, :error) == "Job not created"
-    assert Repo.last(Job) == nil
+    assert Repo.one(Job) == nil
   end
 
   test "GET /jobs shows approved posts", %{conn: conn} do

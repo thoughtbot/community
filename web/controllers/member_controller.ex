@@ -1,11 +1,17 @@
 defmodule Community.MemberController do
   use Community.Web, :controller
   alias Community.Member
+  alias Community.Repo
 
   def index(conn, _params) do
     conn
+    |> assign(:members, approved_members)
     |> add_page_action(text: "Add yourself to the directory", url: "/members/new")
     |> render("index.html")
+  end
+
+  defp approved_members do
+    Member |> Member.approved |> Repo.all
   end
 
   def new(conn, _params) do
