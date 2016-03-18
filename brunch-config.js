@@ -53,6 +53,11 @@ exports.config = {
       // Do not use ES6 compiler in vendor code
       ignore: [/web\/static\/vendor/]
     },
+    postcss: {
+      processors: [
+        require("autoprefixer")
+      ],
+    },
     sass: {
       options: {
         includePaths: ["node_modules/bourbon/app/assets/stylesheets", "node_modules/normalize.css"]

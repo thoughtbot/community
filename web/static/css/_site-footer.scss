@@ -1,0 +1,24 @@
+.site-footer {
+  @include padding($large-spacing null);
+  background-color: $base-font-color;
+  margin-top: $large-spacing;
+
+  p {
+    color: rgba(white, 0.75);
+    font-size: $x-small-font-size;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: rgba($almost-white, 0.75);
+    font-weight: 800;
+
+    &:hover,
+    &:focus {
+      color: $almost-white;
+    }
+  }
+}

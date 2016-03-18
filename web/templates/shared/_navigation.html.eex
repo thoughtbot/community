@@ -1,0 +1,7 @@
+<ul>
+  <li><%= link("Member Directory", to: member_path(@conn, :index)) %></li>
+  <li><%= link("Job Board", to: job_path(@conn, :index)) %></li>
+  <li><a href="#">Dribbble</a></li>
+  <li><a href="#">Meetups</a></li>
+  <li><a href="#">Slack Channel</a></li>
+</ul>

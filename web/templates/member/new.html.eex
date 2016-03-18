@@ -4,7 +4,11 @@
     <p>You facilisi. Duis eu consectetur lorem. Nunc vel mollis purus, a
     fringilla odio. Nulla consectetur lorem quis ligula mollis ultrices non id
     tortor, et egestas enim nisi ac mauris.the&nbsp;web.</p>
-    <%= link("← Back to the Directory", to: member_path(@conn, :index), class: "back-link") %>
+    <%= link(
+      "← Back to the Directory",
+      to: member_path(@conn, :index),
+      class: "appended-link"
+    ) %>
   </div>
 
   <div class="section-content">

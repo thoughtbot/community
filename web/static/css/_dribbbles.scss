@@ -1,0 +1,18 @@
+.dribbbles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.dribbble {
+  margin-bottom: $base-spacing;
+
+  &:nth-child(2n) {
+    margin-left: $base-spacing;
+  }
+
+  a,
+  img {
+    display: block;
+  }
+}

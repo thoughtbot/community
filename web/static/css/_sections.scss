@@ -1,5 +1,11 @@
 .section {
   display: flex;
+  margin-bottom: $large-spacing * 2;
+
+  & + & {
+    border-top: $base-border;
+    padding-top: $large-spacing;
+  }
 }
 
 .section-description {

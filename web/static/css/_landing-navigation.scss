@@ -1,0 +1,21 @@
+.landing-navigation {
+  margin-bottom: $large-spacing * 2;
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    color: $lighter-font-color;
+    display: inline-block;
+    font-size: $x-small-font-size;
+    font-weight: 600;
+    padding: $small-spacing;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      color: $action-color;
+    }
+  }
+}

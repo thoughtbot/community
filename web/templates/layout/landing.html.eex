@@ -13,12 +13,18 @@
 
   <body>
     <div class="container">
-      <header class="site-header">
-        <nav role="navigation" class="app-navigation">
-          <h1 class="site-logo"><%= link("Raleigh Design", to: "/") %></h1>
+      <header class="landing-header">
+        <nav role="navigation" class="landing-navigation">
           <%= render Community.SharedView, "_navigation.html", conn: @conn %>
         </nav>
-        <%= page_action_link(assigns) %>
+        <h1 class="landing-header-title">
+          <%= Community.SharedView.svg("landing-logo") %>
+        </h1>
+        <h2 class="landing-header-subtitle">
+          A resource for designers in Raleigh
+          to stay connected, learn about upcoming events, and find prospective
+          career opportunities.
+        </h2>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>

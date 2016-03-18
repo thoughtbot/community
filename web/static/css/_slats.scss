@@ -1,6 +1,6 @@
 .slat {
   @include padding($base-spacing null);
-  border-bottom: $base-border;
+  border-bottom: $light-border;
   display: flex;
 }
 

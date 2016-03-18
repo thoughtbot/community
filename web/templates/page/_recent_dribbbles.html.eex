@@ -1,0 +1,19 @@
+<section class="section">
+  <div class="section-description">
+    <h4>Recently on Dribbble</h4>
+    <p>In nibh orci, tincidunt et euismod in, iaculis id mauris. Mauris quis
+    varius ex. Aliquam fringilla, quam vel molestie accumsan, orci lacus
+    efficitur dolor, non consequat libero felis in tortor.</p>
+    <a href="#" class="appended-link">View More&rarr;</a>
+  </div>
+
+  <ol class="section-content dribbbles">
+    <%= for _ <- 1..6 do %>
+      <li class="dribbble">
+        <a href="#">
+          <img src="/images/dribbble.png">
+        </a>
+      </li>
+    <% end %>
+  </ol>
+</section>

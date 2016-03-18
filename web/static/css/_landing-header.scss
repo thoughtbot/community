@@ -1,0 +1,23 @@
+.landing-header {
+  @include padding($large-spacing);
+  background-image: url("/images/leaves.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  border-bottom: $base-border;
+  margin-bottom: $large-spacing;
+  text-align: center;
+}
+
+.landing-header-title {
+  margin-bottom: $x-large-spacing;
+}
+
+.landing-header-subtitle {
+  color: $lighter-font-color;
+  display: inline-block;
+  font-size: $x-large-font-size;
+  font-weight: 300;
+  line-height: $base-line-height;
+  margin-bottom: $large-spacing;
+  max-width: 32em;
+}

@@ -1,0 +1,14 @@
+<footer class="site-footer">
+  <div class="container">
+    <p>
+      Raleigh Design is designed and maintained by
+      <a href="http://twitter.com/jchreu">@jchreu</a>, heavily inspired by
+      <a href="http://phldesign.co">PHLDESIGN CO</a>, and supported by
+      <a href="#">thoughtbot</a>.
+    </p>
+    <p>
+      Tweet at us or follow along at
+      <a href="http://twitter.com/raleighdesign">@raleighdesign</a>.
+    </p>
+  </div>
+</footer>
