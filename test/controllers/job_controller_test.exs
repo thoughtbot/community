@@ -1,6 +1,7 @@
 defmodule Community.JobControllerTest do
   use Community.ConnCase
   alias Community.Job
+  use Bamboo.Test
 
   describe "POST /jobs" do
     context "with valid params" do
@@ -9,7 +10,10 @@ defmodule Community.JobControllerTest do
 
         assert get_flash(conn, :info) == "Job created"
         assert redirected_to(conn, 302) =~ "/jobs"
-        assert Repo.one(Job).title == "designer"
+        job = Repo.one(Job)
+        assert job.title == "designer"
+
+        assert_delivered_email Community.Email.job_posted(job)
       end
     end
 

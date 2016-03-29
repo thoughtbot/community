@@ -63,3 +63,7 @@ config :logger, level: :info
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 import_config "prod.secret.exs"
+
+config :community, Community.Mailer,
+  adapter: Bamboo.MandrillAdapter,
+  api_key: System.get_env("MANDRILL_API_KEY")

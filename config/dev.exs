@@ -38,3 +38,6 @@ config :community, Community.Repo,
   database: "community_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :community, Community.Mailer,
+  adapter: Bamboo.LocalAdapter

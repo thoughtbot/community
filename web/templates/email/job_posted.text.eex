@@ -1,0 +1,10 @@
+You created a job! It's hidden for now, but will go live once an admin approves
+it.
+
+<%= @job.title %>
+
+You can edit or delete your job at any time using the link below.
+
+<%= job_url(Community.Endpoint, :edit, @job, token: @job.token) %>
+
+Thanks!

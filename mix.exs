@@ -19,6 +19,7 @@ defmodule Community.Mixfile do
   def application do
     [mod: {Community, []},
      applications: [
+       :bamboo,
        :cowboy,
        :ex_machina,
        :gettext,
@@ -40,6 +41,7 @@ defmodule Community.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:bamboo, github: "thoughtbot/bamboo"},
       {:cowboy, "~> 1.0"},
       {:envy, "~> 0.0.2"},
       {:ex_machina, "~> 0.6.1", only: [:dev, :test]},

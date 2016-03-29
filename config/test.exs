@@ -19,3 +19,6 @@ config :community, Community.Repo,
   pool: Ecto.Adapters.SQL.Sandbox
 
 config :community, sql_sandbox: true
+
+config :community, Community.Mailer,
+  adapter: Bamboo.TestAdapter

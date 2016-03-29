@@ -1,4 +1,5 @@
-%{"certifi": {:hex, :certifi, "0.4.0"},
+%{"bamboo": {:git, "https://github.com/thoughtbot/bamboo.git", "f4ae96942fb6cc800b7d55a405f4e6cec54ee2ac", []},
+  "certifi": {:hex, :certifi, "0.4.0"},
   "connection": {:hex, :connection, "1.0.2"},
   "cowboy": {:hex, :cowboy, "1.0.4"},
   "cowlib": {:hex, :cowlib, "1.0.2"},

@@ -1,9 +1,11 @@
 defmodule Community do
   use Application
 
-  # See http://elixir-lang.org/docs/stable/elixir/Application.html
-  # for more information on OTP Applications
   def start(_type, _args) do
+    unless Mix.env == "prod" do
+      Envy.auto_load
+    end
+
     import Supervisor.Spec, warn: false
 
     unless Mix.env == "prod" do
@@ -17,6 +19,7 @@ defmodule Community do
       supervisor(Community.Repo, []),
       # Here you could define other workers and supervisors as children
       # worker(Community.Worker, [arg1, arg2, arg3]),
+      Bamboo.TaskSupervisorStrategy.child_spec,
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
