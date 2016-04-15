@@ -30,6 +30,20 @@ defmodule Mix.Tasks.DevelopmentSeeds do
       name: "Bruce Banner",
       company_name: "University of California, LA",
     })
+
+    for title <- titles do
+      create(:job, approved: true, title: "#{title}")
+    end
+  end
+
+  def titles do
+    [
+      "Lead Designer",
+      "Design Ninja",
+      "Junior Designer",
+      "Digital Designer",
+      "Product Designer"
+    ]
   end
 
   def approve_member(attributes) do
