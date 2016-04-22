@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/drapergeek/community.svg?label=ready&title=Ready)](http://waffle.io/drapergeek/community)
 # Community
 
 To start your Phoenix app:
