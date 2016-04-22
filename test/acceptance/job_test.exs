@@ -4,7 +4,7 @@ defmodule Community.Acceptance.JobTest do
   test "editing a job" do
     job = create(:job)
 
-    navigate_to "/jobs/#{job.id}/edit?token=#{job.token}"
+    navigate_to job_path(@endpoint, :edit, job, token: job.token)
     fill_in "job", "title", with: "New Title"
     fill_in "job", "company", with: "New Company"
     fill_in "job", "company_url", with: "http://example.com"
