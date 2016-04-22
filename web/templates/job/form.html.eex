@@ -9,6 +9,8 @@
       <%= text_input form, :company %>
       <%= label form, :company_url, "Company URL" %>
       <%= text_input form, :company_url, placeholder: "http://example.com" %>
+      <%= label form, :contact, "Contact" %>
+      <%= text_input form, :contact %>
       <%= label form, :city %>
       <%= text_input form, :city %>
       <%= label form, :description %>

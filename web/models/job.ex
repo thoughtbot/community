@@ -5,6 +5,7 @@ defmodule Community.Job do
   schema "jobs" do
     field :title, :string
     field :company, :string
+    field :contact, :string
     field :city, :string
     field :company_url, :string
     field :description, :string
@@ -16,7 +17,15 @@ defmodule Community.Job do
     timestamps
   end
 
-  @allowed_fields ~w(title company city company_url description instructions approved preview)
+  @required_fields [
+    :contact,
+    :city,
+    :company,
+    :company_url,
+    :description,
+    :instructions,
+    :title,
+  ]
 
   @doc """
   Creates a changeset based on the `model` and `params`.
@@ -26,14 +35,9 @@ defmodule Community.Job do
   """
   def changeset(model, params \\ %{}) do
     model
-    |> cast(params, @allowed_fields)
+    |> cast(params, @required_fields)
     |> validate_format(:company_url, ~r/http(s)?.*/, message: "must start with http(s)")
-    |> validate_required(:city)
-    |> validate_required(:company)
-    |> validate_required(:company_url)
-    |> validate_required(:description)
-    |> validate_required(:instructions)
-    |> validate_required(:title)
+    |> validate_required(@required_fields)
   end
 
   def approved(model) do
