@@ -19,8 +19,3 @@ dependencies:
 test:
   override:
     - bin/ci_test
-deployment:
-  staging:
-    branch: master
-    heroku:
-      appname: flywheel-stage
