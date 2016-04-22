@@ -9,6 +9,19 @@ defmodule Community.JobController do
     |> render("index.html")
   end
 
+  def show(conn, %{"id" => id}) do
+    case Repo.get_by(Job, id: id, approved: true) do
+      nil ->
+        conn
+        |> put_flash(:error, "There is no approved job with that id")
+        |> redirect(to: page_path(conn, :index))
+      job ->
+        conn
+        |> assign(:job, job)
+        |> render(:show)
+    end
+  end
+
   def new(conn, _params) do
     changeset = Job.changeset(%Job{})
     render conn, "new.html", changeset: changeset

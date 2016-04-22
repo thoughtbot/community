@@ -1,0 +1,3 @@
+<h3 class="slat-title"><%= @job.title %></h3>
+<h4 class="slat-subtitle"><%= @job.company %></h4>
+<p class="slat-meta"><%= @job.city %></p>

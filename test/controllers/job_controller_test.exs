@@ -32,4 +32,26 @@ defmodule Community.JobControllerTest do
     assert html_response(conn, 200) =~ approved.company
     assert html_response(conn, 200) =~ approved.city
   end
+
+  test "GET /jobs/:id shows approved job", %{conn: conn} do
+    approved = build(:job, %{
+      city: "Dvegas",
+      company: "big company name",
+      title: "approved",
+    }) |> approve |> create
+
+    conn = get conn, "/jobs/#{approved.id}"
+
+    assert html_response(conn, 200) =~ approved.title
+    assert html_response(conn, 200) =~ approved.company
+    assert html_response(conn, 200) =~ approved.city
+  end
+
+  test "GET /jobs/:id when the job is not approved, redirects", %{conn: conn} do
+    job = create(:job, approved: false)
+
+    conn = get conn, "/jobs/#{job.id}"
+
+    assert redirected_to(conn, 302) == "/"
+  end
 end

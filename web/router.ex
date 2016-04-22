@@ -17,7 +17,7 @@ defmodule Community.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    resources "/jobs", JobController, only: [:index, :new, :create]
+    resources "/jobs", JobController, only: [:index, :show, :new, :create]
     resources "/members", MemberController, only: [:index, :new, :create]
   end
 

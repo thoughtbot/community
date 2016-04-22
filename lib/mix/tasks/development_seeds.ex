@@ -34,6 +34,9 @@ defmodule Mix.Tasks.DevelopmentSeeds do
     for title <- titles do
       create(:job, approved: true, title: "#{title}")
     end
+
+    create(:job, title: "Awsesome Designer")
+    create(:job, title: "Rockstar")
   end
 
   def titles do
