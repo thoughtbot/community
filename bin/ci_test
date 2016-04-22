@@ -1,0 +1,6 @@
+#!/bin/bash
+
+source ~/.asdf/asdf.sh
+export MIX_ENV="test"
+
+bin/test_suite

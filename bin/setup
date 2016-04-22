@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+# Exit if any subcommand fails
+set -e
+
+# Set up phoenix
+mix local.hex --force
+mix deps.get
+mix compile
+
+# Set up database
+mix ecto.create
+mix ecto.migrate
+
+npm install --progress=false

@@ -1,0 +1,26 @@
+machine:
+  pre:
+    - nvm install 5.6.0
+  node:
+    version: 5.6.0
+dependencies:
+  override:
+    - sudo bin/install_phantom
+    - bin/ci_setup
+    - rm -rf node_modules
+    - npm install --progress=false
+  cache_directories:
+    - ~/dependencies
+    - ~/.mix
+    - ~/.asdf
+    - ~/.node_modules
+    - _build
+    - deps
+test:
+  override:
+    - bin/ci_test
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: flywheel-stage
