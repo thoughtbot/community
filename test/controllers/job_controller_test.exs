@@ -2,56 +2,70 @@ defmodule Community.JobControllerTest do
   use Community.ConnCase
   alias Community.Job
 
-  test "POST /jobs with valid params", %{conn: conn} do
-    conn = post conn, "/jobs", job: fields_for(:job, %{title: "designer"})
+  describe "POST /jobs" do
+    context "with valid params" do
+      it "creates the job", %{conn: conn} do
+        conn = post conn, "/jobs", job: fields_for(:job, %{title: "designer"})
 
-    assert get_flash(conn, :info) == "Job created"
-    assert redirected_to(conn, 302) =~ "/"
-    assert Repo.one(Job).title == "designer"
+        assert get_flash(conn, :info) == "Job created"
+        assert redirected_to(conn, 302) =~ "/"
+        assert Repo.one(Job).title == "designer"
+      end
+    end
+
+    context "with invalid params" do
+      it "returns an error", %{conn: conn} do
+        conn = post conn, "/jobs", job: %{}
+
+        assert get_flash(conn, :error) == "Job not created"
+        assert Repo.one(Job) == nil
+      end
+    end
   end
 
-  test "POST /jobs with invalid params", %{conn: conn} do
-    conn = post conn, "/jobs", job: %{}
+  describe "GET /jobs" do
+    it "shows approved posts", %{conn: conn} do
+      approved = build(:job, %{
+        city: "Dvegas",
+        company: "big company name",
+        title: "approved",
+      }) |> approve |> create
+      not_approved = create(:job, %{title: "SPAM"})
 
-    assert get_flash(conn, :error) == "Job not created"
-    assert Repo.one(Job) == nil
+      conn = get conn, "/jobs"
+      refute html_response(conn, 200) =~ not_approved.title
+
+      assert html_response(conn, 200) =~ approved.title
+      assert html_response(conn, 200) =~ approved.company
+      assert html_response(conn, 200) =~ approved.city
+    end
   end
 
-  test "GET /jobs shows approved posts", %{conn: conn} do
-    approved = build(:job, %{
-      city: "Dvegas",
-      company: "big company name",
-      title: "approved",
-    }) |> approve |> create
-    not_approved = create(:job, %{title: "SPAM"})
+  describe "GET /jobs/:id" do
+    context "when the job is approved" do
+      it "shows the job", %{conn: conn} do
+        approved = build(:job, %{
+          city: "Dvegas",
+          company: "big company name",
+          title: "approved",
+        }) |> approve |> create
 
-    conn = get conn, "/jobs"
-    refute html_response(conn, 200) =~ not_approved.title
+        conn = get conn, "/jobs/#{approved.id}"
 
-    assert html_response(conn, 200) =~ approved.title
-    assert html_response(conn, 200) =~ approved.company
-    assert html_response(conn, 200) =~ approved.city
-  end
+        assert html_response(conn, 200) =~ approved.title
+        assert html_response(conn, 200) =~ approved.company
+        assert html_response(conn, 200) =~ approved.city
+      end
+    end
 
-  test "GET /jobs/:id shows approved job", %{conn: conn} do
-    approved = build(:job, %{
-      city: "Dvegas",
-      company: "big company name",
-      title: "approved",
-    }) |> approve |> create
+    context "when the job is not approved" do
+      it "redirects to the root", %{conn: conn} do
+        job = create(:job, approved: false)
 
-    conn = get conn, "/jobs/#{approved.id}"
+        conn = get conn, "/jobs/#{job.id}"
 
-    assert html_response(conn, 200) =~ approved.title
-    assert html_response(conn, 200) =~ approved.company
-    assert html_response(conn, 200) =~ approved.city
-  end
-
-  test "GET /jobs/:id when the job is not approved, redirects", %{conn: conn} do
-    job = create(:job, approved: false)
-
-    conn = get conn, "/jobs/#{job.id}"
-
-    assert redirected_to(conn, 302) == "/"
+        assert redirected_to(conn, 302) == "/"
+      end
+    end
   end
 end

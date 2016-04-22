@@ -42,6 +42,7 @@ defmodule Community.Mixfile do
     [
       {:cowboy, "~> 1.0"},
       {:ex_machina, "~> 0.6.1"},
+      {:ex_spec, "~> 1.0.0", only: :test},
       {:gettext, "~> 0.9"},
       {:hound, "~> 0.8"},
       {:phoenix, "~> 1.1.4"},

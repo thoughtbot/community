@@ -18,6 +18,7 @@ defmodule Community.ConnCase do
   using do
     quote do
       # Import conveniences for testing with connections
+      use ExSpec, async: true
       use Phoenix.ConnTest
 
       alias Community.Repo
