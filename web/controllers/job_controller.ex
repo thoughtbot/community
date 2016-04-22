@@ -52,6 +52,33 @@ defmodule Community.JobController do
     end
   end
 
+  def edit(conn, %{"id" => id, "token" => token}) do
+    job = Repo.get_by(Job, id: id, token: token)
+    changeset = Job.changeset(job)
+    conn
+    |> assign(:token, token)
+    |> assign(:changeset, changeset)
+    |> render(:edit)
+  end
+
+  def update(conn, %{"id" => id, "token" => token, "job" => job_params}) do
+    job = Repo.get_by(Job, id: id, token: token)
+    changeset = Job.changeset(job, job_params)
+
+    case Repo.update(changeset) do
+      {:ok, job} ->
+        conn
+        |> put_flash(:info, gettext("Job updated"))
+        |> redirect(to: job_path(conn, :show, job, token: token))
+      {:error, changeset} ->
+        conn
+        |> assign(:token, token)
+        |> assign(:changeset, changeset)
+        |> put_flash(:error, "Job not created")
+        |> render(:edit)
+    end
+  end
+
   defp approved_jobs do
     Job
     |> Job.approved

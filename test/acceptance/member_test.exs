@@ -6,9 +6,9 @@ defmodule Community.Acceptance.MemberTest do
     navigate_to "/"
     click_on "MEMBER DIRECTORY"
     click_on "Add yourself to the directory"
-    fill_in "member_name", "Scott Summers"
-    fill_in "member_email", "cyclops@example.com"
-    fill_in "member_company_name", "X-men"
+    fill_in "member", "name", with: "Scott Summers"
+    fill_in "member", "email", with: "cyclops@example.com"
+    fill_in "member", "company_name", with: "X-men"
     click_role "member-save"
     assert String.contains?(visible_page_text, "Thank you for signing up!")
 
@@ -17,20 +17,5 @@ defmodule Community.Acceptance.MemberTest do
     assert last_member.email == "cyclops@example.com"
     assert last_member.company_name == "X-men"
     assert last_member.approved == false
-  end
-
-  defp click_on(text) do
-    find_element(:link_text, text)
-    |> click
-  end
-
-  defp click_role(name) do
-    find_element(:css, "[data-role=#{name}]")
-    |> click
-  end
-
-  def fill_in(field_id, text) do
-    find_element(:id, field_id)
-    |> fill_field(text)
   end
 end

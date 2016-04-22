@@ -11,11 +11,12 @@
       class: "appended-link"
     ) %>
   </div>
+
   <%= render(
       "form.html",
       conn: @conn,
       changeset: @changeset,
-      submit_text: gettext("Post your job"),
-      path: job_path(@conn, :create),
+      submit_text: gettext("Save"),
+      path: job_path(@conn, :update, @changeset.data.id, token: @token),
   )%>
 </section>

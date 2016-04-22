@@ -8,6 +8,8 @@ defmodule Community.AcceptanceCase do
       import Ecto.Model
       import Ecto.Query, only: [from: 2]
       import Community.Router.Helpers
+      import Community.Factory
+      import Community.FeatureHelpers
 
       alias Community.Repo
 

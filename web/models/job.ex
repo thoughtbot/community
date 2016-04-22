@@ -24,7 +24,7 @@ defmodule Community.Job do
   If no params are provided, an invalid changeset is returned
   with no validation performed.
   """
-  def changeset(model, params \\ :invalid) do
+  def changeset(model, params \\ %{}) do
     model
     |> cast(params, @allowed_fields)
     |> validate_format(:company_url, ~r/http(s)?.*/, message: "must start with http(s)")
