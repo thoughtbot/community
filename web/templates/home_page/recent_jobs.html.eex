@@ -7,17 +7,5 @@
     <a href="#" class="appended-link">View More&rarr;</a>
   </div>
 
-  <ol class="section-content slats">
-    <%= for _ <- 1..5 do %>
-      <li class="slat">
-        <div class="slat-hgroup">
-          <h3 class="slat-title">
-            <a href="#">Digital Product Designer</a>
-          </h3>
-          <h4 class="slat-subtitle">Acme Inc.</h4>
-        </div>
-        <p class="slat-meta">Raleigh</p>
-      </li>
-    <% end %>
-  </ol>
+  <%= render Community.JobView, "job_list.html", jobs: @jobs, conn: @conn %>
 </section>

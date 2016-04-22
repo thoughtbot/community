@@ -5,15 +5,5 @@
     <p>Jobs are free to post, and will stay online for 30&nbsp;days.</p>
   </header>
 
-  <ol class="section-content slats">
-    <%= for job <- @jobs  do %>
-      <li class="slat">
-        <div class="slat-hgroup">
-          <h3 class="slat-title"><%= job.title %></h3>
-          <h4 class="slat-subtitle"><%= job.company %></h4>
-        </div>
-        <p class="slat-meta"><%= job.city %></p>
-      </li>
-    <% end %>
-  </ol>
+  <%= render Community.JobView, "job_list.html", jobs: @jobs, conn: @conn %>
 </section>

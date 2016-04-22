@@ -1,0 +1,3 @@
+<%= render "recent_jobs.html", jobs: @jobs, conn: @conn %>
+<%= render "recent_dribbbles.html" %>
+<%= render "recent_meetups.html" %>

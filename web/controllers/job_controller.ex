@@ -14,7 +14,7 @@ defmodule Community.JobController do
       nil ->
         conn
         |> put_flash(:error, "There is no approved job with that id")
-        |> redirect(to: page_path(conn, :index))
+        |> redirect(to: root_path(conn, :show))
       job ->
         conn
         |> assign(:job, job)

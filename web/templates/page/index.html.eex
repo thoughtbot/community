@@ -1,3 +1,0 @@
-<%= render "_recent_jobs.html" %>
-<%= render "_recent_dribbbles.html" %>
-<%= render "_recent_meetups.html" %>

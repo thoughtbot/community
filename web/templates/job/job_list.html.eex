@@ -1,0 +1,13 @@
+<ol class="section-content slats">
+  <%= for job <- @jobs  do %>
+    <li class="slat">
+      <div class="slat-hgroup">
+        <h3 class="slat-title">
+          <%= link job.title, to: job_path(@conn, :show, job) %>
+        </h3>
+        <h4 class="slat-subtitle"><%= job.company %></h4>
+      </div>
+      <p class="slat-meta"><%= job.city %></p>
+    </li>
+  <% end %>
+</ol>

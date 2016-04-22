@@ -32,7 +32,12 @@ defmodule Mix.Tasks.DevelopmentSeeds do
     })
 
     for title <- titles do
-      create(:job, approved: true, title: "#{title}")
+      create(
+        :job,
+        approved: true,
+        company: Enum.random(companies),
+        title: "#{title}"
+      )
     end
 
     create(:job, title: "Awsesome Designer")
@@ -49,8 +54,20 @@ defmodule Mix.Tasks.DevelopmentSeeds do
     ]
   end
 
+  def companies do
+    [
+      "thoughtbot",
+      "Vista",
+      "Microsoft",
+      "Citrix",
+      "WebAssign",
+      "BigLeap",
+      "EA",
+      "Big Corp",
+    ]
+  end
+
   def approve_member(attributes) do
     build(:member, attributes) |> approve |> create
   end
-
 end

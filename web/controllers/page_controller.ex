@@ -1,11 +1,8 @@
 defmodule Community.PageController do
   use Community.Web, :controller
 
-  def index(conn, _params) do
-    render(
-      conn,
-      "index.html",
-      layout: {Community.LayoutView, "landing.html"}
-    )
+  def show(conn, %{"id" => page_name}) do
+    conn
+    |> render(page_name |> String.to_atom)
   end
 end
