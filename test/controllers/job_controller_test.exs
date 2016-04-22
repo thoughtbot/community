@@ -8,7 +8,7 @@ defmodule Community.JobControllerTest do
         conn = post conn, "/jobs", job: fields_for(:job, %{title: "designer"})
 
         assert get_flash(conn, :info) == "Job created"
-        assert redirected_to(conn, 302) =~ "/"
+        assert redirected_to(conn, 302) =~ "/jobs"
         assert Repo.one(Job).title == "designer"
       end
     end

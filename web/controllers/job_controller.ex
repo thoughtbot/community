@@ -41,10 +41,10 @@ defmodule Community.JobController do
   def create(conn, %{"job" => job_params}) do
     changeset = Job.changeset(%Job{}, job_params)
     case Repo.insert(changeset) do
-      {:ok, _job} ->
+      {:ok, job} ->
         conn
         |> put_flash(:info, "Job created")
-        |> redirect(to: "/")
+        |> redirect(to: job_path(conn, :show, job, token: job.token))
       {:error, changeset} ->
         conn
         |> put_flash(:error, "Job not created")
