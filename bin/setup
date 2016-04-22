@@ -3,6 +3,8 @@
 # Exit if any subcommand fails
 set -e
 
+cp .sample.env .env
+
 # Set up phoenix
 mix local.hex --force
 mix deps.get
