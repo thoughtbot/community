@@ -12,6 +12,17 @@
     ) %>
   </div>
 
+  <%= if @token do %>
+    <%= link(
+        "Delete Job",
+        to: job_path(@conn, :delete, @changeset.data.id, token: @token),
+        method: :delete,
+        data: [
+          confirm: "Are you sure you want to remove this job?",
+        ]
+    ) %>
+  <% end %>
+
   <%= render(
       "form.html",
       conn: @conn,

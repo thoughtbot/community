@@ -79,6 +79,20 @@ defmodule Community.JobController do
     end
   end
 
+  def delete(conn, %{"id" => id, "token" => token}) do
+    job = Repo.get_by(Job, id: id, token: token)
+    case Repo.delete(job) do
+      {:ok, _} ->
+        conn
+        |> put_flash(:info, "Job deleted")
+        |> redirect(to: root_path(conn, :show))
+      {:error, _} ->
+        conn
+        |> put_flash(:error, "Could not delete job")
+        |> redirect(to: root_path(conn, :show))
+    end
+  end
+
   defp approved_jobs do
     Job
     |> Job.approved

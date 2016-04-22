@@ -10,6 +10,7 @@ defmodule Community.AcceptanceCase do
       import Community.Router.Helpers
       import Community.Factory
       import Community.FeatureHelpers
+      import Community.RoleHelpers
 
       alias Community.Repo
 

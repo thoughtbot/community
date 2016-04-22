@@ -1,0 +1,9 @@
+<%= for flash_key <- [:info, :error] do %>
+  <%= if flash = get_flash(@conn, flash_key) do %>
+    <div class="flash flash-<%= flash_key %>">
+      <div class="container">
+        <p data-role="flash"><%= flash %></p>
+      </div>
+    </div>
+  <% end %>
+<% end %>
