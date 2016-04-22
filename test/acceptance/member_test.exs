@@ -2,14 +2,9 @@ defmodule Community.Acceptance.MemberTest do
   use Community.AcceptanceCase
   alias Community.Member
 
-  test "homepage works" do
-    navigate_to "/"
-    assert String.contains?(visible_page_text, "Welcome to Phoenix")
-  end
-
   test "register a new member" do
     navigate_to "/"
-    click_on "Member Directory"
+    click_on "MEMBER DIRECTORY"
     click_on "Add yourself to the directory"
     fill_in "member_name", "Scott Summers"
     fill_in "member_email", "cyclops@example.com"
