@@ -1,10 +1,11 @@
 <section class="section">
   <div class="section-description">
-    <h4>Recent Job Listings</h4>
-    <p>In nibh orci, tincidunt et euismod in, iaculis id mauris. Mauris quis
-    varius ex. Aliquam fringilla, quam vel molestie accumsan, orci lacus
-    efficitur dolor, non consequat libero felis in tortor.</p>
-    <a href="#" class="appended-link">View More&rarr;</a>
+    <h4>Job Board</h4>
+    <p>
+      Design jobs local to Raleigh, North Carolina. Positions include graphic
+      and visual design, interface design, and everything under the UX
+      umbrella. Work locally!</p>
+    <a href="/jobs/new" class="appended-link">Post a Job for Free &rarr;</a>
   </div>
 
   <%= render Community.JobView, "job_list.html", jobs: @jobs, conn: @conn %>

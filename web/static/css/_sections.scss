@@ -1,6 +1,9 @@
 .section {
-  display: flex;
   margin-bottom: $large-spacing * 2;
+
+  @include media($medium-screen-up) {
+    display: flex;
+  }
 
   & + & {
     border-top: $base-border;
@@ -9,8 +12,12 @@
 }
 
 .section-description {
-  margin-right: $large-spacing * 2;
-  max-width: 20em;
+  margin-bottom: $base-spacing;
+
+  @include media($medium-screen-up) {
+    margin-right: 8%;
+    max-width: 20em;
+  }
 
   p {
     color: $light-font-color;

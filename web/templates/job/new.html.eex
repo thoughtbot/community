@@ -6,8 +6,8 @@
     <p>Your position should be near Raleigh, NC, and related to UX, UI, or
     visual design for applications or the&nbsp;web.</p>
     <%= link(
-      "← Back to Job Board",
-      to: job_path(@conn, :index),
+      "← Back Home",
+      to: "/",
       class: "appended-link"
     ) %>
   </div>

@@ -14,16 +14,18 @@
   <body>
     <div class="container">
       <header class="landing-header">
-        <nav role="navigation" class="landing-navigation">
-          <%= render Community.SharedView, "_navigation.html", conn: @conn %>
-        </nav>
+        <%= if System.get_env("NAVIGATION") == "true" do %>
+          <nav role="navigation" class="landing-navigation">
+            <%= render Community.SharedView, "_navigation.html", conn: @conn %>
+          </nav>
+        <% end %>
+
         <h1 class="landing-header-title">
           <%= Community.SharedView.svg("landing-logo") %>
         </h1>
         <h2 class="landing-header-subtitle">
-          A resource for designers in Raleigh
-          to stay connected, learn about upcoming events, and find prospective
-          career opportunities.
+          A resource for designers in Raleigh to find prospective
+          career&nbsp;opportunities.
         </h2>
       </header>
 

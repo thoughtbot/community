@@ -1,23 +1,41 @@
 .landing-header {
-  @include padding($large-spacing);
+  @include padding($large-spacing null);
   background-image: url("/images/leaves.svg");
-  background-position: 50%;
+  background-position: top;
   background-repeat: no-repeat;
+  background-size: contain;
   border-bottom: $base-border;
   margin-bottom: $large-spacing;
   text-align: center;
+
+  @include media($large-screen-up) {
+    @include padding($x-large-spacing null);
+  }
 }
 
 .landing-header-title {
-  margin-bottom: $x-large-spacing;
+  margin-bottom: $base-spacing;
+
+  @include media($large-screen-up) {
+    margin-bottom: $large-spacing;
+  }
+
+  svg {
+    height: 100%;
+    max-width: 90%;
+  }
 }
 
 .landing-header-subtitle {
   color: $lighter-font-color;
   display: inline-block;
-  font-size: $x-large-font-size;
-  font-weight: 300;
+  font-weight: 400;
   line-height: $base-line-height;
-  margin-bottom: $large-spacing;
+  margin-bottom: 0;
   max-width: 32em;
+
+  @include media($medium-screen-up) {
+    font-size: $x-large-font-size;
+    font-weight: 300;
+  }
 }
