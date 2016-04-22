@@ -6,6 +6,10 @@ defmodule Community do
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
+    unless Mix.env == "prod" do
+      Envy.auto_load
+    end
+
     children = [
       # Start the endpoint when the application starts
       supervisor(Community.Endpoint, []),

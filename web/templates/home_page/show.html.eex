@@ -1,3 +1,9 @@
 <%= render "recent_jobs.html", jobs: @jobs, conn: @conn %>
-<%= render "recent_dribbbles.html" %>
-<%= render "recent_meetups.html" %>
+
+<%= if System.get_env("DRIBBBLE") == "true" do %>
+  <%= render "recent_dribbbles.html" %>
+<% end %>
+
+<%= if System.get_env("MEETUPS") == "true" do %>
+  <%= render "recent_meetups.html" %>
+<% end %>
