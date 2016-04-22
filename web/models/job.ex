@@ -11,6 +11,7 @@ defmodule Community.Job do
     field :instructions, :string
     field :approved, :boolean, default: false
     field :preview, :boolean, default: false
+    field :token, Ecto.UUID, default: Ecto.UUID.generate
 
     timestamps
   end

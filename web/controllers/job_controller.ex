@@ -9,17 +9,28 @@ defmodule Community.JobController do
     |> render("index.html")
   end
 
+  def show(conn, %{"id" => id, "token" => token}) do
+    job = Repo.get_by(Job, id: id, token: token)
+    conn
+    |> show_job(job)
+  end
+
   def show(conn, %{"id" => id}) do
-    case Repo.get_by(Job, id: id, approved: true) do
-      nil ->
-        conn
-        |> put_flash(:error, "There is no approved job with that id")
-        |> redirect(to: root_path(conn, :show))
-      job ->
-        conn
-        |> assign(:job, job)
-        |> render(:show)
-    end
+    job = Repo.get_by(Job, id: id, approved: true)
+    conn
+    |> show_job(job)
+  end
+
+  defp show_job(conn, nil) do
+    conn
+    |> put_flash(:error, gettext("There is no job with that id"))
+    |> redirect(to: root_path(conn, :show))
+  end
+
+  defp show_job(conn, job) do
+    conn
+    |> assign(:job, job)
+    |> render(:show)
   end
 
   def new(conn, _params) do

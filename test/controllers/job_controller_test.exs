@@ -67,5 +67,15 @@ defmodule Community.JobControllerTest do
         assert redirected_to(conn, 302) == "/"
       end
     end
+
+    context "when the job is not approved but the correct token is provided" do
+      it "renders the show" do
+        job = create(:job, approved: false)
+
+        conn = get conn, "/jobs/#{job.id}?token=#{job.token}"
+
+        assert html_response(conn, 200) =~ "This job is awaiting approval"
+      end
+    end
   end
 end
