@@ -26,7 +26,7 @@ defmodule Community.ModelCase do
     end
   end
 
-  setup tags do
+  setup _tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Community.Repo)
   end
 

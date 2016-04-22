@@ -1,4 +1,4 @@
-defmodule Phoenix.Ecto.SQL.Sandbox do
+defmodule Community.Phoenix.Ecto.SQL.Sandbox do
   import Plug.Conn
 
   @config_path "/phoenix/ecto/sql/sandbox/"
@@ -19,7 +19,7 @@ defmodule Phoenix.Ecto.SQL.Sandbox do
     conn |> fetch_cookies |> allow_sandbox_access(sandbox)
   end
 
-  defp allow_sandbox_access(%{req_cookies: %{@cookie_name => configuration}} = conn, sandbox) do
+  defp allow_sandbox_access(%{req_cookies: %{@cookie_name => configuration}} = conn, _sandbox) do
     [pid_string,repo_string] = configuration |> URI.decode |> String.split("|")
 
     owner = to_pid(pid_string)

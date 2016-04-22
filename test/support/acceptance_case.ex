@@ -18,7 +18,7 @@ defmodule Community.AcceptanceCase do
   setup _tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Community.Repo)
     Hound.start_session()
-    path = Phoenix.Ecto.SQL.Sandbox.path_for(Community.Repo, self())
+    path = Community.Phoenix.Ecto.SQL.Sandbox.path_for(Community.Repo, self())
     Hound.Helpers.Navigation.navigate_to(path)
     :ok
   end

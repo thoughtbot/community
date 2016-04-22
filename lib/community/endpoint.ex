@@ -36,7 +36,7 @@ defmodule Community.Endpoint do
     signing_salt: "sMM3TSLM"
 
   if Application.get_env(:community, :sql_sandbox) do
-    plug Phoenix.Ecto.SQL.Sandbox
+    plug Community.Phoenix.Ecto.SQL.Sandbox
   end
 
   plug Community.Router
