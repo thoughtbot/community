@@ -1,0 +1,988 @@
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+/* line 9, node_modules/normalize.css/normalize.css */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+/* line 19, node_modules/normalize.css/normalize.css */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+/* line 33, node_modules/normalize.css/normalize.css */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 54, node_modules/normalize.css/normalize.css */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 67, node_modules/normalize.css/normalize.css */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
+/* line 77, node_modules/normalize.css/normalize.css */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 89, node_modules/normalize.css/normalize.css */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+/* line 98, node_modules/normalize.css/normalize.css */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+/* line 110, node_modules/normalize.css/normalize.css */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+/* line 118, node_modules/normalize.css/normalize.css */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+/* line 127, node_modules/normalize.css/normalize.css */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+/* line 136, node_modules/normalize.css/normalize.css */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 145, node_modules/normalize.css/normalize.css */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 154, node_modules/normalize.css/normalize.css */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 162, node_modules/normalize.css/normalize.css */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 170, node_modules/normalize.css/normalize.css */
+sup {
+  top: -0.5em; }
+
+/* line 174, node_modules/normalize.css/normalize.css */
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+/* line 185, node_modules/normalize.css/normalize.css */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+/* line 193, node_modules/normalize.css/normalize.css */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+/* line 204, node_modules/normalize.css/normalize.css */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 212, node_modules/normalize.css/normalize.css */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+/* line 221, node_modules/normalize.css/normalize.css */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 229, node_modules/normalize.css/normalize.css */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+/* line 252, node_modules/normalize.css/normalize.css */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+/* line 266, node_modules/normalize.css/normalize.css */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+/* line 277, node_modules/normalize.css/normalize.css */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 290, node_modules/normalize.css/normalize.css */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 302, node_modules/normalize.css/normalize.css */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 311, node_modules/normalize.css/normalize.css */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 322, node_modules/normalize.css/normalize.css */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 334, node_modules/normalize.css/normalize.css */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 346, node_modules/normalize.css/normalize.css */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+/* line 356, node_modules/normalize.css/normalize.css */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */ }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+/* line 367, node_modules/normalize.css/normalize.css */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 376, node_modules/normalize.css/normalize.css */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 387, node_modules/normalize.css/normalize.css */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+/* line 396, node_modules/normalize.css/normalize.css */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+/* line 405, node_modules/normalize.css/normalize.css */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 416, node_modules/normalize.css/normalize.css */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 421, node_modules/normalize.css/normalize.css */
+td,
+th {
+  padding: 0; }
+
+/* line 4, /Users/draper/code/community/node_modules/bourbon-neat/app/assets/stylesheets/grid/_box-sizing.scss */
+html {
+  box-sizing: border-box; }
+
+/* line 9, /Users/draper/code/community/node_modules/bourbon-neat/app/assets/stylesheets/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/* line 1, /Users/draper/code/community/web/static/css/base/_buttons.scss */
+button, input[type="button"], input[type="reset"], input[type="submit"],
+.button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #2474d9;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  -webkit-transition: background-color 150ms ease;
+  transition: background-color 150ms ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  white-space: nowrap; }
+  /* line 21, /Users/draper/code/community/web/static/css/base/_buttons.scss */
+  button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus,
+  .button:hover,
+  .button:focus {
+    background-color: #1d5dae;
+    color: #fff; }
+  /* line 27, /Users/draper/code/community/web/static/css/base/_buttons.scss */
+  button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled,
+  .button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5; }
+    /* line 31, /Users/draper/code/community/web/static/css/base/_buttons.scss */
+    button:disabled:hover, input[type="button"]:disabled:hover, input[type="reset"]:disabled:hover, input[type="submit"]:disabled:hover,
+    .button:disabled:hover {
+      background-color: #2474d9; }
+
+/* line 1, /Users/draper/code/community/web/static/css/base/_forms.scss */
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+/* line 8, /Users/draper/code/community/web/static/css/base/_forms.scss */
+legend {
+  font-weight: 600;
+  margin-bottom: 0.375em;
+  padding: 0; }
+
+/* line 14, /Users/draper/code/community/web/static/css/base/_forms.scss */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.375em; }
+
+/* line 20, /Users/draper/code/community/web/static/css/base/_forms.scss */
+input,
+select {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1em; }
+
+/* line 27, /Users/draper/code/community/web/static/css/base/_forms.scss */
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
+select[multiple] {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  padding: 0.5em;
+  -webkit-transition: border-color 150ms ease;
+  transition: border-color 150ms ease;
+  width: 100%; }
+  /* line 40, /Users/draper/code/community/web/static/css/base/_forms.scss */
+  input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover,
+  select[multiple]:hover {
+    border-color: #b1b1b1; }
+  /* line 44, /Users/draper/code/community/web/static/css/base/_forms.scss */
+  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
+  select[multiple]:focus {
+    border-color: #2474d9;
+    outline: none; }
+  /* line 49, /Users/draper/code/community/web/static/css/base/_forms.scss */
+  input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="email"]:disabled, input[type="month"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="week"]:disabled, input:not([type]):disabled, textarea:disabled,
+  select[multiple]:disabled {
+    background-color: #f2f2f2;
+    cursor: not-allowed; }
+    /* line 53, /Users/draper/code/community/web/static/css/base/_forms.scss */
+    input[type="color"]:disabled:hover, input[type="date"]:disabled:hover, input[type="datetime"]:disabled:hover, input[type="datetime-local"]:disabled:hover, input[type="email"]:disabled:hover, input[type="month"]:disabled:hover, input[type="number"]:disabled:hover, input[type="password"]:disabled:hover, input[type="search"]:disabled:hover, input[type="tel"]:disabled:hover, input[type="text"]:disabled:hover, input[type="time"]:disabled:hover, input[type="url"]:disabled:hover, input[type="week"]:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover,
+    select[multiple]:disabled:hover {
+      border: 1px solid #ddd; }
+
+/* line 59, /Users/draper/code/community/web/static/css/base/_forms.scss */
+textarea {
+  resize: vertical; }
+
+/* line 63, /Users/draper/code/community/web/static/css/base/_forms.scss */
+[type="search"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+
+/* line 67, /Users/draper/code/community/web/static/css/base/_forms.scss */
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: 0.375em; }
+
+/* line 73, /Users/draper/code/community/web/static/css/base/_forms.scss */
+[type="file"] {
+  margin-bottom: 0.75em;
+  width: 100%; }
+
+/* line 78, /Users/draper/code/community/web/static/css/base/_forms.scss */
+select {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+  width: auto; }
+
+/* line 1, /Users/draper/code/community/web/static/css/base/_layout.scss */
+html {
+  box-sizing: border-box; }
+
+/* line 5, /Users/draper/code/community/web/static/css/base/_layout.scss */
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/* line 1, /Users/draper/code/community/web/static/css/base/_lists.scss */
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+/* line 8, /Users/draper/code/community/web/static/css/base/_lists.scss */
+dl {
+  margin-bottom: 0.75em; }
+  /* line 11, /Users/draper/code/community/web/static/css/base/_lists.scss */
+  dl dt {
+    font-weight: 600;
+    margin-top: 0.75em; }
+  /* line 16, /Users/draper/code/community/web/static/css/base/_lists.scss */
+  dl dd {
+    margin: 0; }
+
+/* line 1, /Users/draper/code/community/web/static/css/base/_tables.scss */
+table {
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%; }
+
+/* line 8, /Users/draper/code/community/web/static/css/base/_tables.scss */
+th {
+  border-bottom: 1px solid #a6a6a6;
+  font-weight: 600;
+  padding: 0.75em 0;
+  text-align: left; }
+
+/* line 15, /Users/draper/code/community/web/static/css/base/_tables.scss */
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 0.75em 0; }
+
+/* line 20, /Users/draper/code/community/web/static/css/base/_tables.scss */
+tr,
+td,
+th {
+  vertical-align: middle; }
+
+/* line 1, /Users/draper/code/community/web/static/css/base/_typography.scss */
+body {
+  background-color: #fafafa;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  line-height: 1.5; }
+
+/* line 9, /Users/draper/code/community/web/static/css/base/_typography.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+  margin: 0 0 0.75em; }
+
+/* line 21, /Users/draper/code/community/web/static/css/base/_typography.scss */
+p {
+  margin: 0 0 0.75em; }
+
+/* line 25, /Users/draper/code/community/web/static/css/base/_typography.scss */
+a {
+  color: #2474d9;
+  text-decoration: none;
+  -webkit-transition: color 150ms ease;
+  transition: color 150ms ease; }
+  /* line 30, /Users/draper/code/community/web/static/css/base/_typography.scss */
+  a:active, a:focus, a:hover {
+    color: #1b57a3; }
+
+/* line 37, /Users/draper/code/community/web/static/css/base/_typography.scss */
+hr {
+  border-bottom: 1px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: 1.5em 0; }
+
+/* line 45, /Users/draper/code/community/web/static/css/base/_typography.scss */
+img,
+picture {
+  margin: 0;
+  max-width: 100%; }
+
+/* line 2, /Users/draper/code/community/web/static/css/_app-navigation.scss */
+.app-navigation li {
+  display: inline-block; }
+  /* line 5, /Users/draper/code/community/web/static/css/_app-navigation.scss */
+  .app-navigation li + li {
+    margin-left: 1.5em; }
+
+/* line 10, /Users/draper/code/community/web/static/css/_app-navigation.scss */
+.app-navigation a {
+  color: rgba(51, 51, 51, 0.75);
+  font-size: 0.875em;
+  text-transform: uppercase; }
+
+/* line 1, /Users/draper/code/community/web/static/css/_appended-link.scss */
+.appended-link {
+  font-size: 0.875em;
+  font-weight: 600; }
+
+/* line 1, /Users/draper/code/community/web/static/css/_container.scss */
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0.75em;
+  padding-left: 0.75em;
+  max-width: 79em; }
+  /* line 20, /Users/draper/code/community/node_modules/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
+  .container::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+/* line 1, /Users/draper/code/community/web/static/css/_dribbbles.scss */
+.dribbbles {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+/* line 7, /Users/draper/code/community/web/static/css/_dribbbles.scss */
+.dribbble {
+  margin-bottom: 1.5em; }
+  /* line 10, /Users/draper/code/community/web/static/css/_dribbbles.scss */
+  .dribbble:nth-child(2n) {
+    margin-left: 1.5em; }
+  /* line 14, /Users/draper/code/community/web/static/css/_dribbbles.scss */
+  .dribbble a,
+  .dribbble img {
+    display: block; }
+
+/* line 1, /Users/draper/code/community/web/static/css/_landing-header.scss */
+.landing-header {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-image: url("/images/leaves.svg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 3em;
+  text-align: center; }
+  @media screen and (min-width: 900px) {
+    /* line 1, /Users/draper/code/community/web/static/css/_landing-header.scss */
+    .landing-header {
+      padding-top: 6em;
+      padding-bottom: 6em; } }
+
+/* line 16, /Users/draper/code/community/web/static/css/_landing-header.scss */
+.landing-header-title {
+  margin-bottom: 1.5em; }
+  @media screen and (min-width: 900px) {
+    /* line 16, /Users/draper/code/community/web/static/css/_landing-header.scss */
+    .landing-header-title {
+      margin-bottom: 3em; } }
+  /* line 23, /Users/draper/code/community/web/static/css/_landing-header.scss */
+  .landing-header-title svg {
+    height: 100%;
+    max-width: 90%; }
+
+/* line 29, /Users/draper/code/community/web/static/css/_landing-header.scss */
+.landing-header-subtitle {
+  color: rgba(51, 51, 51, 0.5);
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0;
+  max-width: 32em; }
+  @media screen and (min-width: 600px) {
+    /* line 29, /Users/draper/code/community/web/static/css/_landing-header.scss */
+    .landing-header-subtitle {
+      font-size: 1.5em;
+      font-weight: 300; } }
+
+/* line 1, /Users/draper/code/community/web/static/css/_landing-navigation.scss */
+.landing-navigation {
+  margin-bottom: 6em; }
+  /* line 4, /Users/draper/code/community/web/static/css/_landing-navigation.scss */
+  .landing-navigation li {
+    display: inline-block; }
+  /* line 8, /Users/draper/code/community/web/static/css/_landing-navigation.scss */
+  .landing-navigation a {
+    color: rgba(51, 51, 51, 0.5);
+    display: inline-block;
+    font-size: 0.8125em;
+    font-weight: 600;
+    padding: 0.75em;
+    text-transform: uppercase; }
+    /* line 16, /Users/draper/code/community/web/static/css/_landing-navigation.scss */
+    .landing-navigation a:hover, .landing-navigation a:focus {
+      color: #2474d9; }
+
+/* line 1, /Users/draper/code/community/web/static/css/_longform-field.scss */
+.longform-field {
+  min-height: 18em; }
+
+/* line 1, /Users/draper/code/community/web/static/css/_meetups.scss */
+.meetup-name {
+  font-weight: 400; }
+
+/* line 5, /Users/draper/code/community/web/static/css/_meetups.scss */
+.meetup-time {
+  width: 12em; }
+
+/* line 1, /Users/draper/code/community/web/static/css/_notation.scss */
+.notation {
+  color: rgba(51, 51, 51, 0.75);
+  font-size: 0.875em; }
+
+/* line 1, /Users/draper/code/community/web/static/css/_person-cards.scss */
+.person-cards {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+
+/* line 6, /Users/draper/code/community/web/static/css/_person-cards.scss */
+.person-card {
+  margin-right: 2%;
+  margin-bottom: 2%;
+  padding-top: 3em;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 3px 12px rgba(51, 51, 51, 0.1);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 32%; }
+  /* line 16, /Users/draper/code/community/web/static/css/_person-cards.scss */
+  .person-card:nth-child(3n) {
+    margin-right: 0; }
+
+/* line 21, /Users/draper/code/community/web/static/css/_person-cards.scss */
+.person-card-image {
+  margin-right: auto;
+  margin-bottom: 1.5em;
+  margin-left: auto;
+  height: 6em;
+  width: 6em;
+  border-radius: 50%;
+  display: block; }
+
+/* line 28, /Users/draper/code/community/web/static/css/_person-cards.scss */
+.person-card-name {
+  font-size: 1.25em;
+  font-weight: 400;
+  margin-bottom: 0.25em;
+  text-align: center; }
+
+/* line 35, /Users/draper/code/community/web/static/css/_person-cards.scss */
+.person-card-job {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 0.8125em;
+  margin-bottom: 3em;
+  text-align: center; }
+
+/* line 42, /Users/draper/code/community/web/static/css/_person-cards.scss */
+.person-card-meta {
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid #ddd;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+/* line 50, /Users/draper/code/community/web/static/css/_person-cards.scss */
+.person-card-hire-link {
+  font-size: 0.8125em; }
+
+/* line 54, /Users/draper/code/community/web/static/css/_person-cards.scss */
+.person-card-social-item {
+  display: inline-block; }
+  /* line 57, /Users/draper/code/community/web/static/css/_person-cards.scss */
+  .person-card-social-item + .person-card-social-item {
+    margin-left: 0.375em; }
+
+/* line 62, /Users/draper/code/community/web/static/css/_person-cards.scss */
+.person-card-social-link {
+  color: rgba(51, 51, 51, 0.5); }
+  /* line 65, /Users/draper/code/community/web/static/css/_person-cards.scss */
+  .person-card-social-link:hover, .person-card-social-link:focus {
+    color: #2474d9; }
+  /* line 70, /Users/draper/code/community/web/static/css/_person-cards.scss */
+  .person-card-social-link svg {
+    height: 1em;
+    width: 1em;
+    fill: currentColor; }
+
+/* line 1, /Users/draper/code/community/web/static/css/_sections.scss */
+.section {
+  margin-bottom: 6em; }
+  @media screen and (min-width: 600px) {
+    /* line 1, /Users/draper/code/community/web/static/css/_sections.scss */
+    .section {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; } }
+  /* line 8, /Users/draper/code/community/web/static/css/_sections.scss */
+  .section + .section {
+    border-top: 1px solid #ddd;
+    padding-top: 3em; }
+
+/* line 14, /Users/draper/code/community/web/static/css/_sections.scss */
+.section-description {
+  margin-bottom: 1.5em; }
+  @media screen and (min-width: 600px) {
+    /* line 14, /Users/draper/code/community/web/static/css/_sections.scss */
+    .section-description {
+      margin-right: 8%;
+      max-width: 20em; } }
+  /* line 22, /Users/draper/code/community/web/static/css/_sections.scss */
+  .section-description p {
+    color: rgba(51, 51, 51, 0.75);
+    font-size: 0.875em; }
+
+/* line 28, /Users/draper/code/community/web/static/css/_sections.scss */
+.section-content {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+
+/* line 1, /Users/draper/code/community/web/static/css/_site-footer.scss */
+.site-footer {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-color: #333;
+  margin-top: 3em; }
+  /* line 6, /Users/draper/code/community/web/static/css/_site-footer.scss */
+  .site-footer p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8125em; }
+    /* line 10, /Users/draper/code/community/web/static/css/_site-footer.scss */
+    .site-footer p:last-child {
+      margin-bottom: 0; }
+  /* line 15, /Users/draper/code/community/web/static/css/_site-footer.scss */
+  .site-footer a {
+    color: rgba(250, 250, 250, 0.75);
+    font-weight: 800; }
+    /* line 19, /Users/draper/code/community/web/static/css/_site-footer.scss */
+    .site-footer a:hover, .site-footer a:focus {
+      color: #fafafa; }
+
+/* line 1, /Users/draper/code/community/web/static/css/_site-header.scss */
+.site-header {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #ddd;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 3em; }
+  /* line 8, /Users/draper/code/community/web/static/css/_site-header.scss */
+  .site-header nav {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+
+/* line 13, /Users/draper/code/community/web/static/css/_site-header.scss */
+.site-logo {
+  font-size: 1.5em;
+  margin-bottom: 0.375em; }
+  /* line 17, /Users/draper/code/community/web/static/css/_site-header.scss */
+  .site-logo a {
+    color: #333; }
+
+/* line 1, /Users/draper/code/community/web/static/css/_slats.scss */
+.slat {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #eaeaea;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+/* line 7, /Users/draper/code/community/web/static/css/_slats.scss */
+.slat-hgroup {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+
+/* line 11, /Users/draper/code/community/web/static/css/_slats.scss */
+.slat-title {
+  font-size: 1.25em;
+  font-weight: 400;
+  margin-bottom: 0.375em; }
+
+/* line 17, /Users/draper/code/community/web/static/css/_slats.scss */
+.slat-subtitle {
+  color: rgba(51, 51, 51, 0.75);
+  font-weight: 400;
+  margin-bottom: 0; }
+
+/* line 23, /Users/draper/code/community/web/static/css/_slats.scss */
+.slat-meta {
+  color: rgba(51, 51, 51, 0.75); }
+
+
+/*# sourceMappingURL=app.css.map*/
