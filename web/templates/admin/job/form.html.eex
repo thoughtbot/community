@@ -1,0 +1,71 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :title, class: "control-label" %>
+    <%= text_input f, :title, class: "form-control" %>
+    <%= error_tag f, :title %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :company, class: "control-label" %>
+    <%= text_input f, :company, class: "form-control" %>
+    <%= error_tag f, :company %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :contact, class: "control-label" %>
+    <%= text_input f, :contact, class: "form-control" %>
+    <%= error_tag f, :contact %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :city, class: "control-label" %>
+    <%= text_input f, :city, class: "form-control" %>
+    <%= error_tag f, :city %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :company_url, class: "control-label" %>
+    <%= text_input f, :company_url, class: "form-control" %>
+    <%= error_tag f, :company_url %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :description, class: "control-label" %>
+    <%= text_input f, :description, class: "form-control" %>
+    <%= error_tag f, :description %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :instructions, class: "control-label" %>
+    <%= text_input f, :instructions, class: "form-control" %>
+    <%= error_tag f, :instructions %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :approved, class: "control-label" %>
+    <%= checkbox f, :approved, class: "form-control" %>
+    <%= error_tag f, :approved %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :preview, class: "control-label" %>
+    <%= checkbox f, :preview, class: "form-control" %>
+    <%= error_tag f, :preview %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :token, class: "control-label" %>
+    <%= text_input f, :token, class: "form-control" %>
+    <%= error_tag f, :token %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

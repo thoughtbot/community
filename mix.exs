@@ -41,9 +41,7 @@ defmodule Community.Mixfile do
   defp deps do
     [
       {:cowboy, "~> 1.0"},
-      {:ecto, "~> 2.0.0-rc", [override: true, optional: false, hex: :ecto, manager: :mix]},
       {:envy, "~> 0.0.2"},
-      {:ex_admin, github: "smpallen99/ex_admin"},
       {:ex_machina, "~> 0.6.1", only: [:dev, :test]},
       {:ex_spec, "~> 1.0.0", only: :test},
       {:gettext, "~> 0.9"},

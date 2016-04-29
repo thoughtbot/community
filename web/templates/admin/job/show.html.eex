@@ -1,0 +1,58 @@
+<h2>Show job</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @job.title %>
+  </li>
+
+  <li>
+    <strong>Company:</strong>
+    <%= @job.company %>
+  </li>
+
+  <li>
+    <strong>Contact:</strong>
+    <%= @job.contact %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @job.city %>
+  </li>
+
+  <li>
+    <strong>Company url:</strong>
+    <%= @job.company_url %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @job.description %>
+  </li>
+
+  <li>
+    <strong>Instructions:</strong>
+    <%= @job.instructions %>
+  </li>
+
+  <li>
+    <strong>Approved:</strong>
+    <%= @job.approved %>
+  </li>
+
+  <li>
+    <strong>Preview:</strong>
+    <%= @job.preview %>
+  </li>
+
+  <li>
+    <strong>Token:</strong>
+    <%= @job.token %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: admin_job_path(@conn, :edit, @job) %>
+<%= link "Back", to: admin_job_path(@conn, :index) %>

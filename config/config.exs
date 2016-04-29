@@ -31,14 +31,3 @@ config :phoenix, :generators,
   binary_id: false
 
 config :hound, driver: "phantomjs"
-
-config :xain, :quote, "'"
-config :xain, :after_callback, {Phoenix.HTML, :raw}
-
-config :ex_admin,
-  repo: Community.Repo,
-  module: Community,
-  modules: [
-    Community.ExAdmin.Dashboard,
-    Community.ExAdmin.Job
-  ]

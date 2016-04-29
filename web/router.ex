@@ -1,6 +1,5 @@
 defmodule Community.Router do
   use Community.Web, :router
-  use ExAdmin.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -21,8 +20,9 @@ defmodule Community.Router do
     resources "/session", SessionController, only: [:new, :create]
   end
 
-  scope "/admin", ExAdmin do
+  scope "/admin", Community, as: :admin do
     pipe_through [:browser, Community.RequireAdmin]
-    admin_routes
+
+    resources "/jobs", Admin.JobController
   end
 end

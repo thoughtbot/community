@@ -27,6 +27,11 @@ defmodule Community.Job do
     :title,
   ]
 
+  @optional_fields [
+    :approved,
+    :preview,
+  ]
+
   @doc """
   Creates a changeset based on the `model` and `params`.
 
@@ -36,6 +41,13 @@ defmodule Community.Job do
   def changeset(model, params \\ %{}) do
     model
     |> cast(params, @required_fields)
+    |> validate_format(:company_url, ~r/http(s)?.*/, message: "must start with http(s)")
+    |> validate_required(@required_fields)
+  end
+
+  def admin_changeset(model, params \\ %{}) do
+    model
+    |> cast(params, @required_fields, @optional_fields)
     |> validate_format(:company_url, ~r/http(s)?.*/, message: "must start with http(s)")
     |> validate_required(@required_fields)
   end
