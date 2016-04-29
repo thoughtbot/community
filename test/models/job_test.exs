@@ -16,7 +16,7 @@ defmodule Community.JobTest do
     attributes = fields_for(:job, %{company_url: "something.com"})
     changeset = Job.changeset(%Job{}, attributes)
     refute changeset.valid?
-    assert changeset.errors[:company_url] == "must start with http(s)"
+    assert changeset.errors[:company_url] == {"must start with http(s)", []}
 
     http_attributes = fields_for(:job, %{company_url: "http://"})
     assert  Job.changeset(%Job{}, http_attributes).valid?

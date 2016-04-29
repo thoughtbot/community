@@ -1,0 +1,5 @@
+<%= form_for @conn, session_path(@conn, :create), [as: :session], fn form -> %>
+  <%= text_input form, :password %>
+
+  <%= submit "Give it a shot" %>
+<% end %>

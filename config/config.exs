@@ -14,6 +14,8 @@ config :community, Community.Endpoint,
   pubsub: [name: Community.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+config :community, ecto_repos: [Community.Repo]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
@@ -29,3 +31,14 @@ config :phoenix, :generators,
   binary_id: false
 
 config :hound, driver: "phantomjs"
+
+config :xain, :quote, "'"
+config :xain, :after_callback, {Phoenix.HTML, :raw}
+
+config :ex_admin,
+  repo: Community.Repo,
+  module: Community,
+  modules: [
+    Community.ExAdmin.Dashboard,
+    Community.ExAdmin.Job
+  ]

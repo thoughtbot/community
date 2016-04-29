@@ -41,13 +41,15 @@ defmodule Community.Mixfile do
   defp deps do
     [
       {:cowboy, "~> 1.0"},
+      {:ecto, "~> 2.0.0-rc", [override: true, optional: false, hex: :ecto, manager: :mix]},
       {:envy, "~> 0.0.2"},
-      {:ex_machina, "~> 0.6.1"},
+      {:ex_admin, github: "smpallen99/ex_admin"},
+      {:ex_machina, "~> 0.6.1", only: [:dev, :test]},
       {:ex_spec, "~> 1.0.0", only: :test},
       {:gettext, "~> 0.9"},
       {:hound, "~> 0.8"},
       {:phoenix, "~> 1.1.4"},
-      {:phoenix_ecto, "~> 3.0.0-beta.2"},
+      {:phoenix_ecto, "~> 3.0.0-rc.0"},
       {:phoenix_html, "~> 2.4"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:postgrex, "~> 0.11.1"},
