@@ -26,7 +26,8 @@ select {
 }
 
 #{$all-text-inputs},
-select[multiple] {
+select[multiple],
+trix-editor {
   background-color: $base-background-color;
   border: $dark-border;
   border-radius: $base-border-radius;

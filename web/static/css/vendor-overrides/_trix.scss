@@ -1,0 +1,50 @@
+trix-editor {
+  @include border-top-radius(0);
+}
+
+trix-toolbar {
+  @include border-top-radius($base-border-radius);
+  background-color: $white;
+  border: $dark-border;
+  border-bottom-width: 0;
+
+  .button_groups {
+    font-size: 0;
+  }
+
+  .button_group {
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+
+    button,
+    input[type=button] {
+      @include size(42px);
+      border: 0;
+      border-radius: 0;
+      color: $base-font-color;
+
+      &:not(:first-child) {
+        border: 0;
+      }
+    }
+  }
+
+  .block-level,
+  .code,
+  .history_tools,
+  .quote,
+  .strike {
+    display: none;
+  }
+}
+
+.trix-content {
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+}

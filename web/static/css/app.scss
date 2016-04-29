@@ -2,10 +2,12 @@
 @import "normalize";
 @import "bourbon";
 @import "neat";
+@import "trix";
 
 // Base
 @import "base/base";
 
+// Components
 @import "alert";
 @import "appended-link";
 @import "container";
@@ -21,3 +23,6 @@
 @import "site-header";
 @import "site-navigation";
 @import "slats";
+
+// Vendor Overrides
+@import "vendor-overrides/trix";

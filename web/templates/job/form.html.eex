@@ -8,15 +8,19 @@
     <%= text_input form, :company %>
     <%= label form, :company_url, "Company URL" %>
     <%= text_input form, :company_url, placeholder: "http://example.com" %>
-    <%= label form, :contact, "Contact" %>
-    <%= text_input form, :contact %>
     <%= label form, :city %>
     <%= text_input form, :city %>
     <%= label form, :description %>
-    <%= textarea form, :description, class: "longform-field" %>
+    <%= text_input form, :description, id: "description", style: "display:none" %>
+    <trix-editor input="description" class="trix-content longform-field"></trix-editor>
     <%= label form, :instructions %>
-    <%= textarea form, :instructions, placeholder: "Send a resume to jobs@example.com." %>
+    <%= textarea form, :instructions, style: "display:none" %>
+    <trix-editor input="instructions" class="trix-content" placeholder="Send a resume to jobs@example.com"></trix-editor>
+    <%= label form, :contact, "Email Address" %>
+    <p class="notation">
+      This won't be made public, and is used to manage your post.
+    </p>
+    <%= text_input form, :contact %>
   </div>
-
   <%= submit @submit_text, class: "block-button" %>
 <% end %>

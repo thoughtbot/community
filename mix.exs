@@ -48,6 +48,7 @@ defmodule Community.Mixfile do
       {:ex_spec, "~> 1.0.0", only: :test},
       {:gettext, "~> 0.9"},
       {:hound, "~> 0.8"},
+      {:html_sanitize_ex, "~> 0.1.0"},
       {:phoenix, "~> 1.1.4"},
       {:phoenix_ecto, "~> 3.0.0-rc.0"},
       {:phoenix_html, "~> 2.4"},
