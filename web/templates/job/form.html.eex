@@ -1,24 +1,22 @@
-<div class="section-content">
-  <%= form_for @changeset, @path, fn form -> %>
-    <%= render Community.SharedView, "_form_errors.html", form: @changeset %>
+<%= form_for @changeset, @path, fn form -> %>
+  <%= render Community.SharedView, "_form_errors.html", form: @changeset %>
 
-    <div class="form-group">
-      <%= label form, :title, "Job Title" %>
-      <%= text_input form, :title %>
-      <%= label form, :company, "Company Name" %>
-      <%= text_input form, :company %>
-      <%= label form, :company_url, "Company URL" %>
-      <%= text_input form, :company_url, placeholder: "http://example.com" %>
-      <%= label form, :contact, "Contact" %>
-      <%= text_input form, :contact %>
-      <%= label form, :city %>
-      <%= text_input form, :city %>
-      <%= label form, :description %>
-      <%= textarea form, :description, class: "longform-field" %>
-      <%= label form, :instructions %>
-      <%= textarea form, :instructions, placeholder: "Send a resume to jobs@example.com." %>
-    </div>
+  <div class="form-group">
+    <%= label form, :title, "Job Title" %>
+    <%= text_input form, :title %>
+    <%= label form, :company, "Company Name" %>
+    <%= text_input form, :company %>
+    <%= label form, :company_url, "Company URL" %>
+    <%= text_input form, :company_url, placeholder: "http://example.com" %>
+    <%= label form, :contact, "Contact" %>
+    <%= text_input form, :contact %>
+    <%= label form, :city %>
+    <%= text_input form, :city %>
+    <%= label form, :description %>
+    <%= textarea form, :description, class: "longform-field" %>
+    <%= label form, :instructions %>
+    <%= textarea form, :instructions, placeholder: "Send a resume to jobs@example.com." %>
+  </div>
 
-    <%= submit @submit_text, class: "block-button" %>
-  <% end %>
-</div>
+  <%= submit @submit_text, class: "block-button" %>
+<% end %>

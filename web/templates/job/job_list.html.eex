@@ -1,13 +1,15 @@
-<ol class="section-content slats">
+<%= link("Post a job for free", to: job_path(@conn, :new), class: "button page-action") %>
+
+<ol class="container narrow-container">
   <%= for job <- @jobs  do %>
-    <li class="slat">
-      <div class="slat-hgroup">
-        <h3 class="slat-title">
+    <li class="job-slat">
+      <div class="job-slat-hgroup">
+        <h3 class="job-slat-title">
           <%= link job.title, to: job_path(@conn, :show, job) %>
         </h3>
-        <h4 class="slat-subtitle"><%= job.company %></h4>
+        <p class="job-slat-company"><%= job.company %></p>
       </div>
-      <p class="slat-meta"><%= job.city %></p>
+      <p class="job-slat-city"><%= job.city %></p>
     </li>
   <% end %>
 </ol>

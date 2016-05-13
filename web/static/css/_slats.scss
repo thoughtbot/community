@@ -1,25 +1,24 @@
-.slat {
+.job-slat {
   @include padding($base-spacing null);
-  border-bottom: $light-border;
+  border-bottom: $base-border;
   display: flex;
 }
 
-.slat-hgroup {
+.job-slat-hgroup {
   flex: 1;
 }
 
-.slat-title {
+.job-slat-title {
   font-size: $large-font-size;
   font-weight: 400;
-  margin-bottom: $small-spacing / 2;
+  margin-bottom: $x-small-spacing;
 }
 
-.slat-subtitle {
+.job-slat-company {
   color: $light-font-color;
-  font-weight: 400;
   margin-bottom: 0;
 }
 
-.slat-meta {
+.job-slat-city {
   color: $light-font-color;
 }

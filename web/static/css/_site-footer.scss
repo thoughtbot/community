@@ -1,10 +1,9 @@
 .site-footer {
   @include padding($large-spacing null);
-  background-color: $base-font-color;
-  margin-top: $large-spacing;
+  margin-top: $x-large-spacing;
 
   p {
-    color: rgba(white, 0.75);
+    color: $lighter-font-color;
     font-size: $x-small-font-size;
 
     &:last-child {
@@ -13,12 +12,11 @@
   }
 
   a {
-    color: rgba($almost-white, 0.75);
-    font-weight: 800;
+    color: $light-font-color;
 
     &:hover,
     &:focus {
-      color: $almost-white;
+      color: $action-color;
     }
   }
 }

@@ -7,25 +7,29 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Community!</title>
+    <title>Raleigh Design</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
     <div class="container">
       <header class="site-header">
-        <nav role="navigation" class="app-navigation">
-          <h1 class="site-logo"><%= link("Raleigh Design", to: "/") %></h1>
-          <%= render Community.SharedView, "_navigation.html", conn: @conn %>
-        </nav>
-        <%= page_action_link(assigns) %>
+        <%= if System.get_env("NAVIGATION") == "true" do %>
+          <nav role="navigation" class="site-navigation">
+            <%= render Community.SharedView, "_navigation.html", conn: @conn %>
+          </nav>
+        <% end %>
+
+        <h1 class="site-header-title">
+          <a href="/">
+            <%= Community.SharedView.svg("logo") %>
+          </a>
+        </h1>
       </header>
 
       <%= render Community.SharedView, "flashes.html", conn: @conn %>
 
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
+      <%= render @view_module, @view_template, assigns %>
     </div>
 
     <%= render "_footer.html" %>

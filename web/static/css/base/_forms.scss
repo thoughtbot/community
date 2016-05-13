@@ -12,6 +12,7 @@ legend {
 }
 
 label {
+  color: $light-font-color;
   display: block;
   font-weight: 600;
   margin-bottom: $small-spacing / 2;
@@ -27,14 +28,14 @@ select {
 #{$all-text-inputs},
 select[multiple] {
   background-color: $base-background-color;
-  border: $base-border;
+  border: $dark-border;
   border-radius: $base-border-radius;
   box-shadow: $form-box-shadow;
   box-sizing: border-box;
   font-family: $base-font-family;
   font-size: $base-font-size;
-  margin-bottom: $small-spacing;
-  padding: $base-spacing / 3;
+  margin-bottom: $base-spacing;
+  padding: 1.25em;
   transition: border-color $base-duration $base-timing;
   width: 100%;
 

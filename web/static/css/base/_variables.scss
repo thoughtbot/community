@@ -18,16 +18,18 @@ $heading-line-height: 1.2;
 $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
+$x-small-spacing: $small-spacing / 2;
 $large-spacing: $base-spacing * 2;
 $x-large-spacing: $large-spacing * 2;
 $base-z-index: 0;
 
 // Colors
+$alabaster: #fafafa;
 $blue: #2474d9;
-$dark-gray: #333;
+$dark-gray: #3f4044;
+$light-gray: #eee;
 $medium-gray: #999;
-$light-gray: #ddd;
-$almost-white: #fafafa;
+$pearl-lusta: #f8f1d0;
 $white: #fff;
 
 // Font Colors
@@ -39,12 +41,17 @@ $lighter-font-color: rgba($base-font-color, 0.5);
 // Border
 $base-border-color: $light-gray;
 $base-border: 1px solid $base-border-color;
-$light-border-color: lighten($light-gray, 5%);
-$light-border: 1px solid $light-border-color;
+$dark-border-color: shade($base-border-color, 6%);
+$dark-border: 1px solid $dark-border-color;
 
 // Background Colors
 $base-background-color: #fff;
 $secondary-background-color: tint($base-border-color, 75%);
+
+// Alert Colors
+$alert-background-color: $pearl-lusta;
+$alert-border-color: shade($alert-background-color, 10%);
+$alert-color: shade($alert-background-color, 60%);
 
 // Forms
 $form-box-shadow: inset 0 1px 1px rgba(#000, 0.06);

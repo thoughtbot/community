@@ -4,3 +4,11 @@
   @include padding(null $small-spacing);
   max-width: 79em;
 }
+
+.narrow-container {
+  max-width: 36em;
+}
+
+.medium-container {
+  max-width: 40em;
+}

@@ -1,0 +1,19 @@
+.alert {
+  align-items: flex-start;
+  background-color: $alert-background-color;
+  border: 1px solid $alert-border-color;
+  border-radius: $base-border-radius;
+  color: $alert-color;
+  display: flex;
+  margin-bottom: $large-spacing;
+  padding: $base-spacing;
+
+  svg {
+    margin-right: $base-spacing;
+    width: 2.25em;
+  }
+}
+
+.alert-body {
+  flex: 1;
+}

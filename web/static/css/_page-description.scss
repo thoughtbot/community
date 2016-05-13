@@ -1,0 +1,7 @@
+.page-description {
+  @include margin(null auto $x-large-spacing);
+  color: $light-font-color;
+  font-weight: 400;
+  max-width: 32em;
+  text-align: center;
+}

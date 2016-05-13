@@ -4,6 +4,7 @@
     <p>Ut vulputate vel nulla et mattis. Nullam venenatis sem aliquet, vehicula
     libero vel, consequat elit. Suspendisse fermentum enim at lacinia iaculis.
     Cras rutrum.</p>
+    <%= link("Add yourself to the directory", to: member_path(@conn, :new)) %>>
   </header>
 
   <ol class="section-content person-cards">

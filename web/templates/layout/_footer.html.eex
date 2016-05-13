@@ -1,14 +1,8 @@
-<footer class="site-footer">
-  <div class="container">
-    <p>
-      Raleigh Design is maintained by
-      <a href="http://twitter.com/jchreu">@jchreu</a>, heavily inspired by
-      <a href="http://phldesign.co">PHLDESIGN CO</a>, and supported by
-      <a href="http://thoughtbot.com/raleigh">thoughtbot</a>.
-    </p>
-    <p>
-      Tweet at us or follow along at
-      <a href="http://twitter.com/raleighdesign">@raleighdesign</a>.
-    </p>
-  </div>
+<footer class="container narrow-container site-footer">
+  <p>
+    Raleigh Design is maintained by
+    <a href="http://twitter.com/jchreu">@jchreu</a>, heavily inspired by
+    <a href="http://phldesign.co">PHLDESIGN CO</a>, and supported by
+    <a href="http://thoughtbot.com/raleigh">thoughtbot</a>.
+  </p>
 </footer>
