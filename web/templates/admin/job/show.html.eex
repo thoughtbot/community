@@ -29,12 +29,13 @@
 
   <li>
     <strong>Description:</strong>
-    <%= @job.description %>
+    <%= raw(sanitize(@job.description)) %>
   </li>
 
   <li>
     <strong>Instructions:</strong>
-    <%= @job.instructions %>
+    <%= raw(sanitize(@job.instructions)) %>
+  </li>
   </li>
 
   <li>
