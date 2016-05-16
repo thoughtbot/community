@@ -1,0 +1,9 @@
+New job posted!
+
+<%= @job.title %>
+
+You can approve or delete the job here:
+
+<%= admin_job_url(Community.Endpoint, :show, @job) %>
+
+Thanks!

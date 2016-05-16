@@ -41,9 +41,7 @@ defmodule Community.JobController do
     changeset = Job.changeset(%Job{}, job_params)
     case Repo.insert(changeset) do
       {:ok, job} ->
-        job
-        |> Community.Email.job_posted
-        |> Community.Mailer.deliver_later
+        send_emails(job)
         conn
         |> put_flash(:info, "Job created")
         |> redirect(to: job_path(conn, :show, job, token: job.token))
@@ -52,6 +50,16 @@ defmodule Community.JobController do
         |> put_flash(:error, "Job not created")
         |> render("new.html", changeset: changeset)
     end
+  end
+
+  def send_emails(job) do
+    job
+    |> Community.Email.job_posted
+    |> Community.Mailer.deliver_later
+
+    job
+    |> Community.Email.admin_job_posted
+    |> Community.Mailer.deliver_later
   end
 
   def edit(conn, %{"id" => id, "token" => token}) do

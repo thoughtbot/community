@@ -14,6 +14,7 @@ defmodule Community.JobControllerTest do
         assert job.title == "designer"
 
         assert_delivered_email Community.Email.job_posted(job)
+        assert_delivered_email Community.Email.admin_job_posted(job)
       end
     end
 
