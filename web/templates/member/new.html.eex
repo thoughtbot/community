@@ -19,7 +19,8 @@
       <%= text_input form, :name, placeholder: "Designer McAwesome" %>
 
       <%= label form, :email, "Email" %>
-      <%= text_input form, :email, placeholder: "designer@example.com " %>
+      <%= text_input form, :email, placeholder: "designer@example.com", data: [javascript: "gravatar-email"] %>
+      <img data-javascript="gravatar-display" style="display:none"></img>
 
       <%= label form, :company_name, "Company name" %>
       <%= text_input form, :company_name, placeholder: "Awesome Startup" %>

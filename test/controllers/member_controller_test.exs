@@ -21,5 +21,6 @@ defmodule Community.MemberControllerTest do
 
     assert html_response(conn, 200) =~ approved.name
     assert html_response(conn, 200) =~ approved.company_name
+    assert html_response(conn, 200) =~ "https://secure.gravatar.com"
   end
 end

@@ -10,7 +10,7 @@
   <ol class="section-content person-cards">
     <%= for member <- @members do %>
       <li class="person-card">
-        <img class="person-card-image" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg">
+        <img class="person-card-image" src="<%= gravatar(member.email) %>">
         <h4 class="person-card-name"><%= member.name %></h4>
         <p class="person-card-job">Design Director at <%= member.company_name %></p>
         <div class="person-card-meta">
