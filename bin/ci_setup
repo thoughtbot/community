@@ -7,8 +7,8 @@ if ! source ~/.asdf/asdf.sh; then
   source ~/.asdf/asdf.sh
 fi
 
-asdf plugin-add erlang https://github.com/HashNuke/asdf-erlang.git
-asdf plugin-add elixir https://github.com/HashNuke/asdf-elixir.git
+asdf plugin-add erlang https://github.com/HashNuke/asdf-erlang.git || true
+asdf plugin-add elixir https://github.com/HashNuke/asdf-elixir.git || true
 erlang_version=$(awk '/erlang/ { print $2 }' .tool-versions) && asdf install erlang ${erlang_version}
 elixir_version=$(awk '/elixir/ { print $2 }' .tool-versions) && asdf install elixir ${elixir_version}
 
