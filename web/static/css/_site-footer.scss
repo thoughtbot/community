@@ -1,6 +1,7 @@
 .site-footer {
   @include padding($large-spacing null);
   margin-top: $x-large-spacing;
+  text-align: center;
 
   p {
     color: $lighter-font-color;

@@ -11,7 +11,7 @@ defmodule Community.JobController do
   def show(conn, %{"id" => id, "token" => token}) do
     job = Repo.get_by(Job, id: id, token: token)
     conn
-    |> show_job(job)
+    |> show_job(job, token)
   end
 
   def show(conn, %{"id" => id}) do
@@ -26,9 +26,10 @@ defmodule Community.JobController do
     |> redirect(to: root_path(conn, :show))
   end
 
-  defp show_job(conn, job) do
+  defp show_job(conn, job, token \\ "") do
     conn
     |> assign(:job, job)
+    |> assign(:token, token)
     |> render(:show)
   end
 

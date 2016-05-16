@@ -19,7 +19,9 @@ defmodule Community.Router do
 
     get "/", HomePageController, :show, as: :root
     get "/pages/:id", PageController, :show
-    resources "/jobs", JobController
+    resources "/jobs", JobController do
+      resources "/publish", JobPublishController, only: [:create], as: :publish
+    end
     resources "/members", MemberController, only: [:index, :new, :create]
 
     resources "/session", SessionController, only: [:new, :create]

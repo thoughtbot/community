@@ -1,0 +1,43 @@
+.job-sheet {
+  background-color: $white;
+  border: $dark-border;
+  box-shadow: 0 2px 4px rgba($base-font-color, 0.07);
+  margin-left: -$x-large-spacing;
+  margin-right: -$x-large-spacing;
+  padding: $x-large-spacing;
+}
+
+.job-header {
+  display: flex;
+  margin-bottom: $large-spacing;
+}
+
+.job-title {
+  font-size: $large-font-size;
+  font-weight: 400;
+  margin-bottom: $x-small-spacing;
+}
+
+.job-company {
+  color: $light-font-color;
+  margin-bottom: 0;
+}
+
+.job-header-hgroup {
+  flex: 1;
+}
+
+.job-city {
+  color: $light-font-color;
+}
+
+.job-subtitle {
+  margin-top: $large-spacing;
+}
+
+.job-preview-actions {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: $large-spacing;
+}

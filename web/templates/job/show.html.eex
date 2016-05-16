@@ -1,8 +1,82 @@
-<%= if !@job.approved do %>
-  <p>This job is awaiting approval</p>
+<%= if @job.preview do %>
+  <p class="page-description">
+    Preview Your Job Post
+  </p>
 <% end %>
 
-<h3 class="slat-title"><%= @job.title %></h3>
-<h4 class="slat-subtitle"><%= @job.company %></h4>
-<p class="slat-meta"><%= @job.city %></p>
-<p><%= raw sanitize(@job.description) %></p>
+<div class="container medium-container">
+  <%= if !@job.preview && can_edit?(@job, @token) do %>
+    <div class="alert">
+      <%= Community.SharedView.svg("info") %>
+
+      <div class="alert-body">
+        <h3>Your secret page</h3>
+        <p>
+          You can come back to this page at any time to edit or delete this
+          post. We've emailed the link to you.
+        </p>
+
+        <%= if !@job.approved do %>
+          <p data-role="approval">
+            Your post is hidden from the job board until an admin approves it, which
+            usually only takes a few hours.
+          </p>
+        <% end %>
+
+        <%= link(
+             gettext("Edit Post"),
+             to: job_path(@conn, :edit, @job, token: @job.token),
+             class: "alert-action"
+        ) %>
+        <%= link(
+            "Delete Post",
+            to: job_path(@conn, :delete, @job.id, token: @token),
+            method: :delete,
+            form: [class: "alert-action"],
+            data: [
+              confirm: "Are you sure you want to remove this job?",
+            ]
+        ) %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="job-sheet">
+    <header class="job-header">
+      <div class="job-header-hgroup">
+        <h3 class="job-title"><%= @job.title %></h3>
+        <p class="job-company">
+          <%= link(@job.company, to: @job.company_url) %>
+        </p>
+      </div>
+
+      <p class="job-city"><%= @job.city %></p>
+    </header>
+
+    <div class="trix-content">
+      <%= raw sanitize(@job.description) %>
+    </div>
+
+    <h4 class="job-subtitle">Apply for this job</h4>
+    <div class="trix-content">
+      <%= raw sanitize(@job.instructions) %>
+    </div>
+  </div>
+  <%= if @job.preview do %>
+    <div class="job-preview-actions" data-role="preview">
+      <%= link(
+          {:safe, "&larr; Make some changes"},
+          to: job_path(@conn, :edit, @job, token: @job.token)
+      ) %>
+
+      <%= button(
+          {:safe, "Looks good! &rarr;"},
+          to: job_publish_path(@conn, :create, @job.id, token: @job.token),
+          data: [
+            role: "publish-job"
+          ],
+          form: [class: ""],
+      ) %>
+    </div>
+  <% end %>
+</div>

@@ -3,8 +3,17 @@ defmodule Community.FeatureHelpers do
   import Community.RoleHelpers
 
   def click_on(text) do
-    find_element(:link_text, text)
+    text
+    |> find_element_with_text
     |> click
+  end
+
+  def find_element_with_text(text) do
+    case find_all_elements(:link_text, text) do
+      [] -> find_element(:css, "input[value='#{text}']")
+      [element] -> element
+      _multiple_elements -> raise "Multiple elements found with the text #{text}"
+    end
   end
 
   def fill_in(type, field_name, [with: text]) do

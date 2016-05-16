@@ -17,3 +17,8 @@
 .alert-body {
   flex: 1;
 }
+
+.alert-action {
+  display: inline-block;
+  margin-right: $base-spacing;
+}

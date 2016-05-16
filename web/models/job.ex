@@ -11,7 +11,7 @@ defmodule Community.Job do
     field :description, :string
     field :instructions, :string
     field :approved, :boolean, default: false
-    field :preview, :boolean, default: false
+    field :preview, :boolean, default: true
     field :token, Ecto.UUID, default: Ecto.UUID.generate
 
     timestamps
@@ -50,6 +50,11 @@ defmodule Community.Job do
     |> cast(params, @required_fields, @optional_fields)
     |> validate_format(:company_url, ~r/http(s)?.*/, message: "must start with http(s)")
     |> validate_required(@required_fields)
+  end
+
+  def publish_changeset(model, params \\ %{}) do
+    model
+    |> cast(params, [:preview])
   end
 
   def approved(model) do

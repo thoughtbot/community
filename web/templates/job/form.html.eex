@@ -10,12 +10,10 @@
     <%= text_input form, :company_url, placeholder: "http://example.com" %>
     <%= label form, :city %>
     <%= text_input form, :city %>
-    <%= label form, :description %>
-    <%= text_input form, :description, id: "description", style: "display:none" %>
-    <trix-editor input="description" class="trix-content longform-field"></trix-editor>
-    <%= label form, :instructions %>
-    <%= textarea form, :instructions, style: "display:none" %>
-    <trix-editor input="instructions" class="trix-content" placeholder="Send a resume to jobs@example.com"></trix-editor>
+
+    <%= trix_input form, :description, class: "longform-field" %>
+    <%= trix_input form, :instructions, placeholder: "Send a resume to jobs@example.com" %>
+
     <%= label form, :contact, "Email Address" %>
     <p class="notation">
       This won't be made public, and is used to manage your post.

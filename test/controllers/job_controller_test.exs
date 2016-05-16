@@ -9,9 +9,10 @@ defmodule Community.JobControllerTest do
         conn = post conn, "/jobs", job: fields_for(:job, %{title: "designer"})
 
         assert get_flash(conn, :info) == "Job created"
-        assert redirected_to(conn, 302) =~ "/jobs"
         job = Repo.one(Job)
+        assert redirected_to(conn) =~ job_path(conn, :show, job.id, token: job.token)
         assert job.title == "designer"
+        assert job.preview == true
 
         assert_delivered_email Community.Email.job_posted(job)
         assert_delivered_email Community.Email.admin_job_posted(job)
@@ -75,11 +76,11 @@ defmodule Community.JobControllerTest do
 
     context "when the job is not approved but the correct token is provided" do
       it "renders the show" do
-        job = create(:job, approved: false)
+        job = create(:job, approved: false, preview: false)
 
         conn = get conn, "/jobs/#{job.id}?token=#{job.token}"
 
-        assert html_response(conn, 200) =~ "This job is awaiting approval"
+        assert html_response(conn, 200) =~ "Your post is hidden"
       end
     end
   end
