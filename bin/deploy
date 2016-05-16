@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+environment=$1
+
+if [ -z "$environment" ]; then
+  echo "You must provide what environment you want to deploy (staging|production)"
+  exit 1
+fi
+
+git push "$environment" master
+heroku run mix ecto.migrate -r "$environment"

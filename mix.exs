@@ -44,7 +44,7 @@ defmodule Community.Mixfile do
       {:bamboo, github: "thoughtbot/bamboo"},
       {:cowboy, "~> 1.0"},
       {:envy, "~> 0.0.2"},
-      {:ex_machina, "~> 0.6.1", only: [:dev, :test]},
+      {:ex_machina, "~> 0.6.1"},
       {:ex_spec, "~> 1.0.0", only: :test},
       {:gettext, "~> 0.9"},
       {:hound, "~> 0.8"},
