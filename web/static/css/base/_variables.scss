@@ -30,6 +30,7 @@ $dark-gray: #3f4044;
 $light-gray: #eee;
 $medium-gray: #999;
 $pearl-lusta: #f8f1d0;
+$red: #f85766
 $white: #fff;
 
 // Font Colors
@@ -52,6 +53,10 @@ $secondary-background-color: tint($base-border-color, 75%);
 $alert-background-color: $pearl-lusta;
 $alert-border-color: shade($alert-background-color, 10%);
 $alert-color: shade($alert-background-color, 60%);
+
+$error-background-color: $red;
+$error-border-color: shade($error-background-color, 10%);
+$error-color: shade($error-background-color, 60%);
 
 // Box shadows:
 $base-box-shadow: 0 2px 4px rgba($base-font-color, 0.07);

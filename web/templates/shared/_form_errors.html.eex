@@ -1,8 +1,14 @@
 <%= if display_errors?(@form) do %>
-  <div class="alert alert-danger">
-  <p>Oops, something went wrong! Please check the errors below:</p> <ul>
-    <%= for {key, {value, _}} <- @form.errors do %>
-      <li data-role="error"><%= humanize(key) %> - <%= value %></li>
-    <% end %>
+  <div class="alert alert-error">
+    <%= Community.SharedView.svg("warning") %>
+
+    <div class="alert-body">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+      <ul class="bulleted-list">
+        <%= for {key, {value, _}} <- @form.errors do %>
+          <li data-role="error"><%= humanize(key) %> - <%= value %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 <% end %>

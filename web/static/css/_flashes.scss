@@ -1,0 +1,13 @@
+.flash {
+  @include padding($small-spacing null);
+  background-color: $alert-background-color;
+  border-bottom: 1px solid $alert-border-color;
+  color: $alert-color;
+  text-align: center;
+}
+
+.flash-error {
+  background-color: $error-background-color;
+  border-color: $error-border-color;
+  color: $error-color;
+}

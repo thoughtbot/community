@@ -22,3 +22,9 @@
   display: inline-block;
   margin-right: $base-spacing;
 }
+
+.alert-error {
+  background-color: $error-background-color;
+  color: $error-color;
+  border-color: $error-border-color;
+}
