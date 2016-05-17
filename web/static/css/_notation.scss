@@ -1,4 +1,10 @@
 .notation {
   color: $light-font-color;
   font-size: $small-font-size;
+
+  #{$all-text-inputs} + &,
+  .gravatar-group + & {
+    position: relative;
+    top: -1em;
+  }
 }

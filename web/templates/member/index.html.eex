@@ -1,13 +1,11 @@
-<section class="section">
-  <header class="section-description">
-    <h4>Member Directory</h4>
-    <p>Ut vulputate vel nulla et mattis. Nullam venenatis sem aliquet, vehicula
-    libero vel, consequat elit. Suspendisse fermentum enim at lacinia iaculis.
-    Cras rutrum.</p>
-    <%= link("Add yourself to the directory", to: member_path(@conn, :new)) %>>
-  </header>
+<%= link(
+  "Add yourself to the directory", to:
+  member_path(@conn, :new),
+  class: "page-action"
+) %>
 
-  <ol class="section-content person-cards">
+<div class="container">
+  <ol class="person-cards">
     <%= for member <- @members do %>
       <li class="person-card">
         <img class="person-card-image" src="<%= gravatar(member.email) %>">
@@ -31,4 +29,4 @@
       </li>
     <% end %>
   </ol>
-</section>
+</div>

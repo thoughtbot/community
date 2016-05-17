@@ -1,0 +1,22 @@
+.gravatar-group {
+  display: flex;
+}
+
+.gravatar-group-image {
+  @include size(3.75em);
+  @include border-left-radius($base-border-radius);
+  display: none;
+
+  &.is-visible {
+    display: block;
+  }
+}
+
+.gravatar-group-input {
+  flex: 1;
+  margin-bottom: 0;
+
+  .gravatar-group-image.is-visible + & {
+    @include border-left-radius(0);
+  }
+}
