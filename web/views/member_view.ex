@@ -17,4 +17,12 @@ defmodule Community.MemberView do
     :crypto.hash(:md5, email)
     |> Base.encode16(case: :lower)
   end
+
+  def twitter_url(handle) do
+    "https://twitter.com/" <> handle
+  end
+
+  def dribbble_url(username) do
+    "https://dribbble.com/" <> username
+  end
 end

@@ -13,6 +13,9 @@ defmodule Community.MemberControllerTest do
     approved = build(:member, %{
       name: "Bob the Builder",
       company_name: "Construction Company",
+      twitter_handle: "bob",
+      dribbble_username: "bob-builder",
+      website: "http://bob.example.com",
     }) |> approve |> create
     not_approved = create(:member, %{name: "SAM THE JERK"})
 
@@ -22,5 +25,8 @@ defmodule Community.MemberControllerTest do
     assert html_response(conn, 200) =~ approved.name
     assert html_response(conn, 200) =~ approved.company_name
     assert html_response(conn, 200) =~ "https://secure.gravatar.com"
+    assert html_response(conn, 200) =~ approved.twitter_handle
+    assert html_response(conn, 200) =~ approved.dribbble_username
+    assert html_response(conn, 200) =~ approved.website
   end
 end

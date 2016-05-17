@@ -21,6 +21,15 @@
         href="https://en.gravatar.com/" target="_blank">Gravatar</a>.
     </p>
 
+    <%= label form, :twitter_handle, "Twitter handle" %>
+    <%= text_input form, :twitter_handle, placeholder: "ralph" %>
+
+    <%= label form, :dribbble_username, "Dribbble username" %>
+    <%= text_input form, :dribbble_username, placeholder: "ralph" %>
+
+    <%= label form, :website, "Website" %>
+    <%= text_input form, :website, placeholder: "http://www.awesomesite.com" %>
+
     <%= submit "Save", data: [role: "member-save" ] %>
   <% end %>
 </div>

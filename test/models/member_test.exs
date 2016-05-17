@@ -20,4 +20,14 @@ defmodule Community.MemberTest do
     approved = Member |> Member.approved |> Repo.all
     assert approved == [approved_entry]
   end
+
+  test "changeset requires twitter, dribble or website" do
+    changeset = Member.changeset(%Member{}, fields_for(:member, website: ""))
+    refute changeset.valid?
+
+    assert changeset.errors[:social_media] == {"you must provide at least one social media contact", []}
+
+    changeset = Member.changeset(%Member{}, fields_for(:member, website: "", dribbble_username: "ralph"))
+    assert changeset.valid?
+  end
 end

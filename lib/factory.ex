@@ -21,6 +21,7 @@ defmodule Community.Factory do
       company_name: "thoughtbot",
       email: sequence(:email, &"email-#{&1}@example.com"),
       name: "Ralph Robot",
+      website: "http://ralph.thoughtbot.com",
     }
   end
 

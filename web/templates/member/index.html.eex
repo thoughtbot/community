@@ -14,16 +14,29 @@
         <div class="person-card-meta">
           <a class="person-card-hire-link" href="#">Available for Hire</a>
           <ul>
-            <li class="person-card-social-item">
-              <a class="person-card-social-link" href="#">
-                <%= Community.SharedView.svg("twitter") %>
-              </a>
-            </li>
-            <li class="person-card-social-item">
-              <a class="person-card-social-link" href="#">
-                <%= Community.SharedView.svg("dribbble") %>
-              </a>
-            </li>
+            <%= if member.twitter_handle do %>
+              <li class="person-card-social-item">
+                <a class="person-card-social-link" href="<%= twitter_url(member.twitter_handle) %>">
+                  <%= Community.SharedView.svg("twitter") %>
+                </a>
+              </li>
+            <% end %>
+
+            <%= if member.dribbble_username do %>
+              <li class="person-card-social-item">
+                <a class="person-card-social-link" href="<%= dribbble_url(member.dribbble_username) %>">
+                  <%= Community.SharedView.svg("dribbble") %>
+                </a>
+              </li>
+            <% end %>
+
+            <%= if member.website do %>
+              <li class="person-card-social-item">
+                <a class="person-card-social-link" href="<%= member.website %>">
+                  <%= Community.SharedView.svg("dribbble") %>
+                </a>
+              </li>
+            <% end %>
           </ul>
         </div>
       </li>

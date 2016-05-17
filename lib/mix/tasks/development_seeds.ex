@@ -13,10 +13,12 @@ defmodule Mix.Tasks.DevelopmentSeeds do
     approve_member(%{
       name: "Sam Seaborn",
       company_name: "Sam's construction",
+      twitter_handle: "samsconstruction",
     })
     approve_member(%{
       name: "Michelangelo",
       company_name: "Mike's Pizza",
+      dribbble_username: "Mikey",
     })
     approve_member(%{
       name: "Scott Summers",
