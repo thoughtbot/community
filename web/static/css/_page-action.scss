@@ -1,3 +1,5 @@
 .page-action {
-  @include position(absolute, $large-spacing $large-spacing null null);
+  @include media($large-screen-up) {
+    @include position(absolute, $base-spacing $base-spacing null null);
+  }
 }

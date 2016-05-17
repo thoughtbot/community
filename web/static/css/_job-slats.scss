@@ -1,3 +1,7 @@
+.job-slats {
+  margin-bottom: $large-spacing;
+}
+
 .job-slat {
   @include padding($base-spacing null);
   border-bottom: $base-border;

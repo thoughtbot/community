@@ -1,6 +1,5 @@
 .site-navigation {
-  margin-bottom: $x-large-spacing;
-  margin-top: $base-spacing;
+  margin-bottom: $base-spacing;
   text-align: center;
 
   li {
@@ -10,10 +9,9 @@
   a {
     color: $lighter-font-color;
     display: inline-block;
-    font-size: $x-small-font-size;
+    font-size: $small-font-size;
     font-weight: 600;
     padding: $small-spacing;
-    text-transform: uppercase;
 
     &:hover,
     &:focus {

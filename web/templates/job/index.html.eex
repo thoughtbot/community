@@ -1,9 +1,7 @@
-<section class="section">
-  <header class="section-description">
-    <h4>Job Board</h4>
-    <p>Find the best UI, UX, and visual design jobs local to Raleigh,&nbsp;NC.<p>
-    <p>Jobs are free to post, and will stay online for 30&nbsp;days.</p>
-  </header>
+<p class="page-description">
+  A resource for designers in Raleigh to find prospective
+  career opportunities. Follow along on twitter,
+  <a href="http://twitter.com/raleighdesign">@raleighdesign</a>.
+</p>
 
-  <%= render Community.JobView, "job_list.html", jobs: @jobs, conn: @conn %>
-</section>
+<%= render "job_list.html", jobs: @jobs, conn: @conn %>

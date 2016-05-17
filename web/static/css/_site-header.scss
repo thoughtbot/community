@@ -1,6 +1,20 @@
 .site-header-title {
-  @include margin($x-large-spacing null);
+  @include margin($large-spacing null $base-spacing);
   text-align: center;
+
+  @include media($medium-screen-up) {
+    @include margin($x-large-spacing null null);
+  }
+
+  a {
+    color: $base-font-color;
+    display: inline-block;
+
+    &:hover,
+    &:focus {
+      color: $action-color;
+    }
+  }
 
   svg {
     height: 100%;

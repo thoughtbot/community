@@ -12,27 +12,25 @@
   </head>
 
   <body>
+    <%= render Community.SharedView, "flashes.html", conn: @conn %>
     <div class="container">
       <header class="site-header">
-        <%= if System.get_env("NAVIGATION") == "true" do %>
-          <nav role="navigation" class="site-navigation">
-            <%= render Community.SharedView, "_navigation.html", conn: @conn %>
-          </nav>
-        <% end %>
 
         <h1 class="site-header-title">
           <a href="/">
             <%= Community.SharedView.svg("logo") %>
           </a>
         </h1>
+        <%= if System.get_env("NAVIGATION") == "true" do %>
+          <nav role="navigation" class="site-navigation">
+            <%= render Community.SharedView, "_navigation.html", conn: @conn %>
+          </nav>
+        <% end %>
       </header>
 
-      <%= render Community.SharedView, "flashes.html", conn: @conn %>
-
       <%= render @view_module, @view_template, assigns %>
+      <%= render "_footer.html" %>
     </div>
-
-    <%= render "_footer.html" %>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>

@@ -4,7 +4,7 @@ defmodule Community.Acceptance.MemberTest do
 
   test "register a new member" do
     navigate_to "/"
-    click_on "MEMBER DIRECTORY"
+    click_on "Member Directory"
     click_on "Add yourself to the directory"
     fill_in "member", "name", with: "Scott Summers"
     fill_in "member", "email", with: "cyclops@example.com"

@@ -22,7 +22,7 @@ defmodule Mix.Tasks.DevelopmentSeeds do
     })
     approve_member(%{
       name: "Scott Summers",
-      title: "designer at Cyclops Shades",
+      title: "Designer at Cyclops Shades",
     })
     approve_member(%{
       name: "Wade Wilson",

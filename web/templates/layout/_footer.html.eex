@@ -1,7 +1,7 @@
-<footer class="container narrow-container site-footer">
+<footer class="site-footer">
   <p>
     Raleigh Design is maintained by
-    <a href="http://twitter.com/jchreu">@jchreu</a>, and supported by
-    <a href="http://thoughtbot.com/raleigh">thoughtbot</a>.
+    <a href="http://twitter.com/jchreu">@jchreu</a>, and supported
+    by&nbsp;<a href="http://thoughtbot.com/raleigh">thoughtbot</a>.
   </p>
 </footer>

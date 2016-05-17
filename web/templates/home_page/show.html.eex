@@ -1,8 +1,10 @@
-<p class="page-description">
-  A resource for designers in Raleigh to find prospective
-  career opportunities. Follow along on twitter,
-  <a href="http://twitter.com/raleighdesign">@raleighdesign</a>.
-</p>
+<div class="container narrow-container">
+  <p class="page-description">
+    A resource for designers in Raleigh to find prospective
+    career opportunities. Follow along on twitter,
+    <a href="http://twitter.com/raleighdesign">@raleighdesign</a>.
+  </p>
+</div>
 
 <%= render "recent_jobs.html", jobs: @jobs, conn: @conn %>
 

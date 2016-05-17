@@ -1,27 +1,46 @@
 .person-cards {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: $base-spacing;
 }
 
 .person-card {
   @include margin(null 2% 2% null);
-  @include padding($large-spacing $base-spacing null);
   background-color: $white;
+  border: $base-border;
   border-radius: $base-border-radius;
-  box-shadow: 0 3px 12px rgba($dark-gray, 0.1);
+  box-shadow: $base-box-shadow;;
   display: flex;
   flex-direction: column;
-  width: 32%;
+  width: 100%;
 
-  &:nth-child(3n) {
-    margin-right: 0;
+  @include media($small-screen-only) {
+    width: 48%;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
   }
+
+  @include media($medium-screen-up) {
+    width: 32%;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.person-card-body {
+  @include padding($large-spacing $base-spacing $base-spacing);
+  flex: 1;
+  text-align: center;
 }
 
 .person-card-image {
   @include margin(null auto $base-spacing);
-  @include size($large-spacing * 2);
-  border-radius: 50%;
+  @include size($x-large-spacing);
+  border-radius: $base-border-radius;
   display: block;
 }
 
@@ -33,34 +52,39 @@
 }
 
 .person-card-job {
+  color: $light-font-color;
   flex: 1;
   font-size: $x-small-font-size;
-  margin-bottom: $large-spacing;
+  margin-bottom: $base-spacing;
   text-align: center;
 }
 
-.person-card-meta {
-  @include padding($small-spacing null);
-  align-items: center;
-  border-top: $base-border;
-  display: flex;
-  justify-content: space-between;
+.person-card-hire-link {
+  display: block;
+  font-size: $small-font-size;
+  margin-bottom: $base-spacing;
 }
 
-.person-card-hire-link {
-  font-size: $x-small-font-size;
+.person-card-social-items {
+  border-top: $base-border;
+  display: flex;
+  text-align: center;
 }
 
 .person-card-social-item {
-  display: inline-block;
+  flex: 1;
 
   & + & {
-    margin-left: $small-spacing / 2;
+    border-left: $base-border;
   }
 }
 
 .person-card-social-link {
+  @include border-bottom-radius($base-border-radius);
+  @include padding($small-spacing null);
+  background-color: $alabaster;
   color: $lighter-font-color;
+  display: block;
 
   &:hover,
   &:focus {
