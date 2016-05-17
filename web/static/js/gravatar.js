@@ -13,9 +13,9 @@ $(function() {
     const imageField = $(imageSelector);
     if (email) {
       imageField.attr('src', gravatarUrl(email));
-      imageField.show();
+      imageField.addClass('is-visible');
     } else {
-      imageField.hide();
+      imageField.removeClass('is-visible');
     }
   });
 });

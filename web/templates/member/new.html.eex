@@ -1,31 +1,26 @@
-<section class="section">
-  <div class="section-description">
-    <h4>New Member</h4>
-    <p>You facilisi. Duis eu consectetur lorem. Nunc vel mollis purus, a
-    fringilla odio. Nulla consectetur lorem quis ligula mollis ultrices non id
-    tortor, et egestas enim nisi ac mauris.the&nbsp;web.</p>
-    <%= link(
-      "← Back to the Directory",
-      to: member_path(@conn, :index),
-      class: "appended-link"
-    ) %>
-  </div>
-
-  <div class="section-content">
+<div class="container medium-container">
+  <h3 class="page-description">New Member</h3>
     <%= form_for @changeset, member_path(@conn, :create), fn form -> %>
-
       <%= render Community.SharedView, "_form_errors.html", form: @changeset %>
+
       <%= label form, :name, "Name" %>
-      <%= text_input form, :name, placeholder: "Designer McAwesome" %>
+      <%= text_input form, :name %>
 
-      <%= label form, :email, "Email" %>
-      <%= text_input form, :email, placeholder: "designer@example.com", data: [javascript: "gravatar-email"] %>
-      <img data-javascript="gravatar-display" style="display:none"></img>
+    <%= label form, :company_name, "Company name" %>
+    <%= text_input form, :company_name %>
 
-      <%= label form, :company_name, "Company name" %>
-      <%= text_input form, :company_name, placeholder: "Awesome Startup" %>
+    <%= label form, :email, "Email Address" %>
+    <div class="gravatar-group">
+      <img class="gravatar-group-image" data-javascript="gravatar-display"></img>
+      <%= text_input form, :email, data: [javascript: "gravatar-email"],
+      class: "gravatar-group-input" %>
+    </div>
+    <p class="notation">
+      This will not be displayed publicly, and will only be use to manage your
+      profile. Your avatar is pulled from <a
+        href="https://en.gravatar.com/" target="_blank">Gravatar</a>.
+    </p>
 
-      <%= submit "Save", data: [role: "member-save" ] %>
-    <% end %>
-  </div>
-</section>
+    <%= submit "Save", data: [role: "member-save" ] %>
+  <% end %>
+</div>
