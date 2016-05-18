@@ -12,11 +12,13 @@ defmodule Community.Member do
     field :twitter_handle, :string
     field :dribbble_username, :string
     field :social_media, :string, virtual: true
+    field :available_for_hire, :boolean, default: false
 
     timestamps
   end
 
   @allowed_fields [
+    :available_for_hire,
     :dribbble_username,
     :email,
     :name,

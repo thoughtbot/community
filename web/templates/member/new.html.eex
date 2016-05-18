@@ -18,6 +18,9 @@
     <%= label form, :website, "Website" %>
     <%= text_input form, :website, placeholder: "http://example.com" %>
 
+    <%= label form, :available_for_hire, "Available for hire?" %>
+    <%= checkbox form, :available_for_hire %>
+
     <%= label form, :email, "Email Address" %>
     <div class="gravatar-group">
       <img class="gravatar-group-image" data-javascript="gravatar-display"></img>

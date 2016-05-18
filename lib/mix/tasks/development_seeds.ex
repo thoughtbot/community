@@ -19,6 +19,7 @@ defmodule Mix.Tasks.DevelopmentSeeds do
       name: "Michelangelo",
       title: "UX Engineer",
       dribbble_username: "Mikey",
+      available_for_hire: true,
     })
     approve_member(%{
       name: "Scott Summers",
@@ -27,6 +28,7 @@ defmodule Mix.Tasks.DevelopmentSeeds do
     approve_member(%{
       name: "Wade Wilson",
       title: "Professional Lion Wrangler",
+      available_for_hire: true,
     })
     approve_member(%{
       name: "Bruce Banner",

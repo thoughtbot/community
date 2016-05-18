@@ -13,13 +13,8 @@ defmodule Community do
     end
 
     children = [
-      # Start the endpoint when the application starts
       supervisor(Community.Endpoint, []),
-      # Start the Ecto repository
       supervisor(Community.Repo, []),
-      # Here you could define other workers and supervisors as children
-      # worker(Community.Worker, [arg1, arg2, arg3]),
-      Bamboo.TaskSupervisorStrategy.child_spec,
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

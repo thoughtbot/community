@@ -1,0 +1,17 @@
+<div class="container medium-container">
+  <h3 class="page-description">Contact <%= @member.name %></h3>
+    <%= form_for @changeset, member_contact_path(@conn, :create, @member), fn form -> %>
+      <%= render Community.SharedView, "_form_errors.html", form: @changeset %>
+
+      <%= label form, :subject, "Subject" %>
+      <%= text_input form, :subject %>
+
+      <%= label form, :body, "Body" %>
+      <%= textarea form, :body %>
+
+      <%= label form, :email, "Your email address" %>
+      <%= text_input form, :email %>
+
+      <%= submit "Send message" %>
+  <% end %>
+</div>

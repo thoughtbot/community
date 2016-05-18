@@ -1,4 +1,3 @@
-
 <div class="container">
   <ol class="person-cards">
     <%= for member <- @members do %>
@@ -7,7 +6,9 @@
           <img class="person-card-image" src="<%= gravatar(member.email) %>">
           <h4 class="person-card-name"><%= member.name %></h4>
           <p class="person-card-job"><%= member.title %></p>
-          <a class="person-card-hire-link" href="#">Available for Hire</a>
+          <%= if member.available_for_hire do %>
+            <%= link("Available for Hire", to: member_contact_path(@conn, :new, member), class: "person-card-hire-link") %>
+          <% end %>
         </div>
         <ul class="person-card-social-items">
           <%= if member.twitter_handle do %>
