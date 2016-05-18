@@ -6,8 +6,8 @@
       <%= label form, :name, "Name" %>
       <%= text_input form, :name %>
 
-    <%= label form, :company_name, "Company name" %>
-    <%= text_input form, :company_name %>
+    <%= label form, :title, "Title" %>
+    <%= text_input form, :title %>
 
     <%= label form, :email, "Email Address" %>
     <div class="gravatar-group">

@@ -12,25 +12,25 @@ defmodule Mix.Tasks.DevelopmentSeeds do
 
     approve_member(%{
       name: "Sam Seaborn",
-      company_name: "Sam's construction",
+      title: "Freelance",
       twitter_handle: "samsconstruction",
     })
     approve_member(%{
       name: "Michelangelo",
-      company_name: "Mike's Pizza",
+      title: "UX Engineer",
       dribbble_username: "Mikey",
     })
     approve_member(%{
       name: "Scott Summers",
-      company_name: "Cyclops Shades",
+      title: "designer at Cyclops Shades",
     })
     approve_member(%{
       name: "Wade Wilson",
-      company_name: "Mercs for Hire",
+      title: "Professional Lion Wrangler",
     })
     approve_member(%{
       name: "Bruce Banner",
-      company_name: "University of California, LA",
+      title: "Cat Herder",
     })
 
     for title <- titles do

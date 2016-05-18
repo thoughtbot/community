@@ -8,7 +8,7 @@ defmodule Community.Acceptance.MemberTest do
     click_on "Add yourself to the directory"
     fill_in "member", "name", with: "Scott Summers"
     fill_in "member", "email", with: "cyclops@example.com"
-    fill_in "member", "company_name", with: "X-men"
+    fill_in "member", "title", with: "Designer at X-men, Inc"
     fill_in "member", "twitter_handle", with: "cyclops"
     fill_in "member", "dribbble_username", with: "cyclopsdesign"
     fill_in "member", "website", with: "http://www.yahoo.com"
@@ -18,7 +18,7 @@ defmodule Community.Acceptance.MemberTest do
     last_member = Repo.one(Member)
     assert last_member.name == "Scott Summers"
     assert last_member.email == "cyclops@example.com"
-    assert last_member.company_name == "X-men"
+    assert last_member.title == "Designer at X-men, Inc"
     assert last_member.twitter_handle == "cyclops"
     assert last_member.dribbble_username == "cyclopsdesign"
     assert last_member.approved == false

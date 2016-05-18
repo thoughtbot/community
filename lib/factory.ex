@@ -18,7 +18,7 @@ defmodule Community.Factory do
   def factory(:member) do
     %Community.Member{
       approved: false,
-      company_name: "thoughtbot",
+      title: "designer at thoughtbot",
       email: sequence(:email, &"email-#{&1}@example.com"),
       name: "Ralph Robot",
       website: "http://ralph.thoughtbot.com",

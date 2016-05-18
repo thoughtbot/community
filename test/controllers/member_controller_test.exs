@@ -12,7 +12,7 @@ defmodule Community.MemberControllerTest do
   test "GET /members shows approved members", %{conn: conn} do
     approved = build(:member, %{
       name: "Bob the Builder",
-      company_name: "Construction Company",
+      title: "Freelancer",
       twitter_handle: "bob",
       dribbble_username: "bob-builder",
       website: "http://bob.example.com",
@@ -23,7 +23,7 @@ defmodule Community.MemberControllerTest do
     refute html_response(conn, 200) =~ not_approved.name
 
     assert html_response(conn, 200) =~ approved.name
-    assert html_response(conn, 200) =~ approved.company_name
+    assert html_response(conn, 200) =~ approved.title
     assert html_response(conn, 200) =~ "https://secure.gravatar.com"
     assert html_response(conn, 200) =~ approved.twitter_handle
     assert html_response(conn, 200) =~ approved.dribbble_username

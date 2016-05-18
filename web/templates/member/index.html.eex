@@ -10,7 +10,7 @@
       <li class="person-card">
         <img class="person-card-image" src="<%= gravatar(member.email) %>">
         <h4 class="person-card-name"><%= member.name %></h4>
-        <p class="person-card-job">Design Director at <%= member.company_name %></p>
+        <p class="person-card-job"><%= member.title %></p>
         <div class="person-card-meta">
           <a class="person-card-hire-link" href="#">Available for Hire</a>
           <ul>
