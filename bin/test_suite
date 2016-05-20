@@ -1,4 +1,5 @@
 #!/bin/bash
+node_modules/.bin/brunch build
 phantomjs --wd > /dev/null &
 phantom_pid=$!
 mix test
