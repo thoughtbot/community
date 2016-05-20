@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+rm -rf node_modules
+rm -rf _build
+mix do deps.get, compile
+mix do ecto.drop, ecto.create, ecto.migrate
+MIX_ENV=test mix do ecto.drop, ecto.create, ecto.migrate
