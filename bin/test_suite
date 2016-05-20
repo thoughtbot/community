@@ -1,7 +1,7 @@
 #!/bin/bash
-set -e
 phantomjs --wd > /dev/null &
-pid=$!
-trap "kill $pid" INT TERM EXIT
-node_modules/.bin/brunch build
-mix test --warnings-as-errors --force
+phantom_pid=$!
+mix test
+mix_result=$?
+kill "$phantom_pid"
+exit $mix_result
