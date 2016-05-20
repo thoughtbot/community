@@ -13,6 +13,7 @@ defmodule Community.Member do
     field :dribbble_username, :string
     field :social_media, :string, virtual: true
     field :available_for_hire, :boolean, default: false
+    field :token, Ecto.UUID, default: Ecto.UUID.generate
 
     timestamps
   end

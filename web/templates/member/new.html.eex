@@ -1,38 +1,4 @@
 <div class="container medium-container">
   <h3 class="page-description">Add yourself to the directory.</h3>
-  <%= form_for @changeset, member_path(@conn, :create), fn form -> %>
-    <%= render Community.SharedView, "_form_errors.html", form: @changeset %>
-
-    <%= label form, :name, "Name" %>
-    <%= text_input form, :name %>
-
-    <%= label form, :title, "Title" %>
-    <%= text_input form, :title, placeholder: "UI designer at Facebook" %>
-
-    <%= label form, :twitter_handle, "Twitter handle" %>
-    <%= text_input form, :twitter_handle %>
-
-    <%= label form, :dribbble_username, "Dribbble username" %>
-    <%= text_input form, :dribbble_username %>
-
-    <%= label form, :website, "Website" %>
-    <%= text_input form, :website, placeholder: "http://example.com" %>
-
-    <%= label form, :available_for_hire, "Available for hire?" %>
-    <%= checkbox form, :available_for_hire %>
-
-    <%= label form, :email, "Email Address" %>
-    <div class="gravatar-group">
-      <img class="gravatar-group-image" data-javascript="gravatar-display"></img>
-      <%= text_input form, :email, data: [javascript: "gravatar-email"],
-      class: "gravatar-group-input" %>
-    </div>
-    <p class="notation">
-      This will not be displayed publicly, and will only be use to manage your
-      profile. Your avatar is pulled from <a
-        href="https://en.gravatar.com/" target="_blank">Gravatar</a>.
-    </p>
-
-    <%= submit "Save your profile", data: [role: "member-save" ] %>
-  <% end %>
+  <%= render "form.html", changeset: @changeset, conn: @conn, path: member_path(@conn, :create) %>
 </div>

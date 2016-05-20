@@ -1,0 +1,8 @@
+Thanks for signing up! It's hidden for now, but will go live once an admin approves
+it.
+
+You can edit or delete your profile at any time using the link below.
+
+<%= member_url(Community.Endpoint, :edit, @member, token: @member.token) %>
+
+Thanks!

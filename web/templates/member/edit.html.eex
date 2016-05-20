@@ -1,0 +1,14 @@
+<%= link(
+    "Delete your profile",
+    to: member_path(@conn, :delete, @changeset.data.id, token: @token),
+    method: :delete,
+    data: [
+      confirm: "Are you sure you want to remove your profile?",
+    ]
+) %>
+<%= render(
+    "form.html",
+    changeset: @changeset,
+    conn: @conn,
+    path: member_path(@conn, :update, @changeset.data.id, token: @token)
+)%>

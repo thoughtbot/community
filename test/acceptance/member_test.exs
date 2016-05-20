@@ -26,6 +26,9 @@ defmodule Community.Acceptance.MemberTest do
     assert last_member.dribbble_username == "cyclopsdesign"
     assert last_member.available_for_hire == true
     assert last_member.approved == false
+
+    assert_delivered_email Community.Email.member_added(last_member)
+    assert_delivered_email Community.Email.admin_member_added(last_member)
   end
 
   test "contacts a member that is available for hire" do
@@ -49,6 +52,28 @@ defmodule Community.Acceptance.MemberTest do
 
     assert flash_text =~ "Your email has been sent"
     assert_delivered_email Community.Email.contact_form(email_data)
+  end
+
+  test "editing a member" do
+    member = create(:member, approved: true)
+
+    navigate_to member_path(@endpoint, :edit, member, token: member.token)
+    fill_in "member", "name", with: "New Name"
+    submit
+
+    assert flash_text =~ "Member updated"
+    assert visible_page_text =~ "New Name"
+  end
+
+  test "deleting a member" do
+    member = create(:member)
+    navigate_to member_path(@endpoint, :edit, member, token: member.token)
+
+    ignore_confirm_dialog
+    click_on "Delete your profile"
+
+    assert flash_text =~ "Your profile has been deleted"
+    refute Repo.get(Member, member.id)
   end
 
   defp check_label(name) do

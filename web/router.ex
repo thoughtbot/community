@@ -22,7 +22,7 @@ defmodule Community.Router do
     resources "/jobs", JobController do
       resources "/publish", JobPublishController, only: [:create], as: :publish
     end
-    resources "/members", MemberController, only: [:index, :new, :create] do
+    resources "/members", MemberController do
       resources "/contact", MemberContactController, only: [:new, :create], as: :contact
     end
 
