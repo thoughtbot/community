@@ -15,11 +15,8 @@
     <%= render Community.SharedView, "flashes.html", conn: @conn %>
     <div class="container">
       <header class="site-header">
-
         <h1 class="site-header-title">
-          <a href="/">
-            <%= Community.SharedView.svg("logo") %>
-          </a>
+          <a href="/">Raleigh Design</a>
         </h1>
         <%= if System.get_env("NAVIGATION") == "true" do %>
           <nav role="navigation" class="site-navigation">

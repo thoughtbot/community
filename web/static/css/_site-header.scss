@@ -7,17 +7,17 @@
   }
 
   a {
-    color: $base-font-color;
-    display: inline-block;
+    @include hide-text;
+    @include margin(null auto);
+    @include size(284px 203px);
+    background-image: url("/images/logo.png");
+    background-size: contain;
+    display: block;
+    transition: opacity 0.15s ease-in;
 
     &:hover,
     &:focus {
-      color: $action-color;
+      opacity: 0.8;
     }
-  }
-
-  svg {
-    height: 100%;
-    max-width: 90%;
   }
 }
