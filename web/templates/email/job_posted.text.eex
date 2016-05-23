@@ -4,6 +4,6 @@ Title: <%= @job.title %>
 
 You can edit or delete your job at any time using the link below.
 
-<%= job_url(Community.Endpoint, :edit, @job, token: @job.token) %>
+<%= job_url(Community.Endpoint, :show, @job, token: @job.token) %>
 
 Thanks!

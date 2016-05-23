@@ -26,8 +26,8 @@ defmodule Community.Acceptance.JobTest do
   end
 
   test "deleting a job" do
-    job = create(:job)
-    navigate_to job_path(@endpoint, :edit, job, token: job.token)
+    job = create(:job, preview: false)
+    navigate_to job_path(@endpoint, :show, job, token: job.token)
 
     ignore_confirm_dialog
     click_on "Delete Post"

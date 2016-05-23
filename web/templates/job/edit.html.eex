@@ -1,15 +1,4 @@
 <div class="container medium-container">
-  <%= if @token do %>
-    <%= link(
-        "Delete Post",
-        to: job_path(@conn, :delete, @changeset.data.id, token: @token),
-        method: :delete,
-        data: [
-          confirm: "Are you sure you want to remove this job?",
-        ]
-    ) %>
-  <% end %>
-
   <%= render(
       "form.html",
       conn: @conn,
