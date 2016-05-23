@@ -5,7 +5,7 @@ defmodule Community.MemberControllerTest do
   test "POST /members with invalid params", %{conn: conn} do
     conn = post conn, "/members", member: %{}
 
-    assert get_flash(conn, :error) == "You must fill out all the fields"
+    assert get_flash(conn, :error) == "Your profile couldn't be saved"
     assert Repo.one(Member) == nil
   end
 

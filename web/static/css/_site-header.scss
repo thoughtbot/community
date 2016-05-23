@@ -1,10 +1,14 @@
-.site-header-title {
-  @include margin($large-spacing null $base-spacing);
-  text-align: center;
+.site-header {
+  padding-top: $large-spacing;
 
   @include media($medium-screen-up) {
-    @include margin($x-large-spacing null null);
+    padding-top: $x-large-spacing;
   }
+}
+
+.site-header-title {
+  margin-bottom: $base-spacing;
+  text-align: center;
 
   a {
     @include hide-text;

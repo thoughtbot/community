@@ -5,6 +5,6 @@ defmodule Community.MemberContactControllerTest do
     member = create(:member, available_for_hire: true, approved: true)
     conn = post conn, "/members/#{member.id}/contact", contact_form: %{}
 
-    assert get_flash(conn, :error) == "You must fill out all the fields"
+    assert get_flash(conn, :error) == "Your email couldn't be sent"
   end
 end

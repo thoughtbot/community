@@ -24,7 +24,7 @@ defmodule Community.MemberContactController do
       |> redirect(to: "/")
     else
       conn
-      |> put_flash(:error, "You must fill out all the fields")
+      |> put_flash(:error, "Your email couldn't be sent")
       |> assign(:changeset, changeset)
       |> assign(:member, member)
       |> render(:new)

@@ -1,7 +1,6 @@
-You created a job! It's hidden for now, but will go live once an admin approves
-it.
+You posted a job! It's hidden for now, but will go live once an admin approves it.
 
-<%= @job.title %>
+Title: <%= @job.title %>
 
 You can edit or delete your job at any time using the link below.
 

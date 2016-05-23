@@ -16,7 +16,7 @@ defmodule Community.Acceptance.MemberTest do
     check_label("member_available_for_hire")
 
     click_role "member-save"
-    assert String.contains?(visible_page_text, "Thank you for signing up!")
+    assert String.contains?(visible_page_text, "Thanks for signing up!")
 
     last_member = Repo.one(Member)
     assert last_member.name == "Scott Summers"

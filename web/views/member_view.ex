@@ -1,9 +1,10 @@
 defmodule Community.MemberView do
   use Community.Web, :view
   @gravatar_host "https://secure.gravatar.com/avatar/"
+  @gravatar_size_query_param "?s=96"
 
   def gravatar(email) do
-    @gravatar_host <> hash_email(email)
+    @gravatar_host <> hash_email(email) <> @gravatar_size_query_param
   end
 
   defp hash_email(email) do

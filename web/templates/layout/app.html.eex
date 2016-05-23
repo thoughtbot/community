@@ -13,20 +13,20 @@
 
   <body>
     <%= render Community.SharedView, "flashes.html", conn: @conn %>
-    <div class="container">
-      <header class="site-header">
-        <h1 class="site-header-title">
-          <a href="/">Raleigh Design</a>
-        </h1>
-        <%= if System.get_env("NAVIGATION") == "true" do %>
+    <div class="outer-wrapper">
+      <div class="container">
+        <header class="site-header">
+          <h1 class="site-header-title">
+            <a href="/">Raleigh Design</a>
+          </h1>
           <nav role="navigation" class="site-navigation">
             <%= render Community.SharedView, "_navigation.html", conn: @conn %>
           </nav>
-        <% end %>
-      </header>
+        </header>
 
-      <%= render @view_module, @view_template, assigns %>
-      <%= render "_footer.html" %>
+        <%= render @view_module, @view_template, assigns %>
+        <%= render "_footer.html" %>
+      </div>
     </div>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>

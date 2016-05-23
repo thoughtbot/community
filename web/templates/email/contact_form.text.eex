@@ -5,5 +5,6 @@ Sent from: <%= @from %>
 Message:
 <%= @body %>
 
-Right now, your email address has not been exposed to the sender.
-If you reply to this email, your email addresss will be revealed to them.
+---
+Your email address has not been exposed to the sender.
+You can reply directly to this email, which will reveal your email address to them.

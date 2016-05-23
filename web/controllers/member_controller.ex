@@ -25,11 +25,12 @@ defmodule Community.MemberController do
       {:ok, member} ->
         send_emails(member)
         conn
-        |> put_flash(:info, "Thank you for signing up!")
+        |> put_flash(:info, "Thanks for signing up! An admin will approve your
+        account shortly. We've sent you an email with details.")
         |> redirect(to: member_path(conn, :index))
       {:error, changeset} ->
         conn
-        |> put_flash(:error, "You must fill out all the fields")
+        |> put_flash(:error, "Your profile couldn't be saved")
         |> render("new.html", changeset: changeset)
     end
   end
