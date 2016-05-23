@@ -4,7 +4,7 @@ defmodule Community.Email do
 
   def admin_job_posted(job) do
     new_email
-    |> to(System.get_env("ADMIN_EMAILS"))
+    |> to(admin_emails)
     |> from("noreply@raleighdesign.io")
     |> subject("A new job has been posted")
     |> render("admin_job_posted.text", job: job)
@@ -20,7 +20,7 @@ defmodule Community.Email do
 
   def admin_member_added(member) do
     new_email
-    |> to(System.get_env("ADMIN_EMAILS"))
+    |> to(admin_emails)
     |> from("noreply@raleighdesign.io")
     |> subject("A new member has signed up!")
     |> render("admin_member_added.text", member: member)
@@ -41,5 +41,10 @@ defmodule Community.Email do
     |> put_header("Reply-To", data.from)
     |> subject("Raleigh Design Contact Form - #{data.subject}")
     |> render("contact_form.text", body: data.body, from: data.from)
+  end
+
+  defp admin_emails do
+    System.get_env("ADMIN_EMAILS")
+    |> String.split(",")
   end
 end
