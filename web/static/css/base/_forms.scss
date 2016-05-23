@@ -1,11 +1,12 @@
 fieldset {
   background-color: transparent;
   border: 0;
-  margin: 0;
+  margin: 0 0 $base-spacing;
   padding: 0;
 }
 
 legend {
+  color: $light-font-color;
   font-weight: 600;
   margin-bottom: $small-spacing / 2;
   padding: 0;
@@ -16,6 +17,17 @@ label {
   display: block;
   font-weight: 600;
   margin-bottom: $small-spacing / 2;
+}
+
+.checkbox-label {
+  color: $light-font-color;
+  display: inline-block;
+  font-weight: 400;
+  margin-bottom: 0;
+
+  span {
+    font-size: $small-font-size;
+  }
 }
 
 input,

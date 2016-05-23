@@ -16,8 +16,13 @@
   <%= label form, :website, "Website" %>
   <%= text_input form, :website, placeholder: "http://example.com" %>
 
-  <%= label form, :available_for_hire, "Available for hire?" %>
-  <%= checkbox form, :available_for_hire %>
+  <fieldset>
+    <legend>Available for hire?</legend>
+    <%= label form, :available_for_hire, class: "checkbox-label" do %>
+      <%= checkbox form, :available_for_hire %>
+      <span>Yes, let people contact me for work inquiries.</span>
+    <% end %>
+  </fieldset>
 
   <%= label form, :email, "Email Address" %>
   <div class="gravatar-group">
