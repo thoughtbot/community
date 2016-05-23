@@ -11,6 +11,6 @@ mix deps.get
 mix compile
 
 # Set up database
-mix do ecto.create, ecto.migrate, development_seeds
+mix development_seeds
 
 npm install --progress=false
