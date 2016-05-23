@@ -55,6 +55,7 @@ defmodule Community.Member do
     |> validate_required([:name, :email, :title])
     |> unique_constraint(:email)
     |> Validations.validate_url_format(:website)
+    |> Validations.validate_email_format(:email)
     |> validate_at_least_one_present([:website, :twitter_handle, :dribbble_username], "you must provide at least one social media contact")
   end
 

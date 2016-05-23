@@ -1,5 +1,6 @@
 defmodule Community.ContactForm do
   use Community.Web, :model
+  alias Community.Validations
 
   embedded_schema do
     field :body
@@ -23,5 +24,6 @@ defmodule Community.ContactForm do
     model
     |> cast(params, @required_fields)
     |> validate_required(@required_fields)
+    |> Validations.validate_email_format(:email)
   end
 end

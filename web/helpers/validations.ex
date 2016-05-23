@@ -11,4 +11,9 @@ defmodule Community.Validations do
       validate_format(changeset, field, url_format, message: message)
     end
   end
+
+  def validate_email_format(changeset, field) do
+    changeset
+    |> validate_format(field, ~r/.+\@.+\..+/, message: "is invalid")
+  end
 end

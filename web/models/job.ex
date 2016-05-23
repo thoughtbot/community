@@ -43,6 +43,7 @@ defmodule Community.Job do
     model
     |> cast(params, @required_fields)
     |> Validations.validate_url_format(:company_url)
+    |> Validations.validate_email_format(:contact)
     |> validate_required(@required_fields)
   end
 
