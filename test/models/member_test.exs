@@ -21,6 +21,13 @@ defmodule Community.MemberTest do
     assert approved == [approved_entry]
   end
 
+  test "email must be unique" do
+    existing_member = create(:member, email: "test@example.com")
+    changeset = Member.changeset(%Member{}, fields_for(:member, email: existing_member.email))
+    {:error, changeset} = Repo.insert(changeset)
+    assert changeset.errors[:email] == {"has already been taken", []}
+  end
+
   test "changeset requires twitter, dribble or website" do
     changeset = Member.changeset(%Member{}, fields_for(:member, website: ""))
     refute changeset.valid?
