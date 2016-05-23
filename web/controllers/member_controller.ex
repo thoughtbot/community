@@ -77,11 +77,11 @@ defmodule Community.MemberController do
       {:ok, _} ->
         conn
         |> put_flash(:info, "Your profile has been deleted")
-        |> redirect(to: root_path(conn, :show))
+        |> redirect(to: root_path(conn, :index))
       {:error, _} ->
         conn
         |> put_flash(:error, "Your profile could not be deleted. Please contact an administrator")
-        |> redirect(to: root_path(conn, :show))
+        |> redirect(to: root_path(conn, :index))
     end
   end
 end
