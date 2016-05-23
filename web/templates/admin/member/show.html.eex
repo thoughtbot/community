@@ -1,0 +1,48 @@
+<h2>Show member</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @member.name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @member.email %>
+  </li>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @member.title %>
+  </li>
+
+  <li>
+    <strong>Approved:</strong>
+    <%= @member.approved %>
+  </li>
+
+  <li>
+    <strong>Website:</strong>
+    <%= @member.website %>
+  </li>
+
+  <li>
+    <strong>Twitter handle:</strong>
+    <%= @member.twitter_handle %>
+  </li>
+
+  <li>
+    <strong>Dribbble username:</strong>
+    <%= @member.dribbble_username %>
+  </li>
+
+  <li>
+    <strong>Available for hire:</strong>
+    <%= @member.available_for_hire %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: admin_member_path(@conn, :edit, @member) %>
+<%= link "Back", to: admin_member_path(@conn, :index) %>

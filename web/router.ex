@@ -33,5 +33,6 @@ defmodule Community.Router do
     pipe_through [:browser, Community.RequireAdmin]
 
     resources "/jobs", Admin.JobController
+    resources "/members", Admin.MemberController
   end
 end

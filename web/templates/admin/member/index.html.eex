@@ -1,0 +1,32 @@
+<h2>Listing members</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Approved</th>
+      <th>Available for hire</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for member <- @members do %>
+    <tr>
+      <td><%= member.name %></td>
+      <td><%= member.email %></td>
+      <td><%= member.approved %></td>
+      <td><%= member.available_for_hire %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: admin_member_path(@conn, :show, member), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: admin_member_path(@conn, :edit, member), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: admin_member_path(@conn, :delete, member), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New member", to: admin_member_path(@conn, :new) %>

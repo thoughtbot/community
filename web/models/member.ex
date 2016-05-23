@@ -28,6 +28,10 @@ defmodule Community.Member do
     :website,
   ]
 
+  @admin_fields [
+    :approved,
+  ]
+
   @doc """
   Creates a changeset based on the `model` and `params`.
 
@@ -37,6 +41,17 @@ defmodule Community.Member do
   def changeset(model, params \\ %{}) do
     model
     |> cast(params, @allowed_fields)
+    |> model_validations
+  end
+
+  def admin_changeset(model, params \\ %{}) do
+    model
+    |> cast(params, @allowed_fields, @admin_fields)
+    |> model_validations
+  end
+
+  defp model_validations(changset) do
+    changset
     |> validate_required([:name, :email, :title])
     |> unique_constraint(:email)
     |> Validations.validate_url_format(:website)

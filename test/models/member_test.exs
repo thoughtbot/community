@@ -28,7 +28,7 @@ defmodule Community.MemberTest do
     assert changeset.errors[:email] == {"has already been taken", []}
   end
 
-  test "changeset requires twitter, dribble or website" do
+  test "changeset requires twitter, dribbble or website" do
     changeset = Member.changeset(%Member{}, fields_for(:member, website: ""))
     refute changeset.valid?
 
