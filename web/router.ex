@@ -17,7 +17,7 @@ defmodule Community.Router do
   scope "/", Community do
     pipe_through :browser
 
-    get "/", JobController, :index, as: :root
+    get "/", HomePageController, :show, as: :root
     get "/pages/:id", PageController, :show
     resources "/jobs", JobController do
       resources "/publish", JobPublishController, only: [:create], as: :publish

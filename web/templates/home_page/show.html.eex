@@ -2,15 +2,13 @@
   <p class="page-description">
     A resource for designers in Raleigh to find prospective
     career opportunities. Follow along on twitter,
-    <a href="http://twitter.com/raleighdesign">@raleighdesign</a>.
+    <a href="http://twitter.com/raleighdesignio">@raleighdesignio</a>.
   </p>
 </div>
 
 <%= render "recent_jobs.html", jobs: @jobs, conn: @conn %>
 
-<%= if System.get_env("DRIBBBLE") == "true" do %>
-  <%= render "recent_dribbbles.html" %>
-<% end %>
+<%= render "recent_dribbbles.html", conn: @conn %>
 
 <%= if System.get_env("MEETUPS") == "true" do %>
   <%= render "recent_meetups.html" %>

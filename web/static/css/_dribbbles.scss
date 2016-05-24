@@ -5,14 +5,20 @@
 }
 
 .dribbble {
+  @include omega(2n);
+  @include span-columns(6);
   margin-bottom: $base-spacing;
+}
 
-  &:nth-child(2n) {
-    margin-left: $base-spacing;
-  }
+.dribbble-link {
+  display: block;
 
-  a,
-  img {
-    display: block;
+  &:hover,
+  &:focus {
+    opacity: 0.9;
   }
+}
+
+.dribbble-img {
+  display: block;
 }

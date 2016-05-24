@@ -1,22 +1,19 @@
 .section {
-  margin-bottom: $large-spacing * 2;
+  border-top: $base-border;
+  padding-top: $large-spacing;
+  margin-bottom: $x-large-spacing;
 
   @include media($medium-screen-up) {
     display: flex;
   }
-
-  & + & {
-    border-top: $base-border;
-    padding-top: $large-spacing;
-  }
 }
 
 .section-description {
-  margin-bottom: $base-spacing;
+  margin-bottom: $large-spacing;
 
   @include media($medium-screen-up) {
     margin-right: 8%;
-    max-width: 20em;
+    width: 20em;
   }
 
   p {
@@ -27,4 +24,8 @@
 
 .section-content {
   flex: 1;
+}
+
+.section-description-action {
+  margin-top: $base-spacing;
 }

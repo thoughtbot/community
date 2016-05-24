@@ -23,7 +23,7 @@ defmodule Community.JobController do
   defp show_job(conn, nil) do
     conn
     |> put_flash(:error, gettext("There is no job with that id"))
-    |> redirect(to: root_path(conn, :index))
+    |> redirect(to: root_path(conn, :show))
   end
 
   defp show_job(conn, job, token \\ "") do
@@ -96,11 +96,11 @@ defmodule Community.JobController do
       {:ok, _} ->
         conn
         |> put_flash(:info, "Job deleted")
-        |> redirect(to: root_path(conn, :index))
+        |> redirect(to: root_path(conn, :show))
       {:error, _} ->
         conn
         |> put_flash(:error, "Could not delete job")
-        |> redirect(to: root_path(conn, :index))
+        |> redirect(to: root_path(conn, :show))
     end
   end
 

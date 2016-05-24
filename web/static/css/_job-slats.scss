@@ -3,9 +3,10 @@
 }
 
 .job-slat {
-  @include padding($base-spacing null);
   border-bottom: $base-border;
   display: flex;
+  margin-bottom: $base-spacing;
+  padding-bottom: $base-spacing;
 }
 
 .job-slat-hgroup {

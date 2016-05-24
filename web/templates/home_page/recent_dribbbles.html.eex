@@ -1,19 +1,27 @@
 <section class="section">
   <div class="section-description">
-    <h4>Recently on Dribbble</h4>
-    <p>In nibh orci, tincidunt et euismod in, iaculis id mauris. Mauris quis
-    varius ex. Aliquam fringilla, quam vel molestie accumsan, orci lacus
-    efficitur dolor, non consequat libero felis in tortor.</p>
-    <a href="#" class="appended-link">View More&rarr;</a>
+    <h4>Recent Dribbbles</h4>
+    <p>
+      Show and tell from the Raleigh Design community.
+      <%= link(
+          "Add yourself to the directory", to:
+          member_path(@conn, :new),
+      ) %>
+      to see your work featured here.
+    </p>
   </div>
 
-  <ol class="section-content dribbbles">
-    <%= for _ <- 1..6 do %>
-      <li class="dribbble">
-        <a href="#">
-          <img src="/images/dribbble.png">
-        </a>
-      </li>
-    <% end %>
+  <ol
+    class="section-content dribbbles"
+    data-role="dribbble-list"
+    data-access-token="<%= System.get_env("DRIBBBLE_ACCESS_TOKEN") %>"
+    data-bucket-id="<%= System.get_env("DRIBBBLE_BUCKET_ID") %>"
+    data-count="6"
+    >
+    <li class="dribbble" data-role="dribbble-shot" style="display:none">
+      <a class="dribbble-link" href="#">
+        <img class="dribbble-img" src="/images/dribbble.png">
+      </a>
+    </li>
   </ol>
 </section>

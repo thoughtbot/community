@@ -1,1 +1,19 @@
-<%= render Community.JobView, "job_list.html", jobs: @jobs, conn: @conn %>
+<section class="section">
+  <div class="section-description">
+    <h4>Recent Jobs</h4>
+    <p>
+      Find UX, UI, or visual and graphic design jobs local to Raleigh, North
+      Carolina.
+    </p>
+    <p>Design jobs are free to post, and will stay online for 30 days.</p>
+    <%= link(
+      {:safe, "View More &rarr;"},
+      to: job_path(@conn, :index),
+      class: "appended-link"
+    ) %>
+  </div>
+
+  <div class="section-content">
+    <%= render Community.JobView, "job_list.html", jobs: @jobs, conn: @conn %>
+  </div>
+</section>
