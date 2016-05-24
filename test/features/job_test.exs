@@ -1,5 +1,5 @@
-defmodule Community.Acceptance.JobTest do
-  use Community.AcceptanceCase
+defmodule Community.Feature.JobTest do
+  use Community.FeatureCase
 
   test "publishing a job" do
     job = create(:job, approved: false, preview: true)

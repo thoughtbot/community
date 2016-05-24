@@ -1,4 +1,4 @@
-defmodule Community.AcceptanceCase do
+defmodule Community.FeatureCase do
   use ExUnit.CaseTemplate
 
   using do

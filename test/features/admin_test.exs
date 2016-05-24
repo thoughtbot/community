@@ -1,5 +1,5 @@
-defmodule Community.Acceptance.AdminTest do
-  use Community.AcceptanceCase
+defmodule Community.Feature.AdminTest do
+  use Community.FeatureCase
 
   test "it allows admins to see the jobs" do
     job = create(:job)

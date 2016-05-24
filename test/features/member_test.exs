@@ -1,5 +1,5 @@
-defmodule Community.Acceptance.MemberTest do
-  use Community.AcceptanceCase
+defmodule Community.Feature.MemberTest do
+  use Community.FeatureCase
   alias Community.Member
   use Bamboo.Test, shared: true
 
