@@ -2,27 +2,44 @@
 [![Circle CI](https://circleci.com/gh/drapergeek/community.svg?style=svg)](https://circleci.com/gh/drapergeek/community)
 # Community
 
-To start your Phoenix app:
+## What is Community?
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `npm install`
-  * Start Phoenix endpoint with `mix phoenix.server`
+Community is an Elixir/Phoenix app that was designed primarily to run [Raleigh
+Design]. Feel free to fork it and use it for your own community!
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+Right now it is very early MVP. Only the basic requirements are implemented and
+a lot of "features" are handled manually.
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+[Raleigh Design]: https://raleighdesign.io
 
-## Problems?
+## Features
 
-If you run into strange errors, try using the script in `bin/nuke` and then
-running `bin/setup`. This will take quite a while, so only use if you're
-completely stuck.
+* Member directory
+ * Approval is required for new members
+ * Members can update and delete their own profiles
+ * All authentication is handled via tokenized links
+ * Admins can edit member profiles
 
-## Learn more
+* Job Board
+  * Posting new jobs requires approval
+  * Job authors can preview before submitting
+  * Job authors can edit and delete their own posts
+ * All authentication is handled via tokenized links
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: http://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+## Development and Contribuing
+
+See [Contributing](CONTRIBUTING.md)
+
+## About thoughtbot
+
+![thoughtbot](https://thoughtbot.com/logo.png)
+
+Community is maintained and funded by thoughtbot, inc.
+The names and logos for thoughtbot are trademarks of thoughtbot, inc.
+
+We love open source software!
+See [our other projects][community] or
+[hire us][hire] to design, develop, and grow your product.
+
+[community]: https://thoughtbot.com/community?utm_source=github
+[hire]: https://thoughtbot.com?utm_source=github
