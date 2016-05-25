@@ -8,6 +8,4 @@
 
 <%= render "recent_dribbbles.html", conn: @conn %>
 
-<%= if System.get_env("MEETUPS") == "true" do %>
-  <%= render "recent_meetups.html" %>
-<% end %>
+<%= render "recent_meetups.html" %>

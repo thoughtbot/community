@@ -1,7 +1,30 @@
+.meetup-slat {
+  @include padding($base-spacing null);
+  border-bottom: $base-border;
+  display: none;
+  flex-direction: column;
+
+  @include media($large-screen-up) {
+    flex-direction: row;
+  }
+}
+
+.meetup-time {
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: $small-spacing;
+  width: 12em;
+}
+
+.meetup-hgroup {
+  flex: 1;
+}
+
 .meetup-name {
   font-weight: 400;
 }
 
-.meetup-time {
-  width: 12em;
+.meetup-title {
+  font-size: $large-font-size;
+  font-weight: 400;
+  margin-bottom: $x-small-spacing;
 }

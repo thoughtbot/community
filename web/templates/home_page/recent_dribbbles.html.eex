@@ -20,7 +20,7 @@
     >
     <li class="dribbble" data-role="dribbble-shot" style="display:none">
       <a class="dribbble-link" href="#">
-        <img class="dribbble-img" src="/images/dribbble.png">
+        <img class="dribbble-img" src="">
       </a>
     </li>
   </ol>
