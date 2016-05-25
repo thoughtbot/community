@@ -1,7 +1,7 @@
 .section {
   border-top: $base-border;
-  padding-top: $large-spacing;
   margin-bottom: $x-large-spacing;
+  padding-top: $large-spacing;
 
   @include media($medium-screen-up) {
     display: flex;

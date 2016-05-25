@@ -19,3 +19,9 @@
     }
   }
 }
+
+.home-page .home-link,
+.job .jobs-link,
+.member .members-link {
+  color: $action-color;
+}

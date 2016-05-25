@@ -42,6 +42,7 @@ defmodule Community.Mixfile do
   defp deps do
     [
       {:bamboo, github: "thoughtbot/bamboo"},
+      {:brady, "~> 0.0.2"},
       {:cowboy, "~> 1.0"},
       {:envy, "~> 0.0.2"},
       {:ex_machina, "~> 0.6.1"},
