@@ -7,6 +7,12 @@
     </p>
     <p>Design jobs are free to post, and will stay online for 30 days.</p>
     <%= link(
+      {:safe, "&larr; Back to Home"},
+      to: root_path(@conn, :show),
+      class: "appended-link"
+    ) %>
+    <hr>
+    <%= link(
       "Post a job for free",
       to: job_path(@conn, :new),
       class: "button section-description-action"

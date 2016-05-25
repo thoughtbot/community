@@ -1,5 +1,6 @@
 .gravatar-group {
   display: flex;
+  margin-bottom: $small-spacing;
 }
 
 .gravatar-group-image {
@@ -19,4 +20,8 @@
   .gravatar-group-image.is-visible + & {
     @include border-left-radius(0);
   }
+}
+
+.gravatar-help-text {
+  margin-bottom: $large-spacing;
 }

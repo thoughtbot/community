@@ -4,7 +4,7 @@
     "autoprefixer": "~6.3.0",
     "babel-brunch": "~6.0.0",
     "blueimp-md5": "^2.3.0",
-    "bourbon": "^4.2.6",
+    "bourbon": "5.0.0-beta.6",
     "bourbon-neat": "^1.7.4",
     "brunch": "2.7.4",
     "clean-css-brunch": "~1.8.0",

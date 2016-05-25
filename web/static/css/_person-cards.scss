@@ -14,18 +14,10 @@
   flex-direction: column;
   width: 100%;
 
-  @include media($small-screen-only) {
+  @include media($large-screen-up) {
     width: 48%;
 
     &:nth-child(2n) {
-      margin-right: 0;
-    }
-  }
-
-  @include media($medium-screen-up) {
-    width: 32%;
-
-    &:nth-child(3n) {
       margin-right: 0;
     }
   }

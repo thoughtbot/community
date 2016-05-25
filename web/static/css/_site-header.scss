@@ -1,27 +1,28 @@
 .site-header {
-  padding-top: $large-spacing;
+  padding-top: $base-spacing;
 
   @include media($medium-screen-up) {
-    padding-top: $x-large-spacing;
+    padding-top: $large-spacing;
   }
 }
 
 .site-header-title {
   margin-bottom: $base-spacing;
   text-align: center;
+}
 
-  a {
-    @include hide-text;
-    @include margin(null auto);
-    @include size(284px 203px);
-    background-image: url("/images/logo.png");
-    background-size: contain;
-    display: block;
-    transition: opacity 0.15s ease-in;
+.site-header-title-link {
+  @include hide-text;
+  @include margin(null auto);
+  @include size(284px, 203px);
+  background-image: url("/images/logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  transition: opacity 0.15s ease-in;
 
-    &:hover,
-    &:focus {
-      opacity: 0.8;
-    }
+  &:hover,
+  &:focus {
+    opacity: 0.8;
   }
 }

@@ -13,20 +13,18 @@
 
   <body class="<%= Brady.body_class @conn %>">
     <%= render Community.SharedView, "flashes.html", conn: @conn %>
-    <div class="outer-wrapper">
-      <div class="container">
-        <header class="site-header">
-          <h1 class="site-header-title">
-            <a href="/">Raleigh Design</a>
-          </h1>
-          <nav role="navigation" class="site-navigation">
-            <%= render Community.SharedView, "_navigation.html", conn: @conn %>
-          </nav>
-        </header>
+    <div class="container">
+      <header class="site-header">
+        <h1 class="site-header-title">
+          <a href="/" class="site-header-title-link">Raleigh Design</a>
+        </h1>
+        <nav role="navigation" class="site-navigation">
+          <%= render Community.SharedView, "_navigation.html", conn: @conn %>
+        </nav>
+      </header>
 
-        <%= render @view_module, @view_template, assigns %>
-        <%= render "_footer.html" %>
-      </div>
+      <%= render @view_module, @view_template, assigns %>
+      <%= render "_footer.html" %>
     </div>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>

@@ -30,7 +30,7 @@
     <%= text_input form, :email, data: [javascript: "gravatar-email"],
     class: "gravatar-group-input" %>
   </div>
-  <p class="notation">
+  <p class="notation gravatar-help-text">
     This will not be displayed publicly, and will only be use to manage your
     profile. Your avatar is pulled from <a
       href="https://en.gravatar.com/" target="_blank">Gravatar</a>.

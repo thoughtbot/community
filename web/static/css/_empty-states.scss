@@ -1,0 +1,15 @@
+.empty-state {
+  @include padding($base-spacing null);
+  text-align: center;
+
+  svg {
+    @include margin(null auto);
+    display: inline-block;
+    margin-bottom: $large-spacing;
+  }
+}
+
+.empty-state-title {
+  color: $lighter-font-color;
+  font-weight: 400;
+}

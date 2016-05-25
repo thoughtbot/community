@@ -28,4 +28,9 @@
 
 .section-description-action {
   margin-top: $base-spacing;
+  width: 100%;
+
+  @include media($medium-screen-up) {
+    width: initial;
+  }
 }

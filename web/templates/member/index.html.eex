@@ -1,47 +1,65 @@
-<div class="container">
-  <ol class="person-cards">
-    <%= for member <- @members do %>
-      <li class="person-card">
-        <div class="person-card-body">
-          <img class="person-card-image" src="<%= gravatar(member.email) %>">
-          <h4 class="person-card-name"><%= member.name %></h4>
-          <p class="person-card-job"><%= member.title %></p>
-          <%= if member.available_for_hire do %>
-            <%= link("Available for Hire", to: member_contact_path(@conn, :new, member), class: "person-card-hire-link") %>
-          <% end %>
-        </div>
-        <ul class="person-card-social-items">
-          <%= if member.twitter_handle do %>
-            <li class="person-card-social-item">
-              <a class="person-card-social-link" href="<%= twitter_url(member.twitter_handle) %>">
-                <%= Community.SharedView.svg("twitter") %>
-              </a>
-            </li>
-          <% end %>
+<section class="section">
+  <div class="section-description">
+    <h4>Member Directory</h4>
+    <p>
+      User Experience, User Interface, and visual designers located in and
+      around Raleigh, North&nbsp;Carolina. Say hello!
+    </p>
 
-          <%= if member.dribbble_username do %>
-            <li class="person-card-social-item">
-              <a class="person-card-social-link" href="<%= dribbble_url(member.dribbble_username) %>">
-                <%= Community.SharedView.svg("dribbble") %>
-              </a>
-            </li>
-          <% end %>
+    <%= link(
+      {:safe, "&larr; Back to Home"},
+      to: root_path(@conn, :show),
+      class: "appended-link"
+    ) %>
 
-          <%= if member.website do %>
-            <li class="person-card-social-item">
-              <a class="person-card-social-link" href="<%= member.website %>">
-                <%= Community.SharedView.svg("world") %>
-              </a>
-            </li>
-          <% end %>
-        </ul>
-      </li>
-    <% end %>
-  </ol>
+    <hr>
 
-  <%= link(
-    "Add yourself to the directory", to:
-    member_path(@conn, :new),
-    class: "button page-action"
-  ) %>
-</div>
+    <%= link(
+      "Add yourself to the directory", to:
+      member_path(@conn, :new),
+      class: "button section-description-action"
+    ) %>
+  </div>
+
+  <div class="section-content">
+    <ol class="person-cards">
+      <%= for member <- @members do %>
+        <li class="person-card">
+          <div class="person-card-body">
+            <img class="person-card-image" src="<%= gravatar(member.email) %>">
+            <h4 class="person-card-name"><%= member.name %></h4>
+            <p class="person-card-job"><%= member.title %></p>
+            <%= if member.available_for_hire do %>
+              <%= link("Available for Hire", to: member_contact_path(@conn, :new, member), class: "person-card-hire-link") %>
+            <% end %>
+          </div>
+          <ul class="person-card-social-items">
+            <%= if member.twitter_handle do %>
+              <li class="person-card-social-item">
+                <a class="person-card-social-link" href="<%= twitter_url(member.twitter_handle) %>">
+                  <%= Community.SharedView.svg("twitter") %>
+                </a>
+              </li>
+            <% end %>
+
+            <%= if member.dribbble_username do %>
+              <li class="person-card-social-item">
+                <a class="person-card-social-link" href="<%= dribbble_url(member.dribbble_username) %>">
+                  <%= Community.SharedView.svg("dribbble") %>
+                </a>
+              </li>
+            <% end %>
+
+            <%= if member.website do %>
+              <li class="person-card-social-item">
+                <a class="person-card-social-link" href="<%= member.website %>">
+                  <%= Community.SharedView.svg("world") %>
+                </a>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+</section>
