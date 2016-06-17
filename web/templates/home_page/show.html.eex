@@ -4,8 +4,8 @@
   <a href="http://twitter.com/raleighdesignio">@raleighdesignio</a>.
 </p>
 
+<%= render "recent_meetups.html" %>
+
 <%= render "recent_jobs.html", jobs: @jobs, conn: @conn %>
 
 <%= render "recent_dribbbles.html", conn: @conn %>
-
-<%= render "recent_meetups.html" %>

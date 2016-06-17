@@ -1,10 +1,11 @@
 <section class="section">
   <div class="section-description">
     <h4>Upcoming Meetups</h4>
-    <p>In nibh orci, tincidunt et euismod in, iaculis id mauris. Mauris quis
-    varius ex. Aliquam fringilla, quam vel molestie accumsan, orci lacus
-    efficitur dolor, non consequat libero felis in tortor.</p>
-    <a href="#" class="appended-link">View More&rarr;</a>
+    <p>
+      Design meetups in and around Raleigh. Shoot us a suggestion
+      <a href="http://twitter.com/raleighdesignio">@raleighdesign</a>
+      if you have one you'd like to add.
+    </p>
   </div>
 
   <ol class="section-content slats" data-role="meetup-list">
