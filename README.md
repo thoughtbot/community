@@ -1,5 +1,5 @@
-[![Stories in Ready](https://badge.waffle.io/drapergeek/community.svg?label=ready&title=Ready)](http://waffle.io/drapergeek/community)
-[![Circle CI](https://circleci.com/gh/drapergeek/community.svg?style=svg)](https://circleci.com/gh/drapergeek/community)
+[![Stories in Ready](https://badge.waffle.io/thoughtbot/community.svg?label=ready&title=Ready)](http://waffle.io/thoughtbot/community)
+[![CircleCI](https://circleci.com/gh/thoughtbot/community.svg?style=svg)](https://circleci.com/gh/thoughtbot/community)
 # Community
 
 ## What is Community?
