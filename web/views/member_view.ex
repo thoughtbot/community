@@ -14,6 +14,14 @@ defmodule Community.MemberView do
     |> md5_hash
   end
 
+  def present?(nil) do
+    false
+  end
+
+  def present?(string) do
+    String.length(string) > 0
+  end
+
   defp md5_hash(email) do
     :crypto.hash(:md5, email)
     |> Base.encode16(case: :lower)
