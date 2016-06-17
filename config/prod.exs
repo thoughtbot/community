@@ -16,5 +16,5 @@ config :community, Community.Mailer,
 config :community, Community.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
-  pool_size: 15,
+  pool_size: 10,
   ssl: true
