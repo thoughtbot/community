@@ -37,9 +37,12 @@ See [Contributing](CONTRIBUTING.md)
 Community is maintained and funded by thoughtbot, inc.
 The names and logos for thoughtbot are trademarks of thoughtbot, inc.
 
+Community is part of the [thoughtbot Elixir family][elixir-phoenix] of projects.
+
 We love open source software!
 See [our other projects][community] or
 [hire us][hire] to design, develop, and grow your product.
 
+[elixir-phoenix]: https://thoughtbot.com/services/elixir-phoenix?utm_source=github
 [community]: https://thoughtbot.com/community?utm_source=github
 [hire]: https://thoughtbot.com?utm_source=github
