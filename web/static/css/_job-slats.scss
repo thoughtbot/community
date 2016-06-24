@@ -3,10 +3,13 @@
 }
 
 .job-slat {
-  border-bottom: $base-border;
   display: flex;
   margin-bottom: $base-spacing;
   padding-bottom: $base-spacing;
+
+  &:not(last-child) {
+    border-bottom: $base-border;
+  }
 }
 
 .job-slat-hgroup {
