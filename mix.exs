@@ -41,20 +41,20 @@ defmodule Community.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:bamboo, github: "thoughtbot/bamboo"},
-      {:brady, "~> 0.0.2"},
+      {:bamboo, "~> 0.7.0"},
+      {:brady, "~> 0.0.3"},
       {:cowboy, "~> 1.0"},
-      {:envy, "~> 0.0.2"},
-      {:ex_machina, "~> 0.6.1"},
-      {:ex_spec, "~> 1.0.0", only: :test},
-      {:gettext, "~> 0.9"},
-      {:hound, "~> 0.8"},
-      {:html_sanitize_ex, "~> 0.1.0"},
-      {:phoenix, "~> 1.1.4"},
-      {:phoenix_ecto, "~> 3.0.0-rc.0"},
-      {:phoenix_html, "~> 2.4"},
+      {:envy, "~> 1.0"},
+      {:ex_machina, "~> 1.0.2"},
+      {:ex_spec, "~> 2.0", only: :test},
+      {:gettext, "~> 0.11"},
+      {:hound, "~> 1.0.2"},
+      {:html_sanitize_ex, "~> 1.0.1"},
+      {:phoenix, "~> 1.2.0"},
+      {:phoenix_ecto, "~> 3.0.0"},
+      {:phoenix_html, "~> 2.6"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:postgrex, "~> 0.11.1"},
+      {:postgrex, "~> 0.11.2"},
     ]
   end
 

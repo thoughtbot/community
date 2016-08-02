@@ -37,6 +37,6 @@ defmodule Community.ConnCase do
   setup _tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Community.Repo)
 
-    {:ok, conn: Phoenix.ConnTest.conn()}
+    {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end

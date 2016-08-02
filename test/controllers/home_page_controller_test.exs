@@ -6,8 +6,8 @@ defmodule Community.HomePageControllerTest do
       city: "Dvegas",
       company: "big company name",
       title: "approved",
-    }) |> approve |> create
-    not_approved = create(:job, %{title: "SPAM"})
+    }) |> approve |> insert
+    not_approved = insert(:job, %{title: "SPAM"})
 
     conn = get conn, "/"
 

@@ -32,7 +32,7 @@ defmodule Community.Feature.MemberTest do
   end
 
   test "contacts a member that is available for hire" do
-    member = create(:member, available_for_hire: true, approved: true)
+    member = insert(:member, available_for_hire: true, approved: true)
     navigate_to "/members"
 
     click_on "Available for Hire"
@@ -55,7 +55,7 @@ defmodule Community.Feature.MemberTest do
   end
 
   test "editing a member" do
-    member = create(:member, approved: true)
+    member = insert(:member, approved: true)
 
     navigate_to member_path(@endpoint, :edit, member, token: member.token)
     fill_in "member", "name", with: "New Name"
@@ -66,7 +66,7 @@ defmodule Community.Feature.MemberTest do
   end
 
   test "deleting a member" do
-    member = create(:member)
+    member = insert(:member)
     navigate_to member_path(@endpoint, :edit, member, token: member.token)
 
     ignore_confirm_dialog

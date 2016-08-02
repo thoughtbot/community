@@ -2,7 +2,7 @@ defmodule Community.Feature.AdminTest do
   use Community.FeatureCase
 
   test "it allows admins to see the jobs" do
-    job = create(:job)
+    job = insert(:job)
 
     navigate_to "/admin/jobs"
 

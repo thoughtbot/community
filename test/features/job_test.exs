@@ -2,7 +2,7 @@ defmodule Community.Feature.JobTest do
   use Community.FeatureCase
 
   test "publishing a job" do
-    job = create(:job, approved: false, preview: true)
+    job = insert(:job, approved: false, preview: true)
     navigate_to job_path(@endpoint, :show, job, token: job.token)
 
     click_role "publish-job"
@@ -13,7 +13,7 @@ defmodule Community.Feature.JobTest do
   end
 
   test "editing a job" do
-    job = create(:job)
+    job = insert(:job)
 
     navigate_to job_path(@endpoint, :edit, job, token: job.token)
     fill_in "job", "title", with: "New Title"
@@ -26,7 +26,7 @@ defmodule Community.Feature.JobTest do
   end
 
   test "deleting a job" do
-    job = create(:job, preview: false)
+    job = insert(:job, preview: false)
     navigate_to job_path(@endpoint, :show, job, token: job.token)
 
     ignore_confirm_dialog

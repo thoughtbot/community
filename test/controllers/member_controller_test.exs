@@ -16,8 +16,8 @@ defmodule Community.MemberControllerTest do
       twitter_handle: "bob",
       dribbble_username: "bob-builder",
       website: "http://bob.example.com",
-    }) |> approve |> create
-    not_approved = create(:member, %{name: "SAM THE JERK"})
+    }) |> approve |> insert
+    not_approved = insert(:member, %{name: "SAM THE JERK"})
 
     conn = get conn, "/members"
     refute html_response(conn, 200) =~ not_approved.name

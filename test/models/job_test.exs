@@ -3,7 +3,7 @@ defmodule Community.JobTest do
   alias Community.Job
 
   test "changeset with valid attributes" do
-    changeset = Job.changeset(%Job{}, fields_for(:job))
+    changeset = Job.changeset(%Job{}, params_for(:job))
     assert changeset.valid?
   end
 
@@ -13,21 +13,21 @@ defmodule Community.JobTest do
   end
 
   test "validates the url" do
-    attributes = fields_for(:job, %{company_url: "something.com"})
+    attributes = params_for(:job, %{company_url: "something.com"})
     changeset = Job.changeset(%Job{}, attributes)
     refute changeset.valid?
     assert changeset.errors[:company_url] == {"must start with http(s)", []}
 
-    http_attributes = fields_for(:job, %{company_url: "http://"})
+    http_attributes = params_for(:job, %{company_url: "http://"})
     assert  Job.changeset(%Job{}, http_attributes).valid?
 
-    https_attributes = fields_for(:job, %{company_url: "https://"})
+    https_attributes = params_for(:job, %{company_url: "https://"})
     assert  Job.changeset(%Job{}, https_attributes).valid?
   end
 
   test "approved only includes entires where approved is true" do
-    approved_entry = create(:job, %{approved: true})
-    _non_approved_entry = create(:job, %{approved: false})
+    approved_entry = insert(:job, %{approved: true})
+    _non_approved_entry = insert(:job, %{approved: false})
 
     approved = Job |> Job.approved |> Repo.all
     assert approved == [approved_entry]

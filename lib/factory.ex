@@ -1,7 +1,7 @@
 defmodule Community.Factory do
   use ExMachina.Ecto, repo: Community.Repo
 
-  def factory(:job) do
+  def job_factory do
     %Community.Job{
       approved: false,
       city: "Raleigh",
@@ -15,7 +15,7 @@ defmodule Community.Factory do
     }
   end
 
-  def factory(:member) do
+  def member_factory do
     %Community.Member{
       approved: false,
       title: "designer at thoughtbot",

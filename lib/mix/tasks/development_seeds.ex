@@ -36,7 +36,7 @@ defmodule Mix.Tasks.DevelopmentSeeds do
     })
 
     for title <- titles do
-      create(
+      insert(
         :job,
         approved: true,
         company: Enum.random(companies),
@@ -44,8 +44,8 @@ defmodule Mix.Tasks.DevelopmentSeeds do
       )
     end
 
-    create(:job, title: "Awsesome Designer")
-    create(:job, title: "Rockstar")
+    insert(:job, title: "Awsesome Designer")
+    insert(:job, title: "Rockstar")
   end
 
   def titles do
@@ -72,6 +72,6 @@ defmodule Mix.Tasks.DevelopmentSeeds do
   end
 
   def approve_member(attributes) do
-    build(:member, attributes) |> approve |> create
+    build(:member, attributes) |> approve |> insert
   end
 end

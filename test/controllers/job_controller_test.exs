@@ -6,7 +6,7 @@ defmodule Community.JobControllerTest do
   describe "POST /jobs" do
     context "with valid params" do
       it "creates the job", %{conn: conn} do
-        conn = post conn, "/jobs", job: fields_for(:job, %{title: "designer"})
+        conn = post conn, "/jobs", job: params_for(:job, %{title: "designer"})
 
         assert get_flash(conn, :info) == "Job created"
         job = Repo.one(Job)
@@ -35,8 +35,8 @@ defmodule Community.JobControllerTest do
         city: "Dvegas",
         company: "big company name",
         title: "approved",
-      }) |> approve |> create
-      not_approved = create(:job, %{title: "SPAM"})
+      }) |> approve |> insert
+      not_approved = insert(:job, %{title: "SPAM"})
 
       conn = get conn, "/jobs"
       refute html_response(conn, 200) =~ not_approved.title
@@ -54,7 +54,7 @@ defmodule Community.JobControllerTest do
           city: "Dvegas",
           company: "big company name",
           title: "approved",
-        }) |> approve |> create
+        }) |> approve |> insert
 
         conn = get conn, "/jobs/#{approved.id}"
 
@@ -66,7 +66,7 @@ defmodule Community.JobControllerTest do
 
     context "when the job is not approved" do
       it "redirects to the root", %{conn: conn} do
-        job = create(:job, approved: false)
+        job = insert(:job, approved: false)
 
         conn = get conn, "/jobs/#{job.id}"
 
@@ -75,8 +75,8 @@ defmodule Community.JobControllerTest do
     end
 
     context "when the job is not approved but the correct token is provided" do
-      it "renders the show" do
-        job = create(:job, approved: false, preview: false)
+      it "renders the show", %{conn: conn} do
+        job = insert(:job, approved: false, preview: false)
 
         conn = get conn, "/jobs/#{job.id}?token=#{job.token}"
 
