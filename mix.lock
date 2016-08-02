@@ -15,6 +15,7 @@
   "ex_spec": {:hex, :ex_spec, "2.0.0", "7fedc6f3f7fe9b5bc14f17f94199cac4d2abe389727291467ee7708dcf6544a0", [:mix], []},
   "exactor": {:hex, :exactor, "2.2.0"},
   "factory_girl_elixir": {:hex, :factory_girl_elixir, "0.1.1"},
+  "formulator": {:hex, :formulator, "0.0.1", "c3b359750a5c983ad606f41b5ed8a7d44dea6a26f9188c30c6fc3929005b9f37", [:mix], [{:gettext, ">= 0.11.0", [hex: :gettext, optional: false]}, {:phoenix_html, "~> 2.4", [hex: :phoenix_html, optional: false]}]},
   "fs": {:hex, :fs, "0.9.2", "ed17036c26c3f70ac49781ed9220a50c36775c6ca2cf8182d123b6566e49ec59", [:rebar], []},
   "gettext": {:hex, :gettext, "0.11.0", "80c1dd42d270482418fa158ec5ba073d2980e3718bacad86f3d4ad71d5667679", [:mix], []},
   "hackney": {:hex, :hackney, "1.6.1", "ddd22d42db2b50e6a155439c8811b8f6df61a4395de10509714ad2751c6da817", [:rebar3], [{:certifi, "0.4.0", [hex: :certifi, optional: false]}, {:idna, "1.2.0", [hex: :idna, optional: false]}, {:metrics, "1.0.1", [hex: :metrics, optional: false]}, {:mimerl, "1.0.2", [hex: :mimerl, optional: false]}, {:ssl_verify_fun, "1.1.0", [hex: :ssl_verify_fun, optional: false]}]},

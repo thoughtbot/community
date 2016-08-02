@@ -47,6 +47,7 @@ defmodule Community.Mixfile do
       {:envy, "~> 1.0"},
       {:ex_machina, "~> 1.0.2"},
       {:ex_spec, "~> 2.0", only: :test},
+      {:formulator, "~> 0.0.1"},
       {:gettext, "~> 0.11"},
       {:hound, "~> 1.0.2"},
       {:html_sanitize_ex, "~> 1.0.1"},

@@ -31,3 +31,5 @@ config :phoenix, :generators,
   binary_id: false
 
 config :hound, driver: "phantomjs"
+
+config :formulator, gettext: Community.Gettext

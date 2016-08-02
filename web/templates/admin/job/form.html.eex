@@ -1,4 +1,4 @@
-<%= form_for @changeset, @action, fn f -> %>
+<%= form_for @changeset, @action, fn form -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
       <p>Oops, something went wrong! Please check the errors below.</p>
@@ -6,63 +6,47 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :title, class: "control-label" %>
-    <%= text_input f, :title, class: "form-control" %>
-    <%= error_tag f, :title %>
+    <%= input form, :title %>
   </div>
 
   <div class="form-group">
-    <%= label f, :company, class: "control-label" %>
-    <%= text_input f, :company, class: "form-control" %>
-    <%= error_tag f, :company %>
+    <%= input form, :company %>
   </div>
 
   <div class="form-group">
-    <%= label f, :contact, class: "control-label" %>
-    <%= text_input f, :contact, class: "form-control" %>
-    <%= error_tag f, :contact %>
+    <%= input form, :contact %>
   </div>
 
   <div class="form-group">
-    <%= label f, :city, class: "control-label" %>
-    <%= text_input f, :city, class: "form-control" %>
-    <%= error_tag f, :city %>
+    <%= input form, :city %>
   </div>
 
   <div class="form-group">
-    <%= label f, :company_url, class: "control-label" %>
-    <%= text_input f, :company_url, class: "form-control" %>
-    <%= error_tag f, :company_url %>
+    <%= input form, :company_url %>
   </div>
 
   <div class="form-group">
-    <%= label f, :description, class: "control-label" %>
-    <%= text_input f, :description, class: "form-control" %>
-    <%= error_tag f, :description %>
+    <%= input form, :description %>
   </div>
 
   <div class="form-group">
-    <%= label f, :instructions, class: "control-label" %>
-    <%= text_input f, :instructions, class: "form-control" %>
-    <%= error_tag f, :instructions %>
+    <%= input form, :instructions %>
   </div>
 
   <div class="form-group">
-    <%= label f, :approved, class: "control-label" %>
-    <%= checkbox f, :approved, class: "form-control" %>
-    <%= error_tag f, :approved %>
+    <%= label form, :approved %>
+    <%= checkbox form, :approved %>
+    <%= error_tag form, :approved %>
   </div>
 
   <div class="form-group">
-    <%= label f, :preview, class: "control-label" %>
-    <%= checkbox f, :preview, class: "form-control" %>
-    <%= error_tag f, :preview %>
+    <%= label form, :preview %>
+    <%= checkbox form, :preview %>
+    <%= error_tag form, :preview %>
   </div>
 
   <div class="form-group">
-    <%= label f, :token, class: "control-label" %>
-    <%= text_input f, :token, class: "form-control" %>
-    <%= error_tag f, :token %>
+    <%= input form, :token %>
   </div>
 
   <div class="form-group">

@@ -1,20 +1,11 @@
 <%= form_for @changeset, @path, fn form -> %>
   <%= render Community.SharedView, "_form_errors.html", form: @changeset %>
 
-  <%= label form, :name, "Name" %>
-  <%= text_input form, :name %>
-
-  <%= label form, :title, "Title" %>
-  <%= text_input form, :title, placeholder: "UI designer at Facebook" %>
-
-  <%= label form, :twitter_handle, "Twitter handle" %>
-  <%= text_input form, :twitter_handle %>
-
-  <%= label form, :dribbble_username, "Dribbble username" %>
-  <%= text_input form, :dribbble_username %>
-
-  <%= label form, :website, "Website" %>
-  <%= text_input form, :website, placeholder: "http://example.com" %>
+  <%= input form, :name, label_text: "Name" %>
+  <%= input form, :title, placeholder: "UI designer at Facebook" %>
+  <%= input form, :twitter_handle %>
+  <%= input form, :dribbble_username %>
+  <%= input form, :website, placeholder: "http://example.com" %>
 
   <fieldset>
     <legend>Available for hire?</legend>

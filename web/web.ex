@@ -49,6 +49,7 @@ defmodule Community.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
+      import Formulator
       import Community.Router.Helpers
       import Community.ErrorHelpers
       import Community.Gettext
