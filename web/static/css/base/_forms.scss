@@ -46,9 +46,9 @@ trix-editor {
   box-shadow: $form-box-shadow;
   box-sizing: border-box;
   font-family: $base-font-family;
-  font-size: $base-font-size;
+  font-size: 16px;
   margin-bottom: $base-spacing;
-  padding: 1.25em;
+  padding: 1em;
   transition: border-color $base-duration $base-timing;
   width: 100%;
 

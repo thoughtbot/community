@@ -1,0 +1,9 @@
+<footer class="site-footer">
+  <a href="http://thoughtbot.com/raleigh">
+    <%= Community.SharedView.svg("ralph") %>
+  </a>
+  <p>
+    Site design &amp; development by
+    <a href="http://thoughtbot.com/raleigh">thoughtbot</a>.
+  </p>
+</footer>

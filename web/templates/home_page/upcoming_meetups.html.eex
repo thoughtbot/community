@@ -1,22 +1,23 @@
 <section class="section">
-  <div class="section-description">
-    <h4>Upcoming Meetups</h4>
+  <header class="section-header">
+    <h2>Upcoming Meetups</h2>
     <p>
       Design meetups in and around The Triangle. Shoot us a suggestion
       in Slack if you have one you'd like to add.
     </p>
-  </div>
+  </header>
 
-  <ol class="section-content slats" data-role="meetup-list">
+  <ol class="section-content" data-role="meetup-list">
     <li class="meetup-slat" data-role="meetup">
-      <time class="meetup-time" data-role="date-time">2/7/15, 6:30PM</time>
-      <div class="meetup-hgroup">
         <h4 class="meetup-name" data-role="group-name">Meetup Group Name</h4>
         <h3 class="meetup-title">
           <a href="#" data-role="title">Meetup Event Title</a>
         </h3>
-        <span class="notation" data-role="members">97 Members Going</span>
-      </div>
+        <p class="notation">
+          <time data-role="date-time">2/7/15, 6:30PM</time>
+          &bull;
+          <span data-role="members">97 Members Going</span>
+        </p>
     </li>
   </ol>
 </section>

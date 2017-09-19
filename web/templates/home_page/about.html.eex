@@ -1,0 +1,14 @@
+<section class="page-description">
+  <p>
+    Triangle Designers is a resource for designers throughout North Carolina's
+    Triangle to stay connected and find prospective career opportunities.
+  </p>
+
+  <p>
+    <%= link(
+      "Add yourself to the directory", to:
+      member_path(@conn, :new),
+    ) %>
+    or <a href="#">join us in Slack</a>.
+  </p>
+</section>

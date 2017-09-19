@@ -1,11 +1,6 @@
-.job-slats {
-  margin-bottom: $large-spacing;
-}
-
 .job-slat {
+  @include padding($small-spacing null);
   display: flex;
-  margin-bottom: $base-spacing;
-  padding-bottom: $base-spacing;
 
   &:not(:last-child) {
     border-bottom: $base-border;
@@ -17,13 +12,13 @@
 }
 
 .job-slat-title {
-  font-size: $large-font-size;
   font-weight: 400;
   margin-bottom: $x-small-spacing;
 }
 
 .job-slat-company {
   color: $light-font-color;
+  font-size: $small-font-size;
   margin-bottom: 0;
 }
 

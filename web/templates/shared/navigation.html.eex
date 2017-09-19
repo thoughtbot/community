@@ -12,4 +12,7 @@
       class: "members-link"
     ) %>
   </li>
+  <li>
+    <%= link("Slack", to: "#", class: "slack-link") %>
+  </li>
 </ul>

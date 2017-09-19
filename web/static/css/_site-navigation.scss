@@ -1,9 +1,10 @@
 .site-navigation {
-  margin-bottom: $base-spacing;
-  text-align: center;
-
   li {
     display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: $small-spacing;
+    }
   }
 
   a {
@@ -11,7 +12,6 @@
     display: inline-block;
     font-size: $small-font-size;
     font-weight: 600;
-    padding: $small-spacing;
 
     &:hover,
     &:focus {
@@ -23,5 +23,5 @@
 .home-page .home-link,
 .job .jobs-link,
 .member .members-link {
-  color: $action-color;
+  color: $base-font-color;
 }

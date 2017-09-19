@@ -1,16 +1,12 @@
 <section class="section">
-  <div class="section-description">
-    <h4>Recent Jobs</h4>
+  <header class="section-header">
+    <h2>
+      Recent Jobs
+    </h2>
     <p>
-      Find UX, UI, or visual and graphic design jobs in The Triangle.
+      UX, UI, and visual and graphic design jobs in The Triangle.
     </p>
-    <p>Design jobs are free to post, and will stay online for 30 days.</p>
-    <%= link(
-      {:safe, "View More &rarr;"},
-      to: job_path(@conn, :index),
-      class: "appended-link"
-    ) %>
-  </div>
+  </header>
 
   <div class="section-content">
     <%= render Community.JobView, "job_list.html", jobs: @jobs, conn: @conn %>

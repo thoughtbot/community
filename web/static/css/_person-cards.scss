@@ -1,82 +1,40 @@
-.person-cards {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: $base-spacing;
-}
-
 .person-card {
-  @include margin(null 2% 2% null);
-  background-color: $white;
-  border: $base-border;
-  border-radius: $base-border-radius;
-  box-shadow: $base-box-shadow;;
+  @include padding($small-spacing null);
   display: flex;
-  flex-direction: column;
-  width: 100%;
 
-  @include media($large-screen-up) {
-    width: 48%;
-
-    &:nth-child(2n) {
-      margin-right: 0;
-    }
+  &:not(:last-child) {
+    border-bottom: $base-border;
   }
 }
 
 .person-card-body {
-  @include padding($large-spacing $base-spacing $base-spacing);
   flex: 1;
-  text-align: center;
 }
 
 .person-card-image {
-  @include margin(null auto $base-spacing);
-  @include size($x-large-spacing);
-  border-radius: $base-border-radius;
+  @include size($large-spacing);
   display: block;
+  margin-right: $small-spacing;
 }
 
 .person-card-name {
-  font-size: $large-font-size;
-  font-weight: 400;
   margin-bottom: $small-spacing / 3;
-  text-align: center;
 }
 
 .person-card-job {
   color: $light-font-color;
-  flex: 1;
-  font-size: $x-small-font-size;
-  margin-bottom: $base-spacing;
-  text-align: center;
-}
-
-.person-card-hire-link {
-  display: block;
-  font-size: $small-font-size;
-  margin-bottom: $base-spacing;
 }
 
 .person-card-social-items {
-  border-top: $base-border;
   display: flex;
-  text-align: center;
 }
 
 .person-card-social-item {
-  flex: 1;
-
-  & + & {
-    border-left: $base-border;
-  }
+  margin-left: $small-spacing;
 }
 
-.person-card-social-link {
-  @include border-bottom-radius($base-border-radius);
-  @include padding($small-spacing null);
-  background-color: $alabaster;
+.person-card-social-link  {
   color: $lighter-font-color;
-  display: block;
 
   &:hover,
   &:focus {

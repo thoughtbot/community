@@ -1,10 +1,4 @@
-<p class="page-description">
-  A resource for designers throughout North Carolina's Triangle to stay
-  connected and find prospective career opportunities.
-</p>
-
+<%= render "about.html", conn: @conn %>
 <%= render "recent_jobs.html", jobs: @jobs, conn: @conn %>
-
 <%= render "recent_dribbbles.html", conn: @conn %>
-
-<%= render "recent_meetups.html" %>
+<%= render "upcoming_meetups.html" %>

@@ -38,7 +38,7 @@ $(function() {
       if ($.inArray(groupName, groupNames) === -1) {
         groupNames.push(groupName);
         let meetupElement = composeMeetup(basicElement, meetup);
-        meetupElement.css("display", "flex");
+        meetupElement.css("display", "block");
         list.append(meetupElement);
       }
     });

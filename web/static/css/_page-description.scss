@@ -1,8 +1,5 @@
 .page-description {
-  @include margin(null auto $large-spacing);
-  color: $lighter-font-color;
+  font-family: $heading-font-family;
   font-size: $large-font-size;
-  font-weight: 400;
-  max-width: 36em;
-  text-align: center;
+  margin-bottom: $large-spacing;
 }

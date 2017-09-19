@@ -1,34 +1,19 @@
 .meetup-slat {
+  @include padding($small-spacing null);
   display: none;
-  flex-direction: column;
-  margin-bottom: $base-spacing;
-  padding-bottom: $base-spacing;
 
   &:not(:last-child) {
-    border-bottom: $base-border;;
+    border-bottom: $base-border;
   }
-
-  @include media($large-screen-up) {
-    flex-direction: row;
-  }
-}
-
-.meetup-time {
-  -webkit-font-smoothing: antialiased;
-  margin-bottom: $small-spacing;
-  width: 12em;
-}
-
-.meetup-hgroup {
-  flex: 1;
-}
-
-.meetup-name {
-  font-weight: 400;
 }
 
 .meetup-title {
-  font-size: $large-font-size;
   font-weight: 400;
-  margin-bottom: $x-small-spacing;
+}
+
+.meetup-name {
+  font-size: $x-small-font-size;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }

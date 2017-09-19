@@ -1,4 +1,6 @@
-<div class="container medium-container">
-  <h3 class="page-description">Add yourself to the directory.</h3>
+<section class="section">
+  <header class="section-header">
+    <h2>Add yourself to the directory</h2>
+  </header>
   <%= render "form.html", changeset: @changeset, conn: @conn, path: member_path(@conn, :create) %>
-</div>
+</section>
