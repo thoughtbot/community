@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Raleigh Design</title>
+    <title>Triangle Designers</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -16,7 +16,7 @@
     <div class="container">
       <header class="site-header">
         <h1 class="site-header-title">
-          <a href="/" class="site-header-title-link">Raleigh Design</a>
+          <a href="/" class="site-header-title-link">Triangle Designers</a>
         </h1>
         <nav role="navigation" class="site-navigation">
           <%= render Community.SharedView, "_navigation.html", conn: @conn %>
