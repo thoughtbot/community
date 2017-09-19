@@ -42,7 +42,7 @@ defmodule Community.Mixfile do
   defp deps do
     [
       {:bamboo, "~> 0.7.0"},
-      {:brady, "~> 0.0.3"},
+      {:brady, "~> 0.0.7"},
       {:cowboy, "~> 1.0"},
       {:envy, "~> 1.0"},
       {:ex_machina, "~> 1.0.2"},
@@ -50,10 +50,10 @@ defmodule Community.Mixfile do
       {:formulator, "~> 0.0.1"},
       {:gettext, "~> 0.11"},
       {:hound, "~> 1.0.2"},
-      {:html_sanitize_ex, "~> 1.0.1"},
-      {:phoenix, "~> 1.2.0"},
-      {:phoenix_ecto, "~> 3.0.0"},
-      {:phoenix_html, "~> 2.6"},
+      {:html_sanitize_ex, "~> 1.3.0"},
+      {:phoenix, "~> 1.3.0"},
+      {:phoenix_ecto, "~> 3.0.1"},
+      {:phoenix_html, "~> 2.10.4"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:postgrex, "~> 0.11.2"},
     ]
