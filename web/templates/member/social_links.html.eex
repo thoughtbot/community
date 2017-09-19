@@ -1,0 +1,25 @@
+<ul class="person-card-social-items">
+  <%= if @member.twitter_handle |> present? do %>
+    <li class="person-card-social-item">
+      <a class="person-card-social-link" href="<%= twitter_url(@member.twitter_handle) %>">
+        <%= Community.SharedView.svg("twitter") %>
+      </a>
+    </li>
+  <% end %>
+
+  <%= if @member.dribbble_username |> present? do %>
+    <li class="person-card-social-item">
+      <a class="person-card-social-link" href="<%= dribbble_url(@member.dribbble_username) %>">
+        <%= Community.SharedView.svg("dribbble") %>
+      </a>
+    </li>
+  <% end %>
+
+  <%= if @member.website |> present? do %>
+    <li class="person-card-social-item">
+      <a class="person-card-social-link" href="<%= @member.website %>">
+        <%= Community.SharedView.svg("world") %>
+      </a>
+    </li>
+  <% end %>
+</ul>

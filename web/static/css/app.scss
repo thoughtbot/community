@@ -9,7 +9,6 @@
 
 // Components
 @import "alert";
-@import "appended-link";
 @import "bulleted-list";
 @import "container";
 @import "delete-link";
@@ -33,3 +32,9 @@
 
 // Vendor Overrides
 @import "vendor-overrides/trix";
+
+.u-flex-row {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}

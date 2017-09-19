@@ -4,27 +4,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="A resource for designers throughout North
+    Carolina's Triangle to stay connected and find prospective career
+    opportunities">
 
     <title>Triangle Designers</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <%= render Community.SharedView, "typekit.html" %>
   </head>
 
   <body class="<%= Brady.body_class @conn %>">
     <%= render Community.SharedView, "flashes.html", conn: @conn %>
     <div class="container">
-      <header class="site-header">
-        <h1 class="site-header-title">
-          <a href="/" class="site-header-title-link">Triangle Designers</a>
-        </h1>
-        <nav role="navigation" class="site-navigation">
-          <%= render Community.SharedView, "_navigation.html", conn: @conn %>
-        </nav>
-      </header>
-
+      <%= render Community.SharedView, "site_header.html", conn: @conn %>
       <%= render @view_module, @view_template, assigns %>
-      <%= render "_footer.html" %>
+      <%= render Community.SharedView, "site_footer.html" %>
     </div>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>

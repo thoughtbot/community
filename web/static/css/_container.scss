@@ -2,11 +2,7 @@
   @include clearfix;
   @include margin(null auto);
   @include padding(null $small-spacing);
-  max-width: 72em;
-}
-
-.narrow-container {
-  max-width: 36em;
+  max-width: 48em;
 }
 
 .medium-container {

@@ -1,5 +1,9 @@
-<div class="container medium-container">
-  <h3 class="page-description">Contact <%= @member.name %></h3>
+<section class="section">
+  <header class="section-header">
+    <h2>Contact <%= @member.name %></h3>
+  </header>
+
+  <div class="section-content">
     <%= form_for @changeset, member_contact_path(@conn, :create, @member), fn form -> %>
       <%= render Community.SharedView, "_form_errors.html", form: @changeset %>
 
@@ -13,5 +17,6 @@
       <%= text_input form, :email %>
 
       <%= submit "Send message" %>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+</section>

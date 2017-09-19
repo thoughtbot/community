@@ -1,7 +1,11 @@
 .site-footer {
-  @include padding($large-spacing null);
-  margin-top: $x-large-spacing;
+  margin-bottom: $large-spacing;
   text-align: center;
+
+  svg {
+    @include size($large-spacing);
+    margin-bottom: $small-spacing;
+  }
 
   p {
     color: $lighter-font-color;

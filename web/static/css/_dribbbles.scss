@@ -1,13 +1,7 @@
 .dribbbles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.dribbble {
-  @include omega(2n);
-  @include span-columns(6);
-  margin-bottom: $base-spacing;
+  display: grid;
+  grid-gap: $small-spacing;
+  grid-template-columns: 1fr 1fr;
 }
 
 .dribbble-link {
