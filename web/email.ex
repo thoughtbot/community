@@ -5,7 +5,7 @@ defmodule Community.Email do
   def admin_job_posted(job) do
     new_email
     |> to(admin_emails)
-    |> from("noreply@raleighdesign.io")
+    |> from(noreply_email)
     |> subject("A new job has been posted")
     |> render("admin_job_posted.text", job: job)
   end
@@ -13,7 +13,7 @@ defmodule Community.Email do
   def job_posted(job) do
     new_email
     |> to(job.contact)
-    |> from("noreply@raleighdesign.io")
+    |> from(noreply_email)
     |> subject("Thank you for posting")
     |> render("job_posted.text", job: job)
   end
@@ -21,7 +21,7 @@ defmodule Community.Email do
   def admin_member_added(member) do
     new_email
     |> to(admin_emails)
-    |> from("noreply@raleighdesign.io")
+    |> from(noreply_email)
     |> subject("A new member has signed up!")
     |> render("admin_member_added.text", member: member)
   end
@@ -29,7 +29,7 @@ defmodule Community.Email do
   def member_added(member) do
     new_email
     |> to(member.email)
-    |> from("noreply@raleighdesign.io")
+    |> from(noreply_email)
     |> subject("Thank you for signing up")
     |> render("member_added.text", member: member)
   end
@@ -37,14 +37,18 @@ defmodule Community.Email do
   def contact_form(data) do
     new_email
     |> to(data[:to])
-    |> from("noreply@raleighdesign.io")
+    |> from(noreply_email)
     |> put_header("Reply-To", data.from)
-    |> subject("Raleigh Design Contact Form - #{data.subject}")
+    |> subject("Triangle Designers Contact Form - #{data.subject}")
     |> render("contact_form.text", body: data.body, from: data.from)
   end
 
   defp admin_emails do
     System.get_env("ADMIN_EMAILS")
     |> String.split(",")
+  end
+
+  defp noreply_email do
+    System.get_env("NOREPLY_EMAIL")
   end
 end

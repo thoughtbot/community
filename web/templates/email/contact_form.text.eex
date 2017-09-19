@@ -1,4 +1,4 @@
-Someone sent you a message from the Raleigh Design contact form!
+Someone sent you a message from the Triangle Designers contact form!
 
 Sent from: <%= @from %>
 
