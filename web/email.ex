@@ -48,7 +48,7 @@ defmodule Community.Email do
     |> String.split(",")
   end
 
-  def noreply_email do
+  defp noreply_email do
     System.get_env("NOREPLY_EMAIL")
   end
 end
