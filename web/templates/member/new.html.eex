@@ -1,6 +1,4 @@
-<section class="section">
-  <header class="section-header">
-    <h2>Add yourself to the directory</h2>
-  </header>
-  <%= render "form.html", changeset: @changeset, conn: @conn, path: member_path(@conn, :create) %>
-</section>
+<header class="section-header">
+  <h2>Add yourself to the directory</h2>
+</header>
+<%= render "form.html", changeset: @changeset, conn: @conn, path: member_path(@conn, :create) %>

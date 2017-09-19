@@ -9,10 +9,11 @@ function dribbleBucketUrl(options) {
     '&page=1';
 }
 
-function composeDribbbleShot(originalElement, url, imageUrl) {
+function composeDribbbleShot(originalElement, url, imageUrl, title) {
   let updatedElement = originalElement.clone();
   updatedElement.find("a").attr("href", url);
   updatedElement.find("img").attr("src", imageUrl);
+  updatedElement.find("img").attr("alt", title);
   return updatedElement;
 }
 
@@ -31,7 +32,7 @@ $(function() {
   }).done(function(data) {
     $.each(data, function(index, shot) {
       console.log(shot);
-      let shotElement = composeDribbbleShot(basicElement, shot.html_url, shot.images.hidpi);
+      let shotElement = composeDribbbleShot(basicElement, shot.html_url, shot.images.hidpi, shot.title);
       shotElement.show();
       list.append(shotElement);
     });

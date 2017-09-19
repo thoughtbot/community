@@ -1,7 +1,10 @@
-<section class="page-description">
+<header class="banner-body">
+  <h1 class="banner-title">
+    Building community and sharing&nbsp;ideas.
+  </h1>
   <p>
     Triangle Designers is a resource for designers throughout North Carolina's
-    Triangle to stay connected and find prospective career opportunities.
+    Triangle connect, collaborate, and find prospective career opportunities.
   </p>
 
   <p>
@@ -11,4 +14,6 @@
     ) %>
     or <a href="#">join us in Slack</a>.
   </p>
-</section>
+</header>
+
+<img class="banner-image" src="<%= static_path(@conn, "/images/illustration.svg") %>" alt="Design tools illustration">

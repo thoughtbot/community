@@ -36,3 +36,19 @@
     }
   }
 }
+
+.pill-button {
+  background-color: transparent;
+  border: 1px solid $action-color;
+  border-radius: 1em;
+  color: $action-color;
+  font-size: $x-small-font-size;
+  margin-top: $small-spacing;
+  padding: $x-small-spacing $small-spacing;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    color: shade($action-color, 20%);
+  }
+}

@@ -1,4 +1,4 @@
-<%= form_for @changeset, @path, fn form -> %>
+<%= form_for @changeset, @path, [class: "section-content"], fn form -> %>
   <%= render Community.SharedView, "_form_errors.html", form: @changeset %>
 
   <%= input form, :name, label_text: "Name" %>
