@@ -1,6 +1,10 @@
 .site-header {
   @include padding($large-spacing null);
   text-align: center;
+
+  @include media($large-screen-up) {
+    @include padding($x-large-spacing null);
+  }
 }
 
 .site-header-title-link {
@@ -12,6 +16,10 @@
   background-size: contain;
   display: block;
   transition: opacity 0.15s ease-in;
+
+  @include media($large-screen-up) {
+    @include size(370px, 68px);
+  }
 
   &:hover,
   &:focus {

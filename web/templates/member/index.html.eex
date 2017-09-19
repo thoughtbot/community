@@ -1,36 +1,34 @@
-<section class="section">
-  <header class="section-header">
-    <h2>Member Directory</h2>
-    <p>
-      User experience, user interface, and visual designers located throughout
-      The Triangle. Say hello!
-    </p>
-    <%= link(
-      {:safe, "Add yourself to the directory &rsaquo;"},
-      to: member_path(@conn, :new),
-      class: "section-header-action"
-    ) %>
-  </header>
+<header class="section-header">
+  <h2>Member Directory</h2>
+  <p>
+    User experience, user interface, and visual designers located throughout
+    The Triangle. Say hello!
+  </p>
+  <%= link(
+    {:safe, "Add yourself to the directory &rsaquo;"},
+    to: member_path(@conn, :new),
+    class: "section-header-action"
+  ) %>
+</header>
 
-  <div class="section-content">
-    <ol class="person-cards">
-      <%= for member <- @members do %>
-        <li class="person-card">
-          <img class="person-card-image" src="<%= gravatar(member.email) %>">
-          <div class="person-card-body">
-            <h4 class="person-card-name"><%= member.name %></h4>
-            <p class="person-card-job"><%= member.title %></p>
-            <%= if member.available_for_hire do %>
-              <%= link(
-                "Available for Hire",
-                to: member_contact_path(@conn, :new, member),
-                class: "person-card-hire-link"
-              ) %>
-            <% end %>
-          </div>
-          <%= render "social_links.html", conn: @conn, member: member %>
-        </li>
-      <% end %>
-    </ol>
-  </div>
-</section>
+<ol class="section-content person-cards">
+  <%= for member <- @members do %>
+    <li class="person-card">
+      <img class="person-card-image" src="<%= gravatar(member.email) %>">
+      <div class="person-card-body">
+        <h4 class="person-card-name"><%= member.name %></h4>
+        <p class="person-card-job"><%= member.title %></p>
+
+        <%= if member.available_for_hire do %>
+          <%= link(
+            "Available for Hire",
+            to: member_contact_path(@conn, :new, member),
+            class: "button pill-button"
+          ) %>
+        <% end %>
+      </div>
+
+        <%= render "social_links.html", conn: @conn, member: member %>
+    </li>
+  <% end %>
+</ol>

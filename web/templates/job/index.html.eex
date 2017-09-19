@@ -1,17 +1,15 @@
-<section class="section">
-  <header class="section-header">
-    <h2>Job Board</h2>
-    <p>
-      UX, UI, and visual and graphic design jobs in The Triangle.
-    </p>
-    <%= link(
-      {:safe, "Post a job for free &rsaquo;"},
-      to: job_path(@conn, :new),
-      class: "section-header-action"
-    ) %>
-  </header>
+<header class="section-header">
+  <h2>Job Board</h2>
+  <p>
+    UX, UI, and visual and graphic design jobs in The Triangle.
+  </p>
+  <%= link(
+    {:safe, "Post a job for free &rsaquo;"},
+    to: job_path(@conn, :new),
+    class: "section-header-action"
+  ) %>
+</header>
 
-  <div class="section-content">
-    <%= render "job_list.html", jobs: @jobs, conn: @conn %>
-  </div>
-</section>
+<div class="section-content">
+  <%= render "job_list.html", jobs: @jobs, conn: @conn %>
+</div>

@@ -1,0 +1,19 @@
+.grid-container {
+  @include margin(null auto);
+  @include padding(null $small-spacing);
+  max-width: 64em;
+
+  @include media($medium-screen-up) {
+    @include padding(null $large-spacing);
+  }
+
+  @include media($grid-breakpoint) {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-gap: $x-large-spacing $large-spacing;
+  }
+}
+
+.medium-container {
+  max-width: 40em;
+}

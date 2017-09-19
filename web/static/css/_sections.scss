@@ -1,13 +1,19 @@
-.section {
-  margin-bottom: $large-spacing;
-}
-
 .section-header {
+  grid-column: 1;
   margin-bottom: $base-spacing;
 
   p {
     color: $light-font-color;
-    margin-bottom: 0;
+  }
+
+  @include media($medium-screen-up) {
+    &::before {
+      @include size(2em, 3px);
+      background-color: $action-color;
+      content: "";
+      display: block;
+      margin-bottom: $small-spacing;
+    }
   }
 }
 
@@ -18,8 +24,16 @@
 }
 
 .section-content {
-  @include margin(null (-$small-spacing));
-  background-color: $base-background-color;
-  padding: $small-spacing;
-  box-shadow: $base-box-shadow;
+  margin-bottom: $x-large-spacing;
+
+  @include media($small-screen-only) {
+    @include margin(null (-$small-spacing));
+    background-color: $base-background-color;
+    box-shadow: $base-box-shadow;
+    padding: $small-spacing;
+  }
+
+  @include media($grid-breakpoint) {
+    grid-column: 2 / span 2;
+  }
 }

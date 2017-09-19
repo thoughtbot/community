@@ -1,0 +1,29 @@
+.banner-title {
+  font-size: 1.75em;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: $small-spacing / 2;
+
+  @include media($medium-screen-up) {
+    font-size: 2.25em;
+  }
+}
+
+.banner-body {
+  font-family: $heading-font-family;
+  font-size: $large-font-size;
+
+  @include media($grid-breakpoint) {
+    grid-column: 1 / span 2;
+  }
+}
+
+.banner-image {
+  align-self: center;
+
+  @include media(max-width ($grid-breakpoint - 1px)) {
+    @include margin($large-spacing auto);
+    display: block;
+    max-width: 75%;
+  }
+}

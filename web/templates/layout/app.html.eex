@@ -15,12 +15,13 @@
 
   <body class="<%= Brady.body_class @conn %>">
     <%= render Community.SharedView, "flashes.html", conn: @conn %>
-    <div class="container">
-      <%= render Community.SharedView, "site_header.html", conn: @conn %>
-      <%= render @view_module, @view_template, assigns %>
-      <%= render Community.SharedView, "site_footer.html" %>
-    </div>
+    <%= render Community.SharedView, "site_header.html", conn: @conn %>
 
+    <main class="grid-container">
+      <%= render @view_module, @view_template, assigns %>
+    </main>
+
+    <%= render Community.SharedView, "site_footer.html" %>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <%= render Community.SharedView, "segment.html" %>
   </body>

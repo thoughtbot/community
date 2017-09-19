@@ -1,14 +1,10 @@
-<section class="section">
-  <header class="section-header">
-    <h2>
-      Recent Jobs
-    </h2>
-    <p>
-      UX, UI, and visual and graphic design jobs in The Triangle.
-    </p>
-  </header>
+<header class="section-header">
+  <h2>Recent Jobs</h2>
+  <p>
+    UX, UI, and visual and graphic design jobs in The Triangle.
+  </p>
+</header>
 
-  <div class="section-content">
-    <%= render Community.JobView, "job_list.html", jobs: @jobs, conn: @conn %>
-  </div>
-</section>
+<div class="section-content">
+  <%= render Community.JobView, "job_list.html", jobs: @jobs, conn: @conn %>
+</div>

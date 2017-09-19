@@ -1,16 +1,14 @@
-<section class="section">
-  <header class="section-header">
-    <h2>Post a Job</h2>
-    <p>Jobs are free to post and stay online for 30 days.</p>
-    <p>Your position should be in The Triangle, and related to
-      UX, UI, or visual&nbsp;design.</p>
-  </header>
+<header class="section-header">
+  <h2>Post a Job</h2>
+  <p>Jobs are free to post and stay online for 30 days.</p>
+  <p>Your position should be in The Triangle, and related to
+    UX, UI, or visual&nbsp;design.</p>
+</header>
 
-  <%= render(
-      "form.html",
-      conn: @conn,
-      changeset: @changeset,
-      submit_text: gettext("Post your job"),
-      path: job_path(@conn, :create),
-  )%>
-</section>
+<%= render(
+    "form.html",
+    conn: @conn,
+    changeset: @changeset,
+    submit_text: gettext("Post your job"),
+    path: job_path(@conn, :create),
+)%>
