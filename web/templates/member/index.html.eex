@@ -2,8 +2,8 @@
   <div class="section-description">
     <h4>Member Directory</h4>
     <p>
-      User Experience, User Interface, and visual designers located in and
-      around Raleigh, North&nbsp;Carolina. Say hello!
+      User experience, user interface, and visual designers located throughout
+      The Triangle. Say hello!
     </p>
 
     <%= link(

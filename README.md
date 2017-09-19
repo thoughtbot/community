@@ -4,13 +4,13 @@
 
 ## What is Community?
 
-Community is an Elixir/Phoenix app that was designed primarily to run [Raleigh
-Design]. Feel free to fork it and use it for your own community!
+Community is an Elixir/Phoenix app that was designed primarily to run [Triangle
+Designers]. Feel free to fork it and use it for your own community!
 
 Right now it is very early MVP. Only the basic requirements are implemented and
 a lot of "features" are handled manually.
 
-[Raleigh Design]: https://raleighdesign.io
+[Triangle Designers]: https://triangledesigners.com
 
 ## Features
 

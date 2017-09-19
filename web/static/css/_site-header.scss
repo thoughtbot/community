@@ -14,8 +14,8 @@
 .site-header-title-link {
   @include hide-text;
   @include margin(null auto);
-  @include size(284px, 203px);
-  background-image: url("/images/logo.png");
+  @include size(343px, 63px);
+  background-image: url("/images/logo.svg");
   background-repeat: no-repeat;
   background-size: contain;
   display: block;
