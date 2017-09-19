@@ -1,4 +1,7 @@
 <header class="section-header">
   <h2>Add yourself to the directory</h2>
+  <p>Your profile will help potential clients find you for work opportunities,
+    let us feature your Dribbble shots, and help others find you on social
+    media.</p>
 </header>
 <%= render "form.html", changeset: @changeset, conn: @conn, path: member_path(@conn, :create) %>

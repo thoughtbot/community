@@ -1,9 +1,14 @@
-<div class="container medium-container">
-  <%= render(
-      "form.html",
-      conn: @conn,
-      changeset: @changeset,
-      submit_text: gettext("Save"),
-      path: job_path(@conn, :update, @changeset.data.id, token: @token),
-  )%>
-</div>
+<header class="section-header">
+  <h2>Edit job</h2>
+  <p>Jobs are free to post and stay online for 30 days.</p>
+  <p>Your position should be in The Triangle, and related to
+    UX, UI, or visual&nbsp;design.</p>
+</header>
+
+<%= render(
+  "form.html",
+  conn: @conn,
+  changeset: @changeset,
+  submit_text: gettext("Save"),
+  path: job_path(@conn, :update, @changeset.data.id, token: @token),
+)%>

@@ -1,22 +1,18 @@
-<section class="section">
-  <header class="section-header">
-    <h2>Contact <%= @member.name %></h3>
-  </header>
+<header class="section-header">
+  <h2>Send a message to <%= @member.name %></h2>
+</header>
 
-  <div class="section-content">
-    <%= form_for @changeset, member_contact_path(@conn, :create, @member), fn form -> %>
-      <%= render Community.SharedView, "_form_errors.html", form: @changeset %>
+<%= form_for @changeset, member_contact_path(@conn, :create, @member), [class: "section-content"], fn form -> %>
+  <%= render Community.SharedView, "_form_errors.html", form: @changeset %>
 
-      <%= label form, :subject, "Subject" %>
-      <%= text_input form, :subject %>
+  <%= label form, :subject, "Subject" %>
+  <%= text_input form, :subject %>
 
-      <%= label form, :body, "Body" %>
-      <%= textarea form, :body %>
+  <%= label form, :body, "Body" %>
+  <%= textarea form, :body %>
 
-      <%= label form, :email, "Your email address" %>
-      <%= text_input form, :email %>
+  <%= label form, :email, "Your email address" %>
+  <%= text_input form, :email %>
 
-      <%= submit "Send message" %>
-    <% end %>
-  </div>
-</section>
+  <%= submit "Send message" %>
+<% end %>

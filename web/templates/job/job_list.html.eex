@@ -1,5 +1,5 @@
 <%= if Enum.any?(@jobs) do %>
-  <ol class="card">
+  <ol>
     <%= for job <- @jobs  do %>
       <li class="job-slat">
         <div class="job-slat-hgroup">

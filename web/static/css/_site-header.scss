@@ -5,6 +5,10 @@
   @include media($large-screen-up) {
     @include padding($x-large-spacing null);
   }
+
+  @include media($wide-screen) {
+    padding-top: $x-large-spacing * 1.5;
+  }
 }
 
 .site-header-title-link {

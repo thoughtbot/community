@@ -2,7 +2,7 @@
   <%= render Community.SharedView, "_form_errors.html", form: @changeset %>
 
   <%= input form, :name, label_text: "Name" %>
-  <%= input form, :title, placeholder: "UI designer at Facebook" %>
+  <%= input form, :title, placeholder: "Freelancing UX Designer" %>
   <%= input form, :twitter_handle %>
   <%= input form, :dribbble_username %>
   <%= input form, :website, placeholder: "http://example.com" %>

@@ -1,8 +1,7 @@
 <header class="section-header">
   <h2>Member Directory</h2>
   <p>
-    User experience, user interface, and visual designers located throughout
-    The Triangle. Say hello!
+    UX, UI, and visual designers located throughout The Triangle. Say hello!
   </p>
   <%= link(
     {:safe, "Add yourself to the directory &rsaquo;"},
