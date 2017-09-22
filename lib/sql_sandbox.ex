@@ -32,6 +32,6 @@ defmodule Community.Phoenix.Ecto.SQL.Sandbox do
   defp allow_sandbox_access(conn, _sandbox), do: conn
 
   defp to_pid(string) do
-    string |> String.to_char_list |> :erlang.list_to_pid
+    string |> String.to_charlist |> :erlang.list_to_pid
   end
 end

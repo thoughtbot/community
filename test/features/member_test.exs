@@ -16,7 +16,7 @@ defmodule Community.Feature.MemberTest do
     check_label("member_available_for_hire")
 
     click_role "member-save"
-    assert String.contains?(visible_page_text, "Thanks for signing up!")
+    assert String.contains?(visible_page_text(), "Thanks for signing up!")
 
     last_member = Repo.one(Member)
     assert last_member.name == "Scott Summers"
@@ -37,7 +37,7 @@ defmodule Community.Feature.MemberTest do
 
     click_on "Available for Hire"
 
-    assert visible_page_text =~ member.name
+    assert visible_page_text() =~ member.name
 
     email_data = %{
       subject: "Hi there",
@@ -48,9 +48,9 @@ defmodule Community.Feature.MemberTest do
     fill_in "contact_form", "subject", with: email_data.subject
     fill_in "contact_form", "body", with: email_data.body
     fill_in "contact_form", "email", with: email_data.from
-    submit
+    submit()
 
-    assert flash_text =~ "Your email has been sent"
+    assert flash_text() =~ "Your email has been sent"
     assert_delivered_email Community.Email.contact_form(email_data)
   end
 
@@ -59,20 +59,20 @@ defmodule Community.Feature.MemberTest do
 
     navigate_to member_path(@endpoint, :edit, member, token: member.token)
     fill_in "member", "name", with: "New Name"
-    submit
+    submit()
 
-    assert flash_text =~ "Member updated"
-    assert visible_page_text =~ "New Name"
+    assert flash_text() =~ "Member updated"
+    assert visible_page_text() =~ "New Name"
   end
 
   test "deleting a member" do
     member = insert(:member)
     navigate_to member_path(@endpoint, :edit, member, token: member.token)
 
-    ignore_confirm_dialog
+    ignore_confirm_dialog()
     click_on "Delete your profile"
 
-    assert flash_text =~ "Your profile has been deleted"
+    assert flash_text() =~ "Your profile has been deleted"
     refute Repo.get(Member, member.id)
   end
 

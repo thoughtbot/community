@@ -12,7 +12,7 @@ defmodule Community.Repo.Migrations.CreateJob do
       add :approved, :boolean, default: false, null: false
       add :preview, :boolean, default: true, null: false
 
-      timestamps
+      timestamps()
     end
   end
 end

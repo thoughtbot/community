@@ -15,7 +15,7 @@ defmodule Community.Job do
     field :preview, :boolean, default: true
     field :token, Ecto.UUID, default: Ecto.UUID.generate
 
-    timestamps
+    timestamps()
   end
 
   @required_fields [

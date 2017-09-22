@@ -2,34 +2,37 @@ defmodule Community.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :community,
-     version: "0.0.1",
-     elixir: "~> 1.0",
-     elixirc_paths: elixirc_paths(Mix.env),
-     compilers: [:phoenix, :gettext] ++ Mix.compilers,
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     aliases: aliases,
-     deps: deps]
+    [
+      app: :community,
+      version: "0.0.1",
+      elixir: "~> 1.0",
+      elixirc_paths: elixirc_paths(Mix.env),
+      compilers: [:phoenix, :gettext] ++ Mix.compilers,
+      build_embedded: Mix.env == :prod,
+      start_permanent: Mix.env == :prod,
+      aliases: aliases(),
+      deps: deps(),
+    ]
   end
 
   # Configuration for the OTP application.
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {Community, []},
-     applications: [
-       :bamboo,
-       :cowboy,
-       :ex_machina,
-       :gettext,
-       :logger,
-       :phoenix,
-       :phoenix_ecto,
-       :phoenix_html,
-       :postgrex,
-     ]
-   ]
+    [
+      mod: {Community, []},
+      applications: [
+        :bamboo,
+        :cowboy,
+        :ex_machina,
+        :gettext,
+        :logger,
+        :phoenix,
+        :phoenix_ecto,
+        :phoenix_html,
+        :postgrex,
+      ]
+    ]
   end
 
   # Specifies which paths to compile per environment.
@@ -55,6 +58,7 @@ defmodule Community.Mixfile do
       {:phoenix_ecto, "~> 3.0.0"},
       {:phoenix_html, "~> 2.6"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
+      {:plug, "~> 1.3.0"},
       {:postgrex, "~> 0.11.2"},
     ]
   end

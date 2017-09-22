@@ -5,7 +5,7 @@ defmodule Community.MemberController do
 
   def index(conn, _params) do
     conn
-    |> assign(:members, approved_members)
+    |> assign(:members, approved_members())
     |> render("index.html")
   end
 
