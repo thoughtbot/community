@@ -3,15 +3,45 @@
 # Exit if any subcommand fails
 set -e
 
-cp .sample.env .env
+# set up environment variables if not set up yet
+if [ ! -f .env ]; then
+  echo "Copying .env file"
+  cp .sample.env .env
+fi
 
-# Set up phoenix
+# check if phantomjs is installed
+if ! command -v phantomjs >/dev/null; then
+  echo "You must install PhantomJS 2.x before continuing."
+  exit 1
+else
+  phantomjs_version=$(phantomjs -v)
+  major_version="${phantomjs_version%.*.*}"
+
+  if [ $major_version -lt 2 ]; then
+    echo "Please update your PhantomJS to 2.x before continuing."
+    exit 1
+  fi
+fi
+
+if [ -z "$CI" ]; then
+  echo "Removing previous build artifacts"
+  rm -rf node_modules
+  rm -rf deps _build
+  asdf install
+fi
+
+echo "Installing dependencies and compiling"
 mix local.hex --force
 mix local.rebar --force
 mix deps.get
 mix compile
 
-# Set up database
-mix development_seeds
+echo "Setting up the database"
+mix ecto.reset
+MIX_ENV="test" mix ecto.reset
+if [ -z "$CI" ]; then
+  mix development_seeds
+fi
 
+echo "Installing npm dependencies"
 npm install --progress=false

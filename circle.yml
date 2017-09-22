@@ -1,21 +1,56 @@
-machine:
-  pre:
-    - nvm install 5.6.0
-  node:
-    version: 5.6.0
-dependencies:
-  override:
-    - sudo bin/install_phantom
-    - bin/ci_setup
-    - rm -rf node_modules
-    - npm install --progress=false
-  cache_directories:
-    - ~/dependencies
-    - ~/.mix
-    - ~/.asdf
-    - ~/.node_modules
-    - _build
-    - deps
-test:
-  override:
-    - bin/ci_test
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/elixir:1.3.1-browsers
+        environment:
+          PHANTOMJS_VERSION: 2.1.1
+          CI: true
+    working_directory: /home/circleci/community
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - build-cache-{{ .Branch }}
+          - build-cache
+      - restore_cache:
+          keys:
+          - dependency-cache-{{ .Branch }}-{{ checksum "mix.lock" }}
+          - dependency-cache-{{ .Branch }}
+          - dependency-cache
+      - restore_cache:
+          keys:
+          - npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          - npm-cache-{{ .Branch }}
+          - npm-cache
+      - run:
+          name: Install NPM
+          command: |
+            curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+      - run: bin/setup
+      - run: bin/test_suite
+      - save_cache:
+          key: dependency-cache-{{ .Branch }}-{{ checksum "mix.lock" }}
+          paths: "deps"
+      - save_cache:
+          key: dependency-cache-{{ .Branch }}
+          paths: "deps"
+      - save_cache:
+          key: dependency-cache
+          paths: "deps"
+      - save_cache:
+          key: build-cache-{{ .Branch }}
+          paths: "_build"
+      - save_cache:
+          key: build-cache
+          paths: "_build"
+      - save_cache:
+          key: npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths: "node_modules"
+      - save_cache:
+          key: npm-cache-{{ .Branch }}
+          paths: "node_modules"
+      - save_cache:
+          key: npm-cache
+          paths: "node_modules"
