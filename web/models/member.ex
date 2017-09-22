@@ -7,7 +7,7 @@ defmodule Community.Member do
     field :name, :string
     field :email, :string
     field :title, :string
-    field :approved, :boolean, default: false
+    field :approved, :boolean, default: true
     field :website, :string
     field :twitter_handle, :string
     field :dribbble_username, :string

@@ -2,5 +2,10 @@ New member signup!
 
 <%= @member.name %>
 
-You can approve it at the link below.
+<%= if @member.approved do %>
+  You can manage the signup here:
+<% else %>
+  You can approve it at the link below.
+<% end %>
+
 <%= admin_member_url(Community.Endpoint, :edit, @member) %>

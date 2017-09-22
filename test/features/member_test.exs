@@ -25,7 +25,7 @@ defmodule Community.Feature.MemberTest do
     assert last_member.twitter_handle == "cyclops"
     assert last_member.dribbble_username == "cyclopsdesign"
     assert last_member.available_for_hire == true
-    assert last_member.approved == false
+    assert last_member.approved == true
 
     assert_delivered_email Community.Email.member_added(last_member)
     assert_delivered_email Community.Email.admin_member_added(last_member)
