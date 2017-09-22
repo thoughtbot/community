@@ -2,7 +2,11 @@ New job posted!
 
 <%= @job.title %>
 
-You can approve or delete the job here:
+<%= if @job.approved do %>
+  You can manage the job here:
+<% else %>
+  You must approve the job before it's listed publicly:
+<% end %>
 
 <%= admin_job_url(Community.Endpoint, :show, @job) %>
 

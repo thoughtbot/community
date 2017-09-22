@@ -11,7 +11,7 @@ defmodule Community.Job do
     field :company_url, :string
     field :description, :string
     field :instructions, :string
-    field :approved, :boolean, default: false
+    field :approved, :boolean, default: true
     field :preview, :boolean, default: true
     field :token, Ecto.UUID, default: Ecto.UUID.generate
 

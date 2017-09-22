@@ -1,4 +1,8 @@
-You posted a job! It's hidden for now, but will go live once an admin approves it.
+You posted a job!
+
+<%= unless @job.approved do %>
+  It's hidden for now, but will go live once an admin approves it.
+<% end %>
 
 Title: <%= @job.title %>
 
