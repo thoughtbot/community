@@ -7,7 +7,7 @@ defmodule Community.Feature.JobTest do
 
     click_role "publish-job"
 
-    assert flash_text =~ "Job published"
+    assert flash_text() =~ "Job published"
     assert text_for_role("approval") =~ "Your post is hidden"
     refute text_for_role("preview") == "Make some changes"
   end
@@ -19,19 +19,19 @@ defmodule Community.Feature.JobTest do
     fill_in "job", "title", with: "New Title"
     fill_in "job", "company", with: "New Company"
     fill_in "job", "company_url", with: "http://example.com"
-    submit
+    submit()
 
-    assert flash_text =~ "Job updated"
-    assert visible_page_text =~ "New Title"
+    assert flash_text() =~ "Job updated"
+    assert visible_page_text() =~ "New Title"
   end
 
   test "deleting a job" do
     job = insert(:job, preview: false)
     navigate_to job_path(@endpoint, :show, job, token: job.token)
 
-    ignore_confirm_dialog
+    ignore_confirm_dialog()
     click_on "Delete Post"
 
-    assert flash_text =~ "Job deleted"
+    assert flash_text() =~ "Job deleted"
   end
 end

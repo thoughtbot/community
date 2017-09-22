@@ -16,9 +16,6 @@ defmodule Community.ContactForm do
     :subject,
   ]
 
-  @optional_fields [
-  ]
-
   def changeset(model, params \\ %{})
   def changeset(model, params) do
     model

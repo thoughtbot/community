@@ -6,13 +6,13 @@ defmodule Community.Feature.AdminTest do
 
     navigate_to "/admin/jobs"
 
-    assert flash_text =~ "You must log in to see this page"
+    assert flash_text() =~ "You must log in to see this page"
 
     navigate_to "/session/new"
 
     fill_in :session, :password, with: "password"
-    submit
+    submit()
 
-    assert visible_page_text =~ job.title
+    assert visible_page_text() =~ job.title
   end
 end

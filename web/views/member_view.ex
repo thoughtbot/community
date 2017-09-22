@@ -10,7 +10,7 @@ defmodule Community.MemberView do
   defp hash_email(email) do
     email
     |> String.downcase
-    |> String.strip
+    |> String.trim
     |> md5_hash
   end
 

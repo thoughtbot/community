@@ -15,7 +15,7 @@ defmodule Community.Member do
     field :available_for_hire, :boolean, default: false
     field :token, Ecto.UUID, default: Ecto.UUID.generate
 
-    timestamps
+    timestamps()
   end
 
   @allowed_fields [

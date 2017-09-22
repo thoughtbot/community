@@ -35,11 +35,11 @@ defmodule Mix.Tasks.DevelopmentSeeds do
       title: "Cat Herder",
     })
 
-    for title <- titles do
+    for title <- titles() do
       insert(
         :job,
         approved: true,
-        company: Enum.random(companies),
+        company: Enum.random(companies()),
         title: "#{title}"
       )
     end

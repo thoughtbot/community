@@ -4,7 +4,7 @@ defmodule Community.JobController do
 
   def index(conn, _params) do
     conn
-    |> assign(:jobs, approved_jobs)
+    |> assign(:jobs, approved_jobs())
     |> render("index.html")
   end
 

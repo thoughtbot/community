@@ -8,7 +8,7 @@ defmodule Community.Repo.Migrations.CreateMember do
       add :company_name, :string, null: false
       add :approved, :boolean, default: false, null: false
 
-      timestamps
+      timestamps()
     end
 
   end

@@ -13,7 +13,7 @@ defmodule Community.SessionController do
       |> put_flash(:info, "Welcome home!")
       |> redirect(to: redirect_path(conn))
     else
-      prevent_brute_force_attacks
+      prevent_brute_force_attacks()
 
       conn
       |> put_flash(:error, "NOPE")
