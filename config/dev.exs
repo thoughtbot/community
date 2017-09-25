@@ -11,7 +11,7 @@ config :community, Community.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin"]]
+  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin", cd: Path.expand("../", __DIR__)]]
 
 # Watch static and templates for browser reloading.
 config :community, Community.Endpoint,
@@ -35,6 +35,7 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :community, Community.Repo,
   adapter: Ecto.Adapters.Postgres,
+  username: System.get_env("POSTGRES_USER") || "postgres",
   database: "community_dev",
   hostname: "localhost",
   pool_size: 10
