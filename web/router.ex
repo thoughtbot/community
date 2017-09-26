@@ -15,7 +15,7 @@ defmodule Community.Router do
   end
 
   scope "/", Community do
-    pipe_through :browser
+    pipe_through [:browser, :public_layout]
 
     get "/", HomePageController, :show, as: :root
     get "/pages/:id", PageController, :show
@@ -30,9 +30,17 @@ defmodule Community.Router do
   end
 
   scope "/admin", Community, as: :admin do
-    pipe_through [:browser, Community.RequireAdmin]
+    pipe_through [:browser, :admin_layout, Community.RequireAdmin]
 
     resources "/jobs", Admin.JobController
     resources "/members", Admin.MemberController
+  end
+
+  pipeline :admin_layout do
+    plug :put_layout, {Community.LayoutView, "admin.html"}
+  end
+
+  pipeline :public_layout do
+    plug :put_layout, {Community.LayoutView, "public.html"}
   end
 end

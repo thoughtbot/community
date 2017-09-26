@@ -43,6 +43,19 @@ defmodule Community.Web do
     quote do
       use Phoenix.View, root: "web/templates"
 
+      def render_embeddable(module, template, assigns) do
+        if assigns[:inner] do
+          assigns.inner
+        else
+          render module, template, assigns
+        end
+      end
+
+      def within(_layout, template, assigns, do: contents) do
+        assigns = Map.put(assigns, :inner, contents)
+        render_template(template, assigns)
+      end
+
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
 

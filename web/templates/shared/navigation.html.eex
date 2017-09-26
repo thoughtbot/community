@@ -1,18 +1,23 @@
-<ul>
-  <li>
-    <%= link("Home", to: "/", class: "home-link") %>
+<ul class="navigation-list">
+  <li class="navigation-logo-item">
+    <a href="/" class="logo-link">
+      <%= Community.SharedView.svg("logo") %>
+    </a>
   </li>
-  <li>
-    <%= link("Job Board", to: job_path(@conn, :index), class: "jobs-link") %>
+  <li class="navigation-item">
+    <%= link("Job Board", to: job_path(@conn, :index), class: "navigation-link jobs-link") %>
   </li>
-  <li>
+  <li class="navigation-item">
     <%= link(
       "Member Directory",
       to: member_path(@conn, :index),
-      class: "members-link"
+      class: "navigation-link members-link"
     ) %>
   </li>
-  <li>
-    <%= link("Slack", to: "#", class: "slack-link") %>
+  <li class="navigation-item">
+    <%= link("Slack", to: "#", class: "navigation-link slack-link") %>
+  </li>
+  <li class="navigation-item">
+    <%= link("Partners", to: "#", class: "navigation-link partners-link") %>
   </li>
 </ul>

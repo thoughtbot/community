@@ -1,0 +1,22 @@
+<%= within Community.LayoutView, "app.html", assigns do %>
+  <header>
+    <nav role="navigation" class="container">
+      <ul class="navigation-list">
+        <li class="navigation-logo-item">
+          <a href="/" class="logo-link">
+            <%= Community.SharedView.svg("logo") %>
+          </a>
+        </li>
+        <li class="navigation-item">
+          <%= link("Jobs", to: admin_job_path(@conn, :index), class: "navigation-link jobs-link") %>
+        </li>
+        <li class="navigation-item">
+          <%= link("Members", to: admin_member_path(@conn, :index), class: "navigation-link members-link") %>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    <%= render_embeddable @view_module, @view_template, assigns %>
+  </main>
+<% end %>

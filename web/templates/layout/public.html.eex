@@ -1,0 +1,7 @@
+<%= within Community.LayoutView, "app.html", assigns do %>
+  <%= render Community.SharedView, "site_header.html", conn: @conn %>
+  <main class="container grid-container">
+    <%= render_embeddable @view_module, @view_template, assigns %>
+  </main>
+  <%= render Community.SharedView, "site_footer.html" %>
+<% end %>

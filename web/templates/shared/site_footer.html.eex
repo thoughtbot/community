@@ -1,9 +1,9 @@
-<footer class="site-footer">
-  <a href="http://thoughtbot.com/raleigh">
-    <%= Community.SharedView.svg("ralph") %>
+<footer class="site-footer container">
+  <a href="https://github.com/thoughtbot/community">
+    <%= Community.SharedView.svg("github") %>
   </a>
   <p>
-    Site design &amp; development by
-    <a href="http://thoughtbot.com/raleigh">thoughtbot</a>.
+    Be the change you'd like to see and contribute on
+    <a href="https://github.com/thoughtbot/community">GitHub</a>.
   </p>
 </footer>

@@ -1,8 +1,5 @@
 <header class="site-header">
-  <h1 class="site-header-title">
-    <a href="/" class="site-header-title-link">Triangle Designers</a>
-  </h1>
-  <nav role="navigation" class="site-navigation">
+  <nav role="navigation" class="container">
     <%= render Community.SharedView, "navigation.html", conn: @conn %>
   </nav>
 </header>

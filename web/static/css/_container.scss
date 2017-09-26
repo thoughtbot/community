@@ -1,4 +1,4 @@
-.grid-container {
+.container {
   @include margin(null auto);
   @include padding(null $small-spacing);
   max-width: 48em;
@@ -8,13 +8,14 @@
   }
 
   @include media($grid-breakpoint) {
-    display: grid;
-    grid-gap: $x-large-spacing $large-spacing;
-    grid-template-columns: 2fr 1fr 2fr;
-    max-width: 64em;
+    max-width: 72em;
   }
 }
 
-.medium-container {
-  max-width: 40em;
+.grid-container {
+  @include media($grid-breakpoint) {
+    display: grid;
+    grid-gap: $x-large-spacing $large-spacing;
+    grid-template-columns: 2fr 1fr 2fr;
+  }
 }

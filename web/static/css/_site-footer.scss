@@ -8,12 +8,11 @@
   }
 
   p {
-    color: $lighter-font-color;
-    font-size: $x-small-font-size;
+    color: $light-font-color;
   }
 
   a {
-    color: $light-font-color;
+    color: $base-font-color;
 
     &:hover,
     &:focus {

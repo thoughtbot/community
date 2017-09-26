@@ -1,27 +1,63 @@
-.site-navigation {
-  li {
-    display: inline-block;
+$_nav-breakpoint: 800px;
 
-    &:not(:last-child) {
-      margin-right: $small-spacing;
-    }
+.navigation-list {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: $large-spacing;
+}
+
+.navigation-logo-item {
+  @include padding($base-spacing null $small-spacing);
+  margin-right: auto;
+  width: 100%;
+
+  @include media($_nav-breakpoint) {
+    padding: 0;
+    width: auto;
   }
+}
 
-  a {
-    color: $lighter-font-color;
-    display: inline-block;
-    font-size: $small-font-size;
-    font-weight: 600;
+.navigation-item {
+  margin-right: $small-spacing;
+
+  @include media($_nav-breakpoint) {
+    @include margin(null 0 null $base-spacing);
+  }
+}
+
+.navigation-link {
+  color: $light-font-color;
+  display: block;
+  font-size: $small-font-size;
+  font-weight: 600;
+
+  @include media($_nav-breakpoint) {
+    line-height: 8em;
 
     &:hover,
     &:focus {
-      color: $action-color;
+      box-shadow: inset 0 4px 0 0 $action-color;
+      color: $light-font-color;
+      text-decoration: none;
     }
   }
 }
 
-.home-page .home-link,
+.logo-link {
+  color: $base-font-color;
+
+  svg {
+    display: block;
+  }
+}
+
 .job .jobs-link,
 .member .members-link {
   color: $base-font-color;
+  box-shadow: 0 2px 0 0 $action-color;
+
+  @include media($_nav-breakpoint) {
+    box-shadow: inset 0 4px 0 0 $action-color;
+  }
 }

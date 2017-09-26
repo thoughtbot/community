@@ -10,7 +10,7 @@
 // Components
 @import "alert";
 @import "bulleted-list";
-@import "grid-container";
+@import "container";
 @import "delete-link";
 @import "dribbbles";
 @import "empty-states";
@@ -26,14 +26,7 @@
 @import "person-cards";
 @import "sections";
 @import "site-footer";
-@import "site-header";
 @import "site-navigation";
 
 // Vendor Overrides
 @import "vendor-overrides/trix";
-
-.u-flex-row {
-  align-items: flex-start;
-  display: flex;
-  justify-content: space-between;
-}

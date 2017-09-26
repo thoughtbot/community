@@ -7,7 +7,6 @@
     <meta name="description" content="A resource for designers throughout North
     Carolina's Triangle to stay connected and find prospective career
     opportunities">
-
     <title>Triangle Designers</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <%= render Community.SharedView, "typekit.html" %>
@@ -15,13 +14,7 @@
 
   <body class="<%= Brady.body_class @conn %>">
     <%= render Community.SharedView, "flashes.html", conn: @conn %>
-    <%= render Community.SharedView, "site_header.html", conn: @conn %>
-
-    <main class="grid-container">
-      <%= render @view_module, @view_template, assigns %>
-    </main>
-
-    <%= render Community.SharedView, "site_footer.html" %>
+    <%= render_embeddable @view_module, @view_template, assigns %>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <%= render Community.SharedView, "segment.html" %>
   </body>
