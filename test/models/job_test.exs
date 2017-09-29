@@ -13,15 +13,15 @@ defmodule Community.JobTest do
   end
 
   test "validates the url" do
-    attributes = params_for(:job, %{company_url: "something.com"})
+    attributes = params_for(:job, %{application_url: "something.com"})
     changeset = Job.changeset(%Job{}, attributes)
     refute changeset.valid?
-    assert changeset.errors[:company_url] == {"must start with http(s)", []}
+    assert changeset.errors[:application_url] == {"must start with http(s)", []}
 
-    http_attributes = params_for(:job, %{company_url: "http://"})
+    http_attributes = params_for(:job, %{application_url: "http://"})
     assert  Job.changeset(%Job{}, http_attributes).valid?
 
-    https_attributes = params_for(:job, %{company_url: "https://"})
+    https_attributes = params_for(:job, %{application_url: "https://"})
     assert  Job.changeset(%Job{}, https_attributes).valid?
   end
 

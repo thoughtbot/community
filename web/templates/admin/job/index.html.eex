@@ -7,7 +7,6 @@
       <th>Company</th>
       <th>Contact</th>
       <th>Approved</th>
-      <th>Preview</th>
 
       <th></th>
     </tr>
@@ -19,7 +18,6 @@
       <td><%= job.company %></td>
       <td><%= job.contact %></td>
       <td><%= job.approved %></td>
-      <td><%= job.preview %></td>
 
       <td class="text-right">
         <%= link "Show", to: admin_job_path(@conn, :show, job), class: "btn btn-default btn-xs" %>
