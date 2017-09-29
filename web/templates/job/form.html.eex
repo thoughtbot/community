@@ -4,11 +4,8 @@
   <div class="form-group">
     <%= input form, :title, label_text: "Job Title" %>
     <%= input form, :company, label_text: "Company Name" %>
-    <%= input form, :company_url, label_text: "Company URL", placeholder: "http://example.com" %>
+    <%= input form, :application_url, label_text: "Application URL", placeholder: "http://example.com" %>
     <%= input form, :city %>
-
-    <%= trix_input form, :description, class: "longform-field" %>
-    <%= trix_input form, :instructions, placeholder: "Send a resume to jobs@example.com" %>
 
     <%= label form, :contact, "Email Address" %>
     <p class="notation">

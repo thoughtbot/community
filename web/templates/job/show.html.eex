@@ -1,11 +1,5 @@
-<%= if @job.preview do %>
-  <p class="page-description">
-    Preview Your Job Post
-  </p>
-<% end %>
-
 <div class="container medium-container">
-  <%= if !@job.preview && can_edit?(@job, @token) do %>
+  <%= if can_edit?(@job, @token) do %>
     <div class="alert">
       <%= Community.SharedView.svg("info") %>
 
@@ -40,43 +34,22 @@
       </div>
     </div>
   <% end %>
-
   <div class="job-sheet">
     <header class="job-header">
       <div class="job-header-hgroup">
         <h3 class="job-title"><%= @job.title %></h3>
         <p class="job-company">
-          <%= link(@job.company, to: @job.company_url) %>
+          <%= link(@job.company, to: @job.application_url) %>
         </p>
       </div>
 
       <p class="job-city"><%= @job.city %></p>
     </header>
-
-    <div class="trix-content">
-      <%= raw sanitize(@job.description) %>
-    </div>
-
-    <h4 class="job-subtitle">Apply for this job</h4>
-    <div class="trix-content">
-      <%= raw sanitize(@job.instructions) %>
-    </div>
   </div>
-  <%= if @job.preview do %>
-    <div class="job-preview-actions" data-role="preview">
-      <%= link(
-          {:safe, "&larr; Make some changes"},
-          to: job_path(@conn, :edit, @job, token: @job.token)
-      ) %>
-
-      <%= button(
-          {:safe, "Looks good! &rarr;"},
-          to: job_publish_path(@conn, :create, @job.id, token: @job.token),
-          data: [
-            role: "publish-job"
-          ],
-          form: [class: ""],
-      ) %>
-    </div>
-  <% end %>
+  <div class="job-preview-actions" data-role="preview">
+    <%= link(
+        {:safe, "&larr; Make some changes"},
+        to: job_path(@conn, :edit, @job, token: @job.token)
+    ) %>
+  </div>
 </div>

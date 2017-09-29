@@ -12,7 +12,6 @@ defmodule Community.JobControllerTest do
         job = Repo.one(Job)
         assert redirected_to(conn) =~ job_path(conn, :show, job.id, token: job.token)
         assert job.title == "designer"
-        assert job.preview == true
 
         assert_delivered_email Community.Email.job_posted(job)
         assert_delivered_email Community.Email.admin_job_posted(job)
@@ -48,40 +47,28 @@ defmodule Community.JobControllerTest do
   end
 
   describe "GET /jobs/:id" do
-    context "when the job is approved" do
-      it "shows the job", %{conn: conn} do
-        approved = build(:job, %{
-          city: "Dvegas",
-          company: "big company name",
-          title: "approved",
-        }) |> approve |> insert
+    it "shows the job", %{conn: conn} do
+      approved = build(:job, %{
+        city: "Dvegas",
+        company: "big company name",
+        title: "approved",
+      }) |> approve |> insert
 
-        conn = get conn, "/jobs/#{approved.id}"
+      conn = get conn, "/jobs/#{approved.id}"
 
-        assert html_response(conn, 200) =~ approved.title
-        assert html_response(conn, 200) =~ approved.company
-        assert html_response(conn, 200) =~ approved.city
-      end
+      assert html_response(conn, 200) =~ approved.title
+      assert html_response(conn, 200) =~ approved.company
+      assert html_response(conn, 200) =~ approved.city
     end
+  end
 
-    context "when the job is not approved" do
-      it "redirects to the root", %{conn: conn} do
-        job = insert(:job, approved: false)
+  context "when the job is not approved" do
+    it "redirects to the root", %{conn: conn} do
+      job = insert(:job, approved: false)
 
-        conn = get conn, "/jobs/#{job.id}"
+      conn = get conn, "/jobs/#{job.id}"
 
-        assert redirected_to(conn, 302) == "/"
-      end
-    end
-
-    context "when the job is not approved but the correct token is provided" do
-      it "renders the show", %{conn: conn} do
-        job = insert(:job, approved: false, preview: false)
-
-        conn = get conn, "/jobs/#{job.id}?token=#{job.token}"
-
-        assert html_response(conn, 200) =~ "Your post is hidden"
-      end
+      assert redirected_to(conn, 302) == "/"
     end
   end
 end

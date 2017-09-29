@@ -7,10 +7,7 @@ defmodule Community.Factory do
       city: "Raleigh",
       contact: sequence(:contact, &"contact-#{&1}@example.com"),
       company: "thoughtbot",
-      company_url: "http://www.example.com",
-      description: "A great job",
-      instructions: "SIGN UP NOW!",
-      preview: true,
+      application_url: "http://www.example.com",
       title: "title",
     }
   end

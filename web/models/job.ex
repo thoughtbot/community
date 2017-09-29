@@ -4,33 +4,27 @@ defmodule Community.Job do
   alias Community.Validations
 
   schema "jobs" do
-    field :title, :string
+    field :application_url, :string
+    field :approved, :boolean, default: false
+    field :city, :string
     field :company, :string
     field :contact, :string
-    field :city, :string
-    field :company_url, :string
-    field :description, :string
-    field :instructions, :string
-    field :approved, :boolean, default: false
-    field :preview, :boolean, default: true
+    field :title, :string
     field :token, Ecto.UUID, default: Ecto.UUID.generate
 
     timestamps()
   end
 
   @required_fields [
-    :contact,
+    :application_url,
     :city,
     :company,
-    :company_url,
-    :description,
-    :instructions,
+    :contact,
     :title,
   ]
 
   @optional_fields [
     :approved,
-    :preview,
   ]
 
   @doc """
@@ -42,7 +36,7 @@ defmodule Community.Job do
   def changeset(model, params \\ %{}) do
     model
     |> cast(params, @required_fields)
-    |> Validations.validate_url_format(:company_url)
+    |> Validations.validate_url_format(:application_url)
     |> Validations.validate_email_format(:contact)
     |> validate_required(@required_fields)
   end
@@ -50,13 +44,8 @@ defmodule Community.Job do
   def admin_changeset(model, params \\ %{}) do
     model
     |> cast(params, @required_fields, @optional_fields)
-    |> Validations.validate_url_format(:company_url)
+    |> Validations.validate_url_format(:application_url)
     |> validate_required(@required_fields)
-  end
-
-  def publish_changeset(model, params \\ %{}) do
-    model
-    |> cast(params, [:preview])
   end
 
   def approved(model) do
