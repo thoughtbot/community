@@ -30,6 +30,9 @@ $(function() {
     url: dribbleBucketUrl({bucket: bucketId, token: accessToken, count: count}),
     context: document.body
   }).done(function(data) {
+    $("#dribbble-placeholder").fadeOut("medium", function() {
+      $("#dribbbles").fadeIn("medium");
+    })
     $.each(data, function(index, shot) {
       console.log(shot);
       let shotElement = composeDribbbleShot(basicElement, shot.html_url, shot.images.hidpi, shot.title);
@@ -39,3 +42,4 @@ $(function() {
   });
   basicElement.remove();
 });
+
