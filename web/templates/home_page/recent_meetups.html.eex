@@ -8,7 +8,36 @@
     </p>
   </div>
 
-  <ol class="section-content slats" data-role="meetup-list">
+  <div class="section-content slats" id="meetup-placeholder">
+    <div class="meetup-wrapper">
+      <div class="meetup-item">
+        <div class="animated-background">
+          <div class="background-masker header-top"></div>
+          <div class="background-masker header-left"></div>
+          <div class="background-masker header-right"></div>
+          <div class="background-masker header-bottom"></div>
+          <div class="background-masker subheader-left"></div>
+          <div class="background-masker subheader-right"></div>
+          <div class="background-masker subheader-bottom"></div>
+          <div class="background-masker content-top"></div>
+        </div>
+      </div>
+      <div class="meetup-item">
+        <div class="animated-background">
+          <div class="background-masker header-top"></div>
+          <div class="background-masker header-left"></div>
+          <div class="background-masker header-right"></div>
+          <div class="background-masker header-bottom"></div>
+          <div class="background-masker subheader-left"></div>
+          <div class="background-masker subheader-right"></div>
+          <div class="background-masker subheader-bottom"></div>
+          <div class="background-masker content-top"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ol class="section-content slats" data-role="meetup-list" style="display: none;" id="meetups">
     <li class="meetup-slat" data-role="meetup">
       <time class="meetup-time" data-role="date-time">2/7/15, 6:30PM</time>
       <div class="meetup-hgroup">
@@ -19,5 +48,5 @@
         <span class="notation" data-role="members">97 Members Going</span>
       </div>
     </li>
-  </ol>
+    </ol>
 </section>

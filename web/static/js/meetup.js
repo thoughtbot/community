@@ -34,6 +34,9 @@ $(function() {
     dataType: "jsonp",
   }).done(function(data) {
     $.each(data.data, function(index, meetup) {
+      $("#meetup-placeholder").fadeOut("medium", function() {
+        $("#meetups").fadeIn("medium");
+      })
       let groupName = meetup.group.name;
       if ($.inArray(groupName, groupNames) === -1) {
         groupNames.push(groupName);
