@@ -18,6 +18,6 @@
     <%= link("Slack", to: "#", class: "navigation-link slack-link") %>
   </li>
   <li class="navigation-item">
-    <%= link("Partners", to: "#", class: "navigation-link partners-link") %>
+    <%= link("Partners", to: partner_path(@conn, :index), class: "navigation-link partners-link") %>
   </li>
 </ul>

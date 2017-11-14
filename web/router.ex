@@ -19,13 +19,13 @@ defmodule Community.Router do
 
     get "/", HomePageController, :show, as: :root
     get "/pages/:id", PageController, :show
+    get "/partners", PartnerController, :index
     resources "/jobs", JobController do
       resources "/publish", JobPublishController, only: [:create], as: :publish
     end
     resources "/members", MemberController do
       resources "/contact", MemberContactController, only: [:new, :create], as: :contact
     end
-
     resources "/session", SessionController, only: [:new, :create]
   end
 

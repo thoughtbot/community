@@ -1,0 +1,59 @@
+<header class="banner-body">
+  <h1 class="banner-title">
+    Community Driven
+  </h1>
+  <p>
+    Triangle Designers is a resource for designers throughout North Carolina's
+    Triangle to connect, collaborate, and find prospective career opportunities.
+  </p>
+</header>
+
+<img class="banner-image" src="<%= static_path(@conn, "/images/illustration.svg") %>" alt="Design tools illustration">
+
+<header class="section-header">
+  <h3 class="section-title">Organized by</h3>
+  <a href="https://www.vaporwa.re" alt="vaporware" target="_blank">Vaporware</a>
+
+  <br />
+  <br />
+  <br />
+
+  <h3 class="section-title">Site design and development by</h3>
+  <a href="https://www.thoughtbot.com" alt="thoughtbot" target="_blank">thoughtbot</a> <br />
+  <a href="https://www.vaporwa.re" alt="vaporware" target="_blank">Vaporware</a>
+</header>
+
+<div class="section-content">
+  <h3 class="section-title collaboration">In collaboration with</h3>
+
+  <table>
+    <tr>
+      <td><a href="https://raleigh.aiga.org/" alt="AIGA Raleigh" target="_blank">AIGA Raleigh</a> <br /></td>
+      <td><a href="https://www.girldevelopit.com/" alt="Girl Develop IT" target="_blank">Girl Develop IT</a></td>
+    </tr>
+    <tr>
+      <td><a href="http://creativetriangle.me/" alt="Artistic / Triangle" target="_blank">Artistic / Creative</a> <br /></td>
+      <td><a href="http://hq.community/" alt="HQ Studio" target="_blank">HQ Studio</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.meetup.com/Carolinas-Innovators-Design-Thinkers/" alt="Carolina Innovators and Design Thinkers" target="_blank">Carolina Innovators and Design Thinkers</a> <br /></td>
+      <td><a href="https://www.meetup.com/intent-design/" alt="Intent" target="_blank">Intent</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://creativemornings.com/cities/rdu" alt="Creative Mornings" target="_blank">Creative Mornings</a> <br /></td>
+      <td><a href="https://www.meetup.com/Ladies-that-UX-Durham/" alt="Ladies that U/X" target="_blank">Ladies that UX</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.meetup.com/designcrop/" alt="Crop" target="_blank">Crop</a> <br /></td>
+      <td><a href="https://www.meetup.com/WebDesign2-0/" alt="Raleigh-Durham Web Design Group" target="_blank">The Raleigh-Durham Web Design Group</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.meetup.com/exploreUX-raleigh/" alt="exploreUX" target="_blank">exploreUX</a> <br /></td>
+      <td><a href="http://refreshthetriangle.co/" alt="Refresh the Triangle" target="_blank">Refresh the Triangle</a></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><a href="https://triuxpa.org/" alt="Triangle UXPA" target="_blank">Triangle UXPA</a></td>
+    </tr>
+  </table>
+</div>
