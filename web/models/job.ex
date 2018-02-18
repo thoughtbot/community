@@ -42,15 +42,15 @@ defmodule Community.Job do
   def changeset(model, params \\ %{}) do
     model
     |> cast(params, @required_fields)
-    |> Validations.validate_url_format(:company_url)
-    |> Validations.validate_email_format(:contact)
+    |> Validations.url_format(:company_url)
+    |> Validations.email_format(:contact)
     |> validate_required(@required_fields)
   end
 
   def admin_changeset(model, params \\ %{}) do
     model
     |> cast(params, @required_fields, @optional_fields)
-    |> Validations.validate_url_format(:company_url)
+    |> Validations.url_format(:company_url)
     |> validate_required(@required_fields)
   end
 

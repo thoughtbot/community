@@ -54,27 +54,14 @@ defmodule Community.Member do
     changset
     |> validate_required([:name, :email, :title])
     |> unique_constraint(:email)
-    |> Validations.validate_url_format(:website)
-    |> Validations.validate_email_format(:email)
-    |> validate_at_least_one_present([:website, :twitter_handle, :dribbble_username], "you must provide at least one social media contact")
+    |> Validations.url_format(:website)
+    |> Validations.email_format(:email)
+    |> Validations.at_least_one_present(
+      :social_media,
+      [:website, :twitter_handle, :dribbble_username],
+      message: "you must provide at least one social media contact"
+    )
   end
-
-  defp validate_at_least_one_present(changeset, fields, error) do
-    if any_field_present?(changeset, fields) do
-      changeset
-    else
-      add_error(changeset, :social_media, error)
-    end
-  end
-
-  defp any_field_present?(changeset, fields) do
-    Enum.any? fields, fn (field) ->
-      changeset |> get_field(field) |> present?
-    end
-  end
-
-  defp present?(nil), do: false
-  defp present?(string), do: String.length(string) > 1
 
   def approved(model) do
     where(model, approved: true)
