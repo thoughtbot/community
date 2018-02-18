@@ -9,7 +9,7 @@ defmodule Community.Router do
     plug :put_secure_browser_headers
 
     if Mix.env == :dev do
-      forward "/sent_emails", Bamboo.EmailPreviewPlug
+      forward "/sent_emails", Bamboo.SentEmailViewerPlug
     end
 
   end

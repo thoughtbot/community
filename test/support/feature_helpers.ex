@@ -25,7 +25,7 @@ defmodule Community.FeatureHelpers do
   end
 
   def submit do
-    submit_element({:css, "input[type=submit]"})
+    submit_element({:css, "button[type=submit]"})
   end
 
   def ignore_confirm_dialog do
