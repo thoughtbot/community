@@ -32,4 +32,4 @@ config :phoenix, :generators,
 
 config :hound, driver: "phantomjs"
 
-config :formulator, gettext: Community.Gettext
+config :formulator, translate_error_module: Community.ErrorHelpers

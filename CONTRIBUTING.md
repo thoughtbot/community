@@ -1,31 +1,29 @@
 # Contributing
 
-We love pull requests from everyone.
-By participating in this project,
+We love pull requests from everyone.  By participating in this project,
 you agree to abide by the thoughtbot [code of conduct].
 
   [code of conduct]: https://thoughtbot.com/open-source-code-of-conduct
 
-We expect everyone to follow the code of conduct
-anywhere in thoughtbot's project codebases,
-issue trackers, chatrooms, and mailing lists.
+We expect everyone to follow the code of conduct anywhere in
+thoughtbot's project codebases, issue trackers, chatrooms, and mailing
+lists.
 
-## Developing
+## Getting Started
 
 After you have cloned this repo, run this setup script to set up your machine
 with the necessary dependencies to run and test this app:
 
     % ./bin/setup
 
-It assumes you have the following:
-
-* Postgresql
-* Elixir
-* PhantomJS
+It assumes you have a machine equipped with [asdf], [asdf-elixir], [asdf-erlang],
+[asdf-nodejs], [phantomjs], and [postgres].
 
 Start the server using
 
-    % mix phoenix.server
+    % mix phx.server
+    # or
+    % ./bin/server
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
@@ -33,21 +31,34 @@ When you run `bin/setup`, the database will automatically be populated with a
 set of development data that should make playing around with the app locally
 easy.
 
+[asdf]: https://github.com/asdf-vm/asdf
+[asdf-elixir]: https://github.com/asdf-vm/asdf-elixir
+[asdf-erlang]: https://github.com/asdf-vm/asdf-erlang
+[asdf-nodejs]: https://github.com/asdf-vm/asdf-nodejs
+[postgres]: http://postgresapp.com/
+[phantomjs]: http://phantomjs.org/
+
+## Development Seeds
+
+In `lib/mix/tasks/development_seeds.ex` you will find a mix task for seeding the
+app with development data. For an explanation of how we use development seeds,
+please read this [blog post].
+
+To run the seeds:
+
+    % mix development_seeds
+
+It's recommended to regularly run the seeds so that you're not relying on data
+you created by hand. To make this easier, the `bin/server` command will
+automatically reset your db seeds each time you restart the server.
+
+[blog post]: https://robots.thoughtbot.com/priming-the-pump
+
 ## Tests
 
 You can run the tests using:
 
-    % ./bin/setup
-
-this will start up PhantomJS in webdriver mode and run your test suite.
-
-If you want to run feature tests individually, you can start phantomjs manually:
-
-    % phantomjs --wd
-
-then you can run the tests as you would normally:
-
-    % mix test test/features/example_test.ex
+    % ./bin/test_suite
 
 ## Email
 
@@ -67,3 +78,8 @@ To access the sent emails, navigate to
   doesn't fit the app.
 * Please add tests for any new feature. If you're having trouble figuring out to
   test something, please open an issue. We're happy to help out!
+
+## Useful Links
+
+* [CircleCI](https://circleci.com/gh/thoughtbot/community)
+* [GitHub](https://github.com/thoughtbot/community)

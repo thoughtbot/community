@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Exit if any subcommand fails
 set -e
@@ -28,6 +28,16 @@ if [ -z "$CI" ]; then
   rm -rf node_modules
   rm -rf deps _build
   asdf install
+else
+  [[ ! -d ~/.asdf ]] && git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.1
+  . $HOME/.asdf/asdf.sh
+  echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc
+  if ! grep -E nodejs <(asdf plugin-list) > /dev/null; then
+    asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+    bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+    # shellcheck disable=SC2046
+    asdf install $(grep nodejs .tool-versions)
+  fi
 fi
 
 echo "Installing dependencies and compiling"
@@ -45,3 +55,6 @@ fi
 
 echo "Installing npm dependencies"
 npm install --progress=false
+
+echo "Compiling assets"
+node_modules/brunch/bin/brunch build

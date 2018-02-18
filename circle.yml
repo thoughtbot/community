@@ -2,43 +2,51 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/elixir:1.5.1-browsers
+      - image: circleci/elixir:1.6.1-browsers
         environment:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           PHANTOMJS_VERSION: 2.1.1
           CI: true
-      - image: postgres:9.6.2
+      - image: circleci/postgres:9.6-alpine-ram
         environment:
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
     working_directory: /home/circleci/community
     steps:
-      - run:
-          name: Install NPM
-          command: |
-            curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
-            sudo apt-get install -y nodejs
       - checkout
       - restore_cache:
           keys:
-          - dependency-cache-{{ .Branch }}-{{ checksum "mix.lock" }}
-          - dependency-cache
+          - asdf-node-cache-{{ arch }}-{{ checksum ".tool-versions" }}
       - restore_cache:
           keys:
-          - npm-cache-{{ .Branch }}
-          - npm-cache
+          - dependency-cache-{{ arch }}-{{ .Branch }}-{{ checksum "mix.lock" }}
+          - dependency-cache-{{ arch }}-{{ .Branch }}
+          - dependency-cache-{{ arch }}
+      - restore_cache:
+          keys:
+          - npm-cache-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          - npm-cache-{{ arch }}-{{ .Branch }}
+          - npm-cache-{{ arch }}
       - run: bin/setup
+      - save_cache:
+          key: asdf-node-cache-{{ arch }}-{{ checksum ".tool-versions" }}
+          paths: "~/.asdf"
+      - save_cache:
+          key: dependency-cache-{{ arch }}-{{ .Branch }}-{{ checksum "mix.lock" }}
+          paths: "deps"
+      - save_cache:
+          key: dependency-cache-{{ arch }}-{{ .Branch }}
+          paths: "deps"
+      - save_cache:
+          key: dependency-cache-{{ arch }}
+          paths: "deps"
+      - save_cache:
+          key: npm-cache-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths: "node_modules"
+      - save_cache:
+          key: npm-cache-{{ arch }}-{{ .Branch }}
+          paths: "node_modules"
+      - save_cache:
+          key: npm-cache-{{ arch }}
+          paths: "node_modules"
       - run: bin/test_suite
-      - save_cache:
-          key: dependency-cache-{{ .Branch }}-{{ checksum "mix.lock" }}
-          paths: "deps"
-      - save_cache:
-          key: dependency-cache
-          paths: "deps"
-      - save_cache:
-          key: npm-cache-{{ .Branch }}
-          paths: "node_modules"
-      - save_cache:
-          key: npm-cache
-          paths: "node_modules"
