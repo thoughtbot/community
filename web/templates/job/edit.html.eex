@@ -4,6 +4,6 @@
       conn: @conn,
       changeset: @changeset,
       submit_text: gettext("Save"),
-      path: job_path(@conn, :update, @changeset.data.id, token: @token),
+      path: job_path(@conn, :update, @changeset.data.id, token: @token)
   )%>
 </div>

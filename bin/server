@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+if [ ! -d node_modules ]; then
+  npm install
+  node_modules/.bin/brunch build
+fi
+
+mix do deps.get, development_seeds
+iex -S mix phx.server

@@ -47,16 +47,12 @@ defmodule Community.Admin.MemberController do
         |> put_flash(:info, "Member updated successfully.")
         |> redirect(to: admin_member_path(conn, :show, member))
       {:error, changeset} ->
-        IO.inspect changeset
         render(conn, "edit.html", member: member, changeset: changeset)
     end
   end
 
   def delete(conn, %{"id" => id}) do
     member = Repo.get!(Member, id)
-
-    # Here we use delete! (with a bang) because we expect
-    # it to always work (and if it does not, it will raise).
     Repo.delete!(member)
 
     conn

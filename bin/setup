@@ -17,7 +17,7 @@ else
   phantomjs_version=$(phantomjs -v)
   major_version="${phantomjs_version%.*.*}"
 
-  if [ $major_version -lt 2 ]; then
+  if [ "$major_version" -lt 2 ]; then
     echo "Please update your PhantomJS to 2.x before continuing."
     exit 1
   fi

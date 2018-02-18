@@ -1,9 +1,5 @@
 #!/bin/bash
+
 node_modules/.bin/brunch build
 mix compile --force --warnings-as-errors
-phantomjs --wd > /dev/null &
-phantom_pid=$!
 mix test
-mix_result=$?
-kill "$phantom_pid"
-exit $mix_result
