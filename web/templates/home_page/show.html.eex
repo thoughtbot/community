@@ -1,11 +1,10 @@
 <p class="page-description">
-  A resource for designers in Raleigh to stay connected and find prospective
-  career opportunities. Follow along on twitter,
-  <a href="http://twitter.com/raleighdesignio">@raleighdesignio</a>.
+  <%= @organization.short_description %>
+  Follow along on twitter, <a href="https://twitter.com/<%= @organization.twitter %>">@<%= @organization.twitter %></a>.
 </p>
 
 <%= render "recent_jobs.html", jobs: @jobs, conn: @conn %>
 
 <%= render "recent_dribbbles.html", conn: @conn %>
 
-<%= render "recent_meetups.html" %>
+<%= render "upcoming_meetups.html", organization: @organization %>

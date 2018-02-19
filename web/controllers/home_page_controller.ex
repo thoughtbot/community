@@ -4,6 +4,7 @@ defmodule Community.HomePageController do
   def show(conn, _params) do
     conn
     |> assign(:jobs, Community.Queries.Job.approved_jobs)
+    |> assign(:organization, find_organization())
     |> render(:show)
   end
 end

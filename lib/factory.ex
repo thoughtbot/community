@@ -1,6 +1,21 @@
 defmodule Community.Factory do
   use ExMachina.Ecto, repo: Community.Repo
 
+  def organization_factory do
+    %Community.Organization{
+      name: "Raleigh Design",
+      admin_email_address: "admin@example.com,admin@raleighdesign.io",
+      meetup_slugs: [
+        "RefreshTheTriangle",
+        "triupa-book-club",
+        "WebDesign2-0",
+      ],
+      no_reply_email_address: "noreply@raleighdesign.io",
+      short_description: "A resource for designers in Raleigh to stay connected and find prospective career opportunities.",
+      twitter: "raleighdesignio"
+    }
+  end
+
   def job_factory do
     %Community.Job{
       approved: false,

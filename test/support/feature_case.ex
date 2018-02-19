@@ -20,6 +20,7 @@ defmodule Community.FeatureCase do
 
   setup tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Community.Repo)
+    Community.Factory.insert(:organization)
 
     on_exit(fn ->
       PhantomJS.clear_local_storage()

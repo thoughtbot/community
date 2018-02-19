@@ -1,0 +1,35 @@
+<%= form_for @changeset, @action, fn form -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= input form, :admin_email_address %>
+  </div>
+
+  <div class="form-group">
+    <%= input form, :meetup_slugs, value: Enum.join(@changeset.data.meetup_slugs, ",") %>
+  </div>
+
+  <div class="form-group">
+    <%= input form, :name %>
+  </div>
+
+  <div class="form-group">
+    <%= input form, :no_reply_email_address %>
+  </div>
+
+  <div class="form-group">
+    <%= input form, :short_description %>
+  </div>
+
+  <div class="form-group">
+    <%= input form, :twitter %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

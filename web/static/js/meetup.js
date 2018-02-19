@@ -1,4 +1,3 @@
-const meetupUrl = "https://api.meetup.com/self/calendar?photo-host=public&page=20&sig_id=205839672&sig=57e1d519c30c3e5f331d36feab8bebab7fbe494e";
 const moment = require("moment");
 
 function composeMeetup(element, meetup) {
@@ -22,25 +21,31 @@ function formatDateTime(epochTime) {
 }
 
 $(function() {
-  const listSelector = "[data-role=meetup-list]";
-  const meetupSelector = "[data-role=meetup]";
-  const list = $(listSelector);
-  const basicElement = $(meetupSelector);
-  let groupNames = [];
+  const meetupSlugs = $("[data-meetup-slugs]").data("meetupSlugs") || "";
+  if (meetupSlugs.length) {
+    let groupNames = [];
+    const listSelector = "[data-role=meetup-list]";
+    const meetupSelector = "[data-role=meetup]";
+    const $list = $(listSelector);
+    const $basicElement = $(meetupSelector);
 
-  $.ajax({
-    url: meetupUrl,
-    contentType: "application/json",
-    dataType: "jsonp",
-  }).done(function(data) {
-    $.each(data.data, function(index, meetup) {
-      let groupName = meetup.group.name;
-      if ($.inArray(groupName, groupNames) === -1) {
-        groupNames.push(groupName);
-        let meetupElement = composeMeetup(basicElement, meetup);
-        meetupElement.css("display", "flex");
-        list.append(meetupElement);
-      }
+    $.each(meetupSlugs, function(index, meetupSlug) {
+      const meetupUrl = `https://api.meetup.com/${meetupSlug}/events?&sign=true&photo-host=public&page=60`;
+      $.ajax({
+        url: meetupUrl,
+        contentType: "application/json",
+        dataType: "jsonp",
+      }).done(function(data) {
+        $.each(data.data, function(index, meetup) {
+          let groupName = meetup.group.name;
+          if ($.inArray(groupName, groupNames) === -1) {
+            groupNames.push(groupName);
+            let meetupElement = composeMeetup($basicElement, meetup);
+            meetupElement.css("display", "flex");
+            $list.append(meetupElement);
+          }
+        });
+      });
     });
-  });
+  }
 });

@@ -36,6 +36,7 @@ defmodule Community.Web do
 
       import Community.Router.Helpers
       import Community.Gettext
+      import Community.Queries.Organization
     end
   end
 

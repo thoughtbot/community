@@ -1,9 +1,9 @@
-<section class="section">
+<section class="section" data-meetup-slugs='<%= serialize_slugs(@organization.meetup_slugs) %>'>
   <div class="section-description">
     <h4>Upcoming Meetups</h4>
     <p>
       Design meetups in and around Raleigh. Shoot us a suggestion
-      <a href="http://twitter.com/raleighdesignio">@raleighdesignio</a>
+      <a href="https://twitter.com/<%= @organization.twitter %>">@<%= @organization.twitter %></a>
       if you have one you'd like to add.
     </p>
   </div>

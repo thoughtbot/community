@@ -34,5 +34,7 @@ defmodule Community.Router do
 
     resources "/jobs", Admin.JobController
     resources "/members", Admin.MemberController
+    get "/settings", Admin.OrganizationController, :edit
+    put "/settings", Admin.OrganizationController, :update
   end
 end

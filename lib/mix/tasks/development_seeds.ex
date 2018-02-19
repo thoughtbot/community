@@ -49,6 +49,21 @@ defmodule Mix.Tasks.DevelopmentSeeds do
 
     insert(:job, title: "Awsesome Designer")
     insert(:job, title: "Rockstar")
+
+    insert(
+      :organization,
+      admin_email_address: "admin@example.com,admin@raleighdesign.io",
+      meetup_slugs: [
+        "RefreshTheTriangle",
+        "triupa-book-club",
+        "WebDesign2-0",
+      ],
+      name: "Raleigh Design",
+      no_reply_email_address: "noreply@raleighdesign.io",
+      short_description: "A resource for designers in Raleigh to stay connected and find prospective
+  career opportunities.",
+      twitter: "raleighdesignio"
+    )
   end
 
   def titles do
@@ -82,6 +97,7 @@ defmodule Mix.Tasks.DevelopmentSeeds do
     ~w(
       jobs
       members
+      organizations
     )
   end
 end
