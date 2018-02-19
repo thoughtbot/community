@@ -14,7 +14,7 @@ defmodule Community.Validations do
 
   def email_format(changeset, field) do
     changeset
-    |> validate_format(field, ~r/.+\@.+\..+/, message: "is invalid")
+    |> validate_format(field, ~r/.+@.+..+/, message: "is invalid")
   end
 
   def at_least_one_present(changeset, field, fields, options \\ []) when is_list(fields) do
