@@ -23,7 +23,9 @@ function formatDateTime(epochTime) {
 $(function() {
   const meetupUrl = $("[data-meetup-url]").data("meetupUrl");
   if (meetupUrl.length) {
+    let groupNames = [];
     const meetupSelector = "[data-role=meetup]";
+    const listSelector = "[data-role=meetup-list]";
     const $list = $(listSelector);
     const $basicElement = $(meetupSelector);
 
