@@ -22,7 +22,7 @@ function formatDateTime(epochTime) {
 
 $(function() {
   const meetupUrl = $("[data-meetup-url]").data("meetupUrl");
-  if (meetupUrl.length) {
+  if (meetupUrl) {
     let groupNames = [];
     const meetupSelector = "[data-role=meetup]";
     const listSelector = "[data-role=meetup-list]";

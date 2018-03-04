@@ -25,16 +25,18 @@ $(function() {
   const bucketId = list.data("bucket-id");
   const count = list.data("count");
 
-  $.ajax({
-    url: dribbleBucketUrl({bucket: bucketId, token: accessToken, count: count}),
-    context: document.body
-  }).done(function(data) {
-    $.each(data, function(index, shot) {
-      console.log(shot);
-      let shotElement = composeDribbbleShot(basicElement, shot.html_url, shot.images.hidpi);
-      shotElement.show();
-      list.append(shotElement);
+  if(accessToken) {
+    $.ajax({
+      url: dribbleBucketUrl({bucket: bucketId, token: accessToken, count: count}),
+      context: document.body
+    }).done(function(data) {
+      $.each(data, function(index, shot) {
+        console.log(shot);
+        let shotElement = composeDribbbleShot(basicElement, shot.html_url, shot.images.hidpi);
+        shotElement.show();
+        list.append(shotElement);
+      });
     });
-  });
-  basicElement.remove();
+    basicElement.remove();
+  }
 });
