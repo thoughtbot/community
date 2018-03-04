@@ -1,23 +1,25 @@
-<section class="section" data-meetup-url='<%= @organization.upcoming_meetups_url %>'>
-  <div class="section-description">
-    <h4>Upcoming Meetups</h4>
-    <p>
-      Design meetups in and around Raleigh. Shoot us a suggestion
-      <a href="https://twitter.com/<%= @organization.twitter %>">@<%= @organization.twitter %></a>
-      if you have one you'd like to add.
-    </p>
-  </div>
+<%= if @organization.meetup_enabled && @organization.upcoming_meetups_url do %>
+  <section class="section" data-meetup-url='<%= @organization.upcoming_meetups_url %>'>
+    <div class="section-description">
+      <h4>Upcoming Meetups</h4>
+      <p>
+        Design meetups in and around Raleigh. Shoot us a suggestion
+        <a href="https://twitter.com/<%= @organization.twitter %>">@<%= @organization.twitter %></a>
+        if you have one you'd like to add.
+      </p>
+    </div>
 
-  <ol class="section-content slats" data-role="meetup-list">
-    <li class="meetup-slat" data-role="meetup">
-      <time class="meetup-time" data-role="date-time">2/7/15, 6:30PM</time>
-      <div class="meetup-hgroup">
-        <h4 class="meetup-name" data-role="group-name">Meetup Group Name</h4>
-        <h3 class="meetup-title">
-          <a href="#" data-role="title">Meetup Event Title</a>
-        </h3>
-        <span class="notation" data-role="members">97 Members Going</span>
-      </div>
-    </li>
-  </ol>
-</section>
+    <ol class="section-content slats" data-role="meetup-list">
+      <li class="meetup-slat" data-role="meetup">
+        <time class="meetup-time" data-role="date-time">2/7/15, 6:30PM</time>
+        <div class="meetup-hgroup">
+          <h4 class="meetup-name" data-role="group-name">Meetup Group Name</h4>
+          <h3 class="meetup-title">
+            <a href="#" data-role="title">Meetup Event Title</a>
+          </h3>
+          <span class="notation" data-role="members">97 Members Going</span>
+        </div>
+      </li>
+    </ol>
+  </section>
+<% end %>

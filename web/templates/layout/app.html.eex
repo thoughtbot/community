@@ -16,7 +16,7 @@
     <div class="container">
       <header class="site-header">
         <h1 class="site-header-title">
-          <a href="/" class="site-header-title-link">Raleigh Design</a>
+          <a href="/" class="site-header-title-link" style="background-image: url('<%= find_organization().logo_url %>')">Raleigh Design</a>
         </h1>
         <nav role="navigation" class="site-navigation">
           <%= render Community.SharedView, "_navigation.html", conn: @conn %>
@@ -28,6 +28,6 @@
     </div>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-    <%= render Community.SharedView, "segment.html" %>
+    <%= render Community.SharedView, "tracking.html" %>
   </body>
 </html>

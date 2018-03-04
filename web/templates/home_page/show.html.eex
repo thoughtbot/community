@@ -5,6 +5,6 @@
 
 <%= render "recent_jobs.html", jobs: @jobs, conn: @conn %>
 
-<%= render "recent_dribbbles.html", conn: @conn %>
+<%= render "recent_dribbbles.html", conn: @conn, organization: @organization %>
 
 <%= render "upcoming_meetups.html", organization: @organization %>

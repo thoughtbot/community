@@ -10,15 +10,15 @@
   </div>
 
   <div class="form-group">
-    <%= input form, :upcoming_meetups_url %>
-  </div>
-
-  <div class="form-group">
     <%= input form, :name %>
   </div>
 
   <div class="form-group">
-    <%= input form, :no_reply_email_address %>
+    <%= input form, :logo_url %>
+  </div>
+
+  <div class="form-group">
+    <%= input form, :no_reply_email_address, as: :email %>
   </div>
 
   <div class="form-group">
@@ -27,6 +27,20 @@
 
   <div class="form-group">
     <%= input form, :twitter %>
+  </div>
+
+  <h2>Integrations</h2>
+
+  <div class="form-group">
+    <%= input form, :meetup_enabled, as: :checkbox, label: "Meetup.com" %>
+  </div>
+
+  <div class="form-group">
+    <%= input form, :upcoming_meetups_url %>
+  </div>
+
+  <div class="form-group">
+    <%= input form, :dribbble_enabled, as: :checkbox, label: "Dribbble" %>
   </div>
 
   <div class="form-group">

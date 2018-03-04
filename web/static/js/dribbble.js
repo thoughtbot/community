@@ -21,8 +21,8 @@ $(function() {
   const shotSelector = "[data-role=dribbble-shot]";
   const list = $(listSelector);
   const basicElement = $(shotSelector);
-  const accessToken = list.data("access-token");
-  const bucketId = list.data("bucket-id");
+  const accessToken = list.data("accessToken");
+  const bucketId = list.data("bucketId");
   const count = list.data("count");
 
   if(accessToken) {

@@ -1,27 +1,30 @@
-<section class="section">
-  <div class="section-description">
-    <h4>Recent Dribbbles</h4>
-    <p>
-      Show and tell from the Raleigh Design community.
-      <%= link(
-          "Add yourself to the directory", to:
-          member_path(@conn, :new)
-      ) %>
-      to see your work featured here.
-    </p>
-  </div>
+<% dribbble_access_token = System.get_env("DRIBBBLE_ACCESS_TOKEN") %>
+<%= if @organization.dribbble_enabled && dribbble_access_token do %>
+  <section class="section">
+    <div class="section-description">
+      <h4>Recent Dribbbles</h4>
+      <p>
+        Show and tell from the Raleigh Design community.
+        <%= link(
+            "Add yourself to the directory", to:
+            member_path(@conn, :new)
+        ) %>
+        to see your work featured here.
+      </p>
+    </div>
 
-  <ol
-    class="section-content dribbbles"
-    data-role="dribbble-list"
-    data-access-token="<%= System.get_env("DRIBBBLE_ACCESS_TOKEN") %>"
-    data-bucket-id="<%= System.get_env("DRIBBBLE_BUCKET_ID") %>"
-    data-count="6"
-    >
-    <li class="dribbble" data-role="dribbble-shot" style="display:none">
-      <a class="dribbble-link" href="#">
-        <img class="dribbble-img" src="">
-      </a>
-    </li>
-  </ol>
-</section>
+    <ol
+      class="section-content dribbbles"
+      data-role="dribbble-list"
+      data-access-token="<%= dribbble_access_token %>"
+      data-bucket-id="<%= System.get_env("DRIBBBLE_BUCKET_ID") %>"
+      data-count="6"
+      >
+      <li class="dribbble" data-role="dribbble-shot" style="display:none">
+        <a class="dribbble-link" href="#">
+          <img class="dribbble-img" src="">
+        </a>
+      </li>
+    </ol>
+  </section>
+<% end %>
