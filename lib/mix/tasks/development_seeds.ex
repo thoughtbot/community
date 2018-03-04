@@ -1,14 +1,17 @@
 defmodule Mix.Tasks.DevelopmentSeeds do
   use Mix.Task
   import Community.Factory
+  alias Community.Repo
 
   @shortdoc "Insert the seeds for development"
 
   def run(_args) do
-    Mix.Task.run "ecto.drop", []
-    Mix.Task.run "ecto.create", []
-    Mix.Task.run "ecto.migrate", []
-    Mix.Task.run "app.start", []
+    Mix.Task.run("ecto.migrate", [])
+    Mix.Task.run("app.start", [])
+
+    for table_name <- tables_to_truncate() do
+      Ecto.Adapters.SQL.query!(Repo, "TRUNCATE TABLE #{table_name} CASCADE")
+    end
 
     approve_member(%{
       name: "Sam Seaborn",
@@ -73,5 +76,12 @@ defmodule Mix.Tasks.DevelopmentSeeds do
 
   def approve_member(attributes) do
     build(:member, attributes) |> approve |> insert
+  end
+
+  defp tables_to_truncate do
+    ~w(
+      jobs
+      members
+    )
   end
 end

@@ -24,18 +24,18 @@
         <% end %>
 
         <%= link(
-             gettext("Edit Post"),
-             to: job_path(@conn, :edit, @job, token: @job.token),
-             class: "alert-action"
+           gettext("Edit Post"),
+           to: job_path(@conn, :edit, @job, token: @job.token),
+           class: "alert-action"
         ) %>
         <%= link(
-            "Delete Post",
-            to: job_path(@conn, :delete, @job.id, token: @token),
-            method: :delete,
-            form: [class: "alert-action"],
-            data: [
-              confirm: "Are you sure you want to remove this job?",
-            ]
+          "Delete Post",
+          to: job_path(@conn, :delete, @job.id, token: @token),
+          method: :delete,
+          class: "alert-action",
+          data: [
+            confirm: "Are you sure you want to remove this job?",
+          ]
         ) %>
       </div>
     </div>
@@ -65,17 +65,16 @@
   <%= if @job.preview do %>
     <div class="job-preview-actions" data-role="preview">
       <%= link(
-          {:safe, "&larr; Make some changes"},
-          to: job_path(@conn, :edit, @job, token: @job.token)
+        {:safe, "&larr; Make some changes"},
+        to: job_path(@conn, :edit, @job, token: @job.token)
       ) %>
 
       <%= button(
-          {:safe, "Looks good! &rarr;"},
-          to: job_publish_path(@conn, :create, @job.id, token: @job.token),
-          data: [
-            role: "publish-job"
-          ],
-          form: [class: ""],
+        {:safe, "Looks good! &rarr;"},
+        to: job_publish_path(@conn, :create, @job.id, token: @job.token),
+        data: [
+          role: "publish-job"
+        ]
       ) %>
     </div>
   <% end %>

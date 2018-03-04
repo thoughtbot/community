@@ -5,7 +5,7 @@
       Show and tell from the Raleigh Design community.
       <%= link(
           "Add yourself to the directory", to:
-          member_path(@conn, :new),
+          member_path(@conn, :new)
       ) %>
       to see your work featured here.
     </p>

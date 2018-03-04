@@ -5,7 +5,7 @@ defmodule Community.Mixfile do
     [
       app: :community,
       version: "0.0.1",
-      elixir: "~> 1.0",
+      elixir: "~> 1.6",
       elixirc_paths: elixirc_paths(Mix.env),
       compilers: [:phoenix, :gettext] ++ Mix.compilers,
       build_embedded: Mix.env == :prod,
@@ -21,17 +21,7 @@ defmodule Community.Mixfile do
   def application do
     [
       mod: {Community, []},
-      applications: [
-        :bamboo,
-        :cowboy,
-        :ex_machina,
-        :gettext,
-        :logger,
-        :phoenix,
-        :phoenix_ecto,
-        :phoenix_html,
-        :postgrex,
-      ]
+      extra_applications: [:logger]
     ]
   end
 
@@ -44,22 +34,21 @@ defmodule Community.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:bamboo, "~> 0.7.0"},
-      {:brady, "~> 0.0.3"},
-      {:cowboy, "~> 1.0"},
+      {:bamboo, github: "thoughtbot/bamboo"},
+      {:brady, "~> 0.0.7"},
+      {:cowboy, "~> 1.1"},
       {:envy, "~> 1.0"},
-      {:ex_machina, "~> 1.0.2"},
+      {:ex_machina, "~> 2.0"},
       {:ex_spec, "~> 2.0", only: :test},
-      {:formulator, "~> 0.0.1"},
+      {:formulator, "~> 0.1"},
       {:gettext, "~> 0.11"},
       {:hound, "~> 1.0.2"},
-      {:html_sanitize_ex, "~> 1.0.1"},
-      {:phoenix, "~> 1.2.0"},
-      {:phoenix_ecto, "~> 3.0.0"},
+      {:html_sanitize_ex, "~> 1.3"},
+      {:phoenix, "~> 1.2"},
+      {:phoenix_ecto, "~> 3.1"},
       {:phoenix_html, "~> 2.6"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:plug, "~> 1.3.0"},
-      {:postgrex, "~> 0.11.2"},
+      {:postgrex, "~> 0.11"},
     ]
   end
 

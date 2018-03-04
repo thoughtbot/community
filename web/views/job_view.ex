@@ -29,7 +29,7 @@ defmodule Community.JobView do
         input: field_name,
         id: field_name,
         class: "trix-content #{attrs[:class]}",
-        placeholder: attrs[:placeholder],
+        placeholder: attrs[:placeholder]
       )
     ]
   end

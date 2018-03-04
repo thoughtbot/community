@@ -15,6 +15,6 @@
       conn: @conn,
       changeset: @changeset,
       submit_text: gettext("Post your job"),
-      path: job_path(@conn, :create),
+      path: job_path(@conn, :create)
   )%>
 </div>
