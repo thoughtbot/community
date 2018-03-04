@@ -21,6 +21,6 @@ defmodule Community.ContactForm do
     model
     |> cast(params, @required_fields)
     |> validate_required(@required_fields)
-    |> Validations.validate_email_format(:email)
+    |> Validations.email_format(:email)
   end
 end
