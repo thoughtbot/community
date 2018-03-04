@@ -21,30 +21,25 @@ function formatDateTime(epochTime) {
 }
 
 $(function() {
-  const meetupSlugs = $("[data-meetup-slugs]").data("meetupSlugs") || "";
-  if (meetupSlugs.length) {
-    let groupNames = [];
-    const listSelector = "[data-role=meetup-list]";
+  const meetupUrl = $("[data-meetup-url]").data("meetupUrl");
+  if (meetupUrl.length) {
     const meetupSelector = "[data-role=meetup]";
     const $list = $(listSelector);
     const $basicElement = $(meetupSelector);
 
-    $.each(meetupSlugs, function(index, meetupSlug) {
-      const meetupUrl = `https://api.meetup.com/${meetupSlug}/events?&sign=true&photo-host=public&page=60`;
-      $.ajax({
-        url: meetupUrl,
-        contentType: "application/json",
-        dataType: "jsonp",
-      }).done(function(data) {
-        $.each(data.data, function(index, meetup) {
-          let groupName = meetup.group.name;
-          if ($.inArray(groupName, groupNames) === -1) {
-            groupNames.push(groupName);
-            let meetupElement = composeMeetup($basicElement, meetup);
-            meetupElement.css("display", "flex");
-            $list.append(meetupElement);
-          }
-        });
+    $.ajax({
+      url: meetupUrl,
+      contentType: "application/json",
+      dataType: "jsonp",
+    }).done(function(data) {
+      $.each(data.data, function(index, meetup) {
+        let groupName = meetup.group.name;
+        if ($.inArray(groupName, groupNames) === -1) {
+          groupNames.push(groupName);
+          let meetupElement = composeMeetup($basicElement, meetup);
+          meetupElement.css("display", "flex");
+          $list.append(meetupElement);
+        }
       });
     });
   }

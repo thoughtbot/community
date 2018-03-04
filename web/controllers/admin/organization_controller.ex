@@ -12,7 +12,6 @@ defmodule Community.Admin.OrganizationController do
   def update(conn, %{"organization" => params}) do
     params =
       params
-      |> Map.put("meetup_slugs", format_meetup_slugs(params["meetup_slugs"]))
       |> Map.put("twitter", format_twitter(params["twitter"]))
 
     find_organization()
@@ -34,12 +33,6 @@ defmodule Community.Admin.OrganizationController do
     |> assign(:oranization, changeset.data)
     |> assign(:changeset, changeset)
     |> render(:edit)
-  end
-
-  defp format_meetup_slugs(slugs) when is_binary(slugs) do
-    slugs
-    |> String.replace(" ", "", global: true)
-    |> String.split(",")
   end
 
   defp format_twitter(twitter) when is_binary(twitter) do

@@ -4,11 +4,11 @@ defmodule Community.Organization do
 
   schema "organizations" do
     field :admin_email_address, :string
-    field :meetup_slugs, {:array, :string}
     field :name, :string
     field :no_reply_email_address, :string
     field :short_description, :string
     field :twitter, :string
+    field :upcoming_meetups_url, :string
 
     timestamps()
   end
@@ -21,16 +21,16 @@ defmodule Community.Organization do
   )a
 
   @optional_fields ~w(
-    meetup_slugs
     twitter
+    upcoming_meetups_url
   )a
 
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, @required_fields ++ @optional_fields)
     |> validate_required(@required_fields)
-    |> Validations.validate_email_format(:no_reply_email_address)
-    |> Validations.validate_email_format(:admin_email_address)
+    |> Validations.email_format(:no_reply_email_address)
+    |> Validations.email_format(:admin_email_address)
   end
 
   def placeholder_organization do
@@ -39,7 +39,7 @@ defmodule Community.Organization do
       name: "Sample Organization",
       no_reply_email_address: "no-reply@example.com",
       short_description: "A great resource for local groups to organize events and people",
-      meetup_slugs: ["refreshthetriangle", "triangle-elixir"],
+      upcoming_meetups_url: "",
       twitter: "raleighdesignio"
     }
   end

@@ -1,4 +1,4 @@
-<section class="section" data-meetup-slugs='<%= serialize_slugs(@organization.meetup_slugs) %>'>
+<section class="section" data-meetup-url='<%= @organization.upcoming_meetups_url %>'>
   <div class="section-description">
     <h4>Upcoming Meetups</h4>
     <p>

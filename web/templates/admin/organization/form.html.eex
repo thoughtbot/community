@@ -10,7 +10,7 @@
   </div>
 
   <div class="form-group">
-    <%= input form, :meetup_slugs, value: Enum.join(@changeset.data.meetup_slugs, ",") %>
+    <%= input form, :upcoming_meetups_url %>
   </div>
 
   <div class="form-group">

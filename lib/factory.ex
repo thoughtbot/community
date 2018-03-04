@@ -3,16 +3,12 @@ defmodule Community.Factory do
 
   def organization_factory do
     %Community.Organization{
-      name: "Raleigh Design",
       admin_email_address: "admin@example.com,admin@raleighdesign.io",
-      meetup_slugs: [
-        "RefreshTheTriangle",
-        "triupa-book-club",
-        "WebDesign2-0",
-      ],
+      name: "Raleigh Design",
       no_reply_email_address: "noreply@raleighdesign.io",
       short_description: "A resource for designers in Raleigh to stay connected and find prospective career opportunities.",
-      twitter: "raleighdesignio"
+      twitter: "raleighdesignio",
+      upcoming_meetups_url: "https://api.meetup.com/self/calendar?photo-host=public&page=20&sig_id=205839672&sig=57e1d519c30c3e5f331d36feab8bebab7fbe494e",
     }
   end
 
