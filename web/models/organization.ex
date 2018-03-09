@@ -30,12 +30,12 @@ defmodule Community.Organization do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, @required_fields ++ @optional_fields)
+    |> format_twitter
     |> validate_required(@required_fields)
     |> Validations.email_format(:no_reply_email_address)
     |> Validations.email_format(:admin_email_address)
     |> Validations.url_format(:logo_url)
     |> Validations.url_format(:upcoming_meetups_url)
-    |> format_twitter
   end
 
   defp format_twitter(changeset) do
@@ -59,7 +59,7 @@ defmodule Community.Organization do
       no_reply_email_address: "no-reply@example.com",
       short_description: "A great resource for local groups to organize events and people",
       twitter: "raleighdesignio",
-      upcoming_meetups_url: "",
+      upcoming_meetups_url: "https://api.meetup.com/self/calendar?photo-host=public&page=20&sig_id=205839672&sig=57e1d519c30c3e5f331d36feab8bebab7fbe494e",
     }
   end
 end

@@ -20,7 +20,7 @@ defmodule Community.FeatureCase do
 
   setup tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Community.Repo)
-    Community.Factory.insert(:organization)
+    organization = Community.Factory.insert(:organization)
 
     on_exit(fn ->
       PhantomJS.clear_local_storage()
@@ -33,6 +33,6 @@ defmodule Community.FeatureCase do
     Hound.start_session()
     path = Community.Phoenix.Ecto.SQL.Sandbox.path_for(Community.Repo, self())
     Hound.Helpers.Navigation.navigate_to(path)
-    :ok
+    {:ok, organization: organization}
   end
 end

@@ -2,11 +2,11 @@ defmodule Mix.Tasks.DevelopmentSeeds do
   use Mix.Task
   import Community.Factory
   alias Community.Repo
+  alias Community.Organization
 
   @shortdoc "Insert the seeds for development"
 
   def run(_args) do
-    Application.ensure_all_started(:ex_machina)
     Mix.Task.run("ecto.migrate", [])
     Mix.Task.run("app.start", [])
 
@@ -51,16 +51,7 @@ defmodule Mix.Tasks.DevelopmentSeeds do
     insert(:job, title: "Awsesome Designer")
     insert(:job, title: "Rockstar")
 
-    insert(
-      :organization,
-      admin_email_address: "admin@example.com,admin@raleighdesign.io",
-      upcoming_meetups_url: "https://api.meetup.com/self/calendar?photo-host=public&page=20&sig_id=205839672&sig=57e1d519c30c3e5f331d36feab8bebab7fbe494e",
-      name: "Raleigh Design",
-      no_reply_email_address: "noreply@raleighdesign.io",
-      short_description: "A resource for designers in Raleigh to stay connected and find prospective
-  career opportunities.",
-      twitter: "raleighdesignio"
-    )
+    insert(:organization, Organization.placeholder_organization() |> Map.to_list)
   end
 
   def titles do

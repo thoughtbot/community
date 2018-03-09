@@ -5,5 +5,6 @@ defmodule Community.LayoutView do
     link(page_action.text, to: page_action.url, class: "button")
   end
 
-  def page_action_link(_), do: nil
+  def page_action_link(_) do
+  end
 end

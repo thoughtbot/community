@@ -3,9 +3,7 @@
     <div class="section-description">
       <h4>Upcoming Meetups</h4>
       <p>
-        Design meetups in and around Raleigh. Shoot us a suggestion
-        <a href="https://twitter.com/<%= @organization.twitter %>">@<%= @organization.twitter %></a>
-        if you have one you'd like to add.
+        Design meetups in and around Raleigh. Shoot us a suggestion <%= twitter_link() %> if you have one you'd like to add.
       </p>
     </div>
 

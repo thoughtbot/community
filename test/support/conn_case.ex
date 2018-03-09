@@ -25,6 +25,7 @@ defmodule Community.ConnCase do
       import Ecto
       import Ecto.Changeset
       import Ecto.Query, only: [from: 1, from: 2]
+      import Phoenix.HTML, only: [safe_to_string: 1]
 
       import Community.Router.Helpers
       import Community.Factory
@@ -34,7 +35,7 @@ defmodule Community.ConnCase do
     end
   end
 
-  setup tags do
+  setup _tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Community.Repo)
     organization = Community.Factory.insert(:organization)
 
