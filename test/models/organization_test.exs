@@ -25,10 +25,13 @@ defmodule Community.OrganizationTest do
     end
 
     test "formats twitter" do
-      params = params_for(:organization, twitter: "@example")
+      altered_params = params_for(:organization, twitter: "@example")
+      params = params_for(:organization, twitter: "example")
 
+      altered_changeset = %Organization{} |> Organization.changeset(altered_params)
       changeset = %Organization{} |> Organization.changeset(params)
 
+      assert altered_changeset.changes.twitter == "example"
       assert changeset.changes.twitter == "example"
     end
   end
