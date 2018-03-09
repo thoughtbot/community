@@ -1,4 +1,4 @@
-<%= if @organization.meetup_enabled && @organization.upcoming_meetups_url do %>
+<%= if @organization.upcoming_meetups_url do %>
   <section class="section" data-meetup-url='<%= @organization.upcoming_meetups_url %>'>
     <div class="section-description">
       <h4>Upcoming Meetups</h4>

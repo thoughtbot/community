@@ -23,11 +23,9 @@ function formatDateTime(epochTime) {
 $(function() {
   const meetupUrl = $("[data-meetup-url]").data("meetupUrl");
   if (meetupUrl) {
+    const $basicElement = $("[data-role=meetup]");
+    const $list = $("[data-role=meetup-list]");
     let groupNames = [];
-    const meetupSelector = "[data-role=meetup]";
-    const listSelector = "[data-role=meetup-list]";
-    const $list = $(listSelector);
-    const $basicElement = $(meetupSelector);
 
     $.ajax({
       url: meetupUrl,

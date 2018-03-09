@@ -10,20 +10,18 @@ defmodule Community.Admin.OrganizationController do
   end
 
   def update(conn, %{"organization" => params}) do
-    params =
-      params
-      |> Map.put("twitter", format_twitter(params["twitter"]))
-
     find_organization()
     |> Organization.changeset(params)
     |> Repo.update
     |> case do
       {:ok, _organization} ->
         conn
+        |> put_flash(:info, gettext("Organization updated"))
         |> redirect(to: admin_organization_path(conn, :edit))
 
       {:error, changeset} ->
         conn
+        |> put_flash(:error, gettext("Error updating organization"))
         |> render_edit(changeset)
     end
   end
@@ -33,10 +31,5 @@ defmodule Community.Admin.OrganizationController do
     |> assign(:oranization, changeset.data)
     |> assign(:changeset, changeset)
     |> render(:edit)
-  end
-
-  defp format_twitter(twitter) when is_binary(twitter) do
-    twitter
-    |> String.replace("@", "", global: true)
   end
 end

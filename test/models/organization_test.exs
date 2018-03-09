@@ -23,6 +23,14 @@ defmodule Community.OrganizationTest do
       assert invalid_changeset.errors[:no_reply_email_address]
       assert invalid_changeset.errors[:short_description]
     end
+
+    test "formats twitter" do
+      params = params_for(:organization, twitter: "@example")
+
+      changeset = %Organization{} |> Organization.changeset(params)
+
+      assert changeset.changes.twitter == "example"
+    end
   end
 
   describe "placeholder_organization" do

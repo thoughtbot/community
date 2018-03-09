@@ -10,8 +10,6 @@ defmodule Community.Factory do
       short_description: "A resource for designers in Raleigh to stay connected and find prospective career opportunities.",
       twitter: "raleighdesignio",
       upcoming_meetups_url: "https://api.meetup.com/self/calendar?photo-host=public&page=20&sig_id=205839672&sig=57e1d519c30c3e5f331d36feab8bebab7fbe494e",
-      meetup_enabled: true,
-      dribbble_enabled: true,
     }
   end
 

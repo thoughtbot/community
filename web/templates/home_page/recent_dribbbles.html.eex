@@ -1,5 +1,5 @@
 <% dribbble_access_token = System.get_env("DRIBBBLE_ACCESS_TOKEN") %>
-<%= if @organization.dribbble_enabled && dribbble_access_token do %>
+<%= if dribbble_access_token do %>
   <section class="section">
     <div class="section-description">
       <h4>Recent Dribbbles</h4>

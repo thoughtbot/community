@@ -10,8 +10,6 @@ defmodule Community.Organization do
     field :twitter, :string
     field :upcoming_meetups_url, :string
     field :logo_url, :string
-    field :dribbble_enabled, :boolean, default: true
-    field :meetup_enabled, :boolean, default: true
 
     timestamps()
   end
@@ -27,8 +25,6 @@ defmodule Community.Organization do
   @optional_fields ~w(
     twitter
     upcoming_meetups_url
-    dribbble_enabled
-    meetup_enabled
   )a
 
   def changeset(struct, params \\ %{}) do
@@ -37,6 +33,22 @@ defmodule Community.Organization do
     |> validate_required(@required_fields)
     |> Validations.email_format(:no_reply_email_address)
     |> Validations.email_format(:admin_email_address)
+    |> Validations.url_format(:logo_url)
+    |> Validations.url_format(:upcoming_meetups_url)
+    |> format_twitter
+  end
+
+  defp format_twitter(changeset) do
+    case get_change(changeset, :twitter) do
+      nil ->
+        changeset
+
+      twitter ->
+        formatted_twitter = String.replace(twitter, "@", "", global: true)
+        changeset
+        |> put_change(:twitter, formatted_twitter)
+
+    end
   end
 
   def placeholder_organization do

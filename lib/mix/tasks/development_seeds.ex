@@ -6,6 +6,7 @@ defmodule Mix.Tasks.DevelopmentSeeds do
   @shortdoc "Insert the seeds for development"
 
   def run(_args) do
+    Application.ensure_all_started(:ex_machina)
     Mix.Task.run("ecto.migrate", [])
     Mix.Task.run("app.start", [])
 

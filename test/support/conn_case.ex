@@ -34,10 +34,13 @@ defmodule Community.ConnCase do
     end
   end
 
-  setup _tags do
+  setup tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Community.Repo)
-    Community.Factory.insert(:organization)
+    organization = Community.Factory.insert(:organization)
 
-    {:ok, conn: Phoenix.ConnTest.build_conn()}
+    {:ok,
+      conn: Phoenix.ConnTest.build_conn(),
+      organization: organization
+    }
   end
 end
