@@ -28,6 +28,11 @@ a lot of "features" are handled manually.
   * Job authors can edit and delete their own posts
   * All authentication is handled via tokenized links
 
+## Usage
+
+Clone the repo and change `config/organization.exs` to suit your
+community.
+
 ## Development and Contribuing
 
 See [Contributing](CONTRIBUTING.md)

@@ -2,10 +2,9 @@
   <div class="section-description">
     <h4>Recent Jobs</h4>
     <p>
-      Find UX, UI, or visual and graphic design jobs local to Raleigh, North
-      Carolina.
+      Find <%= @organization.titles%> jobs local to <%= @organization.city %>.
     </p>
-    <p>Design jobs are free to post, and will stay online for 30 days.</p>
+    <p>Jobs are free to post, and will stay online for 30 days.</p>
     <%= link(
       {:safe, "View More &rarr;"},
       to: job_path(@conn, :index),

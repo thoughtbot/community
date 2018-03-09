@@ -2,6 +2,10 @@ defmodule Community.Organization do
   use Community.Web, :model
   alias Community.Validations
 
+  defmodule BuildError do
+    defexception [:message]
+  end
+
   schema "organizations" do
     field :admin_email_address, :string
     field :name, :string
@@ -31,10 +35,23 @@ defmodule Community.Organization do
     upcoming_meetups_url
   )a
 
-  def changeset(struct, params \\ %{}) do
-    struct
+  def build do
+    changeset = Application.get_env(:community, :organization) |> changeset
+    if changeset.valid? do
+      changeset |> apply_changes
+    else
+      raise BuildError, message:
+        """
+        Organization is not valid.
+        Errors: #{inspect changeset.errors}
+        """
+    end
+  end
+
+  def changeset(params) do
+    %__MODULE__{}
     |> cast(params, @required_fields ++ @optional_fields)
-    |> format_twitter
+    |> validate_twitter
     |> validate_required(@required_fields)
     |> Validations.email_format(:no_reply_email_address)
     |> Validations.email_format(:admin_email_address)
@@ -42,29 +59,18 @@ defmodule Community.Organization do
     |> Validations.url_format(:upcoming_meetups_url)
   end
 
-  defp format_twitter(changeset) do
-    case get_change(changeset, :twitter) do
+  defp validate_twitter(changeset) do
+    case get_field(changeset, :twitter) do
       nil ->
         changeset
 
       twitter ->
-        formatted_twitter = String.replace(twitter, "@", "", global: true)
-        changeset
-        |> put_change(:twitter, formatted_twitter)
+        if String.contains?(twitter, "@") do
+          changeset
+          |> add_error(:twitter, "Twitter handle doesn't need to contain @ symbol")
+        else
+          changeset
+        end
     end
-  end
-
-  def placeholder_organization do
-    %{
-      admin_email_address: "admin@example.com",
-      city: "Raleigh",
-      logo_url: "https://raw.githubusercontent.com/thoughtbot/community/master/web/static/assets/images/logo.png",
-      name: "Sample Organization",
-      no_reply_email_address: "no-reply@example.com",
-      short_description: "A great resource for local groups to organize events and people",
-      titles: "User Experience, User Interface, and visual designers",
-      twitter: "raleighdesignio",
-      upcoming_meetups_url: "https://api.meetup.com/self/calendar?photo-host=public&page=20&sig_id=205839672&sig=57e1d519c30c3e5f331d36feab8bebab7fbe494e",
-    }
   end
 end

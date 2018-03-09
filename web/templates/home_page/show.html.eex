@@ -3,7 +3,7 @@
   Follow along on twitter, <%= twitter_link(@organization) %>.
 </p>
 
-<%= render "recent_jobs.html", jobs: @jobs, conn: @conn %>
+<%= render "recent_jobs.html", jobs: @jobs, conn: @conn, organization: @organization %>
 
 <%= render "recent_dribbbles.html", conn: @conn, organization: @organization %>
 

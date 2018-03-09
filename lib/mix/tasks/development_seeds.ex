@@ -2,7 +2,6 @@ defmodule Mix.Tasks.DevelopmentSeeds do
   use Mix.Task
   import Community.Factory
   alias Community.Repo
-  alias Community.Organization
 
   @shortdoc "Insert the seeds for development"
 
@@ -50,8 +49,6 @@ defmodule Mix.Tasks.DevelopmentSeeds do
 
     insert(:job, title: "Awsesome Designer")
     insert(:job, title: "Rockstar")
-
-    insert(:organization, Organization.placeholder_organization() |> Map.to_list)
   end
 
   def titles do

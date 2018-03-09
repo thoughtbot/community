@@ -1,18 +1,9 @@
 defmodule Community.Factory do
   use ExMachina.Ecto, repo: Community.Repo
+  alias Community.Organization
 
   def organization_factory do
-    %Community.Organization{
-      admin_email_address: "admin@example.com,admin@raleighdesign.io",
-      city: "Raleigh",
-      logo_url: "https://raw.githubusercontent.com/thoughtbot/community/master/web/static/assets/images/logo.png",
-      name: "Raleigh Design",
-      no_reply_email_address: "noreply@raleighdesign.io",
-      short_description: "A resource for designers in Raleigh to stay connected and find prospective career opportunities.",
-      titles: "User Experience, User Interface, and visual designers",
-      twitter: "raleighdesignio",
-      upcoming_meetups_url: "https://api.meetup.com/self/calendar?photo-host=public&page=20&sig_id=205839672&sig=57e1d519c30c3e5f331d36feab8bebab7fbe494e",
-    }
+    Organization.build()
   end
 
   def job_factory do

@@ -1,6 +1,0 @@
-<h2>Edit Organization</h2>
-
-<%= render "form.html",
-  changeset: @changeset,
-  action: admin_organization_path(@conn, :update)
-%>

@@ -15,8 +15,8 @@ defmodule Community.OrganizationTest do
         short_description: nil
       )
 
-      valid_changeset = %Organization{} |> Organization.changeset(valid_params)
-      invalid_changeset = %Organization{} |> Organization.changeset(invalid_params)
+      valid_changeset = Organization.changeset(valid_params)
+      invalid_changeset = Organization.changeset(invalid_params)
 
       assert valid_changeset.valid?
       refute invalid_changeset.valid?
@@ -28,25 +28,16 @@ defmodule Community.OrganizationTest do
       assert invalid_changeset.errors[:titles]
     end
 
-    test "formats twitter" do
-      altered_params = params_for(:organization, twitter: "@example")
-      params = params_for(:organization, twitter: "example")
+    test "validates twitter" do
+      invalid_params = params_for(:organization, twitter: "@example")
+      valid_params = params_for(:organization, twitter: "example")
 
-      altered_changeset = %Organization{} |> Organization.changeset(altered_params)
-      changeset = %Organization{} |> Organization.changeset(params)
-
-      assert altered_changeset.changes.twitter == "example"
-      assert changeset.changes.twitter == "example"
-    end
-  end
-
-  describe "placeholder_organization" do
-    test "can create a valid organization" do
-      valid_params = Organization.placeholder_organization()
-
-      valid_changeset = %Organization{} |> Organization.changeset(valid_params)
+      valid_changeset = Organization.changeset(valid_params)
+      invalid_changeset = Organization.changeset(invalid_params)
 
       assert valid_changeset.valid?
+      refute invalid_changeset.valid?
+      assert invalid_changeset.errors[:twitter]
     end
   end
 end
