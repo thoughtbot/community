@@ -7,6 +7,7 @@ defmodule Community.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Community.AssignOrganization
 
     if Mix.env == :dev do
       forward "/sent_emails", Bamboo.SentEmailViewerPlug

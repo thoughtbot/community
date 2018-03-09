@@ -36,7 +36,6 @@ defmodule Community.Web do
 
       import Community.Router.Helpers
       import Community.Gettext
-      import Community.Queries.Organization, only: [find_organization: 0]
     end
   end
 
@@ -54,7 +53,6 @@ defmodule Community.Web do
       import Community.Router.Helpers
       import Community.ErrorHelpers
       import Community.Gettext
-      import Community.Queries.Organization, only: [find_organization: 0]
       import Community.OrganizationView
     end
   end

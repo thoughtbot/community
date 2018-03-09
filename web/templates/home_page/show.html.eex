@@ -1,6 +1,6 @@
 <p class="page-description">
   <%= @organization.short_description %>
-  Follow along on twitter, <%= twitter_link() %>.
+  Follow along on twitter, <%= twitter_link(@organization) %>.
 </p>
 
 <%= render "recent_jobs.html", jobs: @jobs, conn: @conn %>

@@ -16,7 +16,7 @@
     <div class="container">
       <header class="site-header">
         <h1 class="site-header-title">
-          <a href="/" class="site-header-title-link" style="background-image: url('<%= find_organization().logo_url %>')">Raleigh Design</a>
+          <a href="/" class="site-header-title-link" style="background-image: url('<%= @conn.assigns[:organization].logo_url %>')">Raleigh Design</a>
         </h1>
         <nav role="navigation" class="site-navigation">
           <%= render Community.SharedView, "_navigation.html", conn: @conn %>

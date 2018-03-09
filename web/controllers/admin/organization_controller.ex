@@ -3,14 +3,14 @@ defmodule Community.Admin.OrganizationController do
   alias Community.Organization
 
   def edit(conn, _params) do
-    changeset = Organization.changeset(find_organization())
+    changeset = Organization.changeset(conn.assigns[:organization])
 
     conn
     |> render_edit(changeset)
   end
 
   def update(conn, %{"organization" => params}) do
-    find_organization()
+    conn.assigns[:organization]
     |> Organization.changeset(params)
     |> Repo.update
     |> case do
