@@ -5,8 +5,14 @@ defmodule Community.Queries.OrganizationTest do
 
   describe "find_organization/0" do
     test "when none, creates and returns placeholder organization" do
-      refute Organization |> Repo.one
-      assert %Organization{} = Queries.Organization.find_organization()
+      refute Organization |> Repo.one()
+
+      organization = Queries.Organization.find_organization()
+
+      assert Repo.get_by(
+               Organization,
+               Organization.placeholder_organization()
+             ).id == organization.id
     end
 
     test "returns the one organization" do
