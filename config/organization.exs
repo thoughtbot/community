@@ -1,7 +1,7 @@
 use Mix.Config
 
 config :community, :organization, %{
-  admin_email_address: "admin@example.com",
+  admin_email_address: "admin@example.com,admin@raleighdesign.io",
   city: "Raleigh",
   logo_url: "https://raw.githubusercontent.com/thoughtbot/community/master/web/static/assets/images/logo.png",
   name: "Sample Organization",
