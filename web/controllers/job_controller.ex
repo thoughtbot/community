@@ -42,7 +42,7 @@ defmodule Community.JobController do
     changeset = Job.changeset(%Job{}, job_params)
     case Repo.insert(changeset) do
       {:ok, job} ->
-        send_emails(job, conn.assigns[:organization])
+        send_emails(job)
         conn
         |> put_flash(:info, "Job created")
         |> redirect(to: job_path(conn, :show, job, token: job.token))
@@ -53,13 +53,13 @@ defmodule Community.JobController do
     end
   end
 
-  def send_emails(job, organization) do
+  def send_emails(job) do
     job
-    |> Community.Email.job_posted(organization)
+    |> Community.Email.job_posted
     |> Community.Mailer.deliver_later
 
     job
-    |> Community.Email.admin_job_posted(organization)
+    |> Community.Email.admin_job_posted
     |> Community.Mailer.deliver_later
   end
 

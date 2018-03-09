@@ -5,7 +5,7 @@ defmodule Community.JobControllerTest do
 
   describe "POST /jobs" do
     context "with valid params" do
-      it "creates the job", %{conn: conn, organization: organization} do
+      it "creates the job", %{conn: conn, organization: _organization} do
         conn = post conn, "/jobs", job: params_for(:job, %{title: "designer"})
 
         assert get_flash(conn, :info) == "Job created"
@@ -14,8 +14,8 @@ defmodule Community.JobControllerTest do
         assert job.title == "designer"
         assert job.preview == true
 
-        assert_delivered_email Community.Email.job_posted(job, organization)
-        assert_delivered_email Community.Email.admin_job_posted(job, organization)
+        assert_delivered_email Community.Email.job_posted(job)
+        assert_delivered_email Community.Email.admin_job_posted(job)
       end
     end
 

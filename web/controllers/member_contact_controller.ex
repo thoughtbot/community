@@ -17,7 +17,7 @@ defmodule Community.MemberContactController do
     member = Repo.get(Member, id)
     changeset = ContactForm.changeset(%ContactForm{member: member}, contact_form_params)
     if changeset.valid? do
-      send_contact_email(changeset, member, conn.assigns[:organization])
+      send_contact_email(changeset, member)
 
       conn
       |> put_flash(:info, "Your email has been sent")
@@ -31,9 +31,9 @@ defmodule Community.MemberContactController do
     end
   end
 
-  defp send_contact_email(changeset, member, organization) do
+  defp send_contact_email(changeset, member) do
     prepare_email_data(changeset, member)
-    |> Community.Email.contact_form(organization)
+    |> Community.Email.contact_form
     |> Community.Mailer.deliver_later
   end
 

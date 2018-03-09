@@ -82,7 +82,6 @@ defmodule Mix.Tasks.DevelopmentSeeds do
     ~w(
       jobs
       members
-      organizations
     )
   end
 end
