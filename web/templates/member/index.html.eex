@@ -1,9 +1,9 @@
+<% organization = @conn.assigns[:organization] %>
 <section class="section">
   <div class="section-description">
     <h4>Member Directory</h4>
     <p>
-      User Experience, User Interface, and visual designers located in and
-      around Raleigh, North&nbsp;Carolina. Say hello!
+      <%= organization.titles %> located in and around <%= organization.city %>. Say hello!
     </p>
 
     <%= link(

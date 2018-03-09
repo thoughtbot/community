@@ -1,11 +1,11 @@
+<% organization = @conn.assigns[:organization] %>
 <section class="section">
   <div class="section-description">
     <h4>Job Board</h4>
     <p>
-      Find UX, UI, or visual and graphic design jobs local to Raleigh, North
-      Carolina.
+      Find <%= organization.titles %> jobs local to <%= organization.city %>.
     </p>
-    <p>Design jobs are free to post, and will stay online for 30 days.</p>
+    <p>Jobs are free to post, and will stay online for 30 days.</p>
     <%= link(
       {:safe, "&larr; Back to Home"},
       to: root_path(@conn, :show),

@@ -9,6 +9,7 @@ defmodule Community.Repo.Migrations.CreateOrganization do
       add :name, :string, null: false
       add :no_reply_email_address, :string, null: false
       add :short_description, :text, null: false
+      add :titles, :string, null: false
       add :twitter, :string
       add :upcoming_meetups_url, :string
 

@@ -9,6 +9,8 @@ defmodule Community.OrganizationTest do
         :organization,
         name: nil,
         admin_email_address: nil,
+        city: nil,
+        titles: nil,
         no_reply_email_address: nil,
         short_description: nil
       )
@@ -22,6 +24,8 @@ defmodule Community.OrganizationTest do
       assert invalid_changeset.errors[:admin_email_address]
       assert invalid_changeset.errors[:no_reply_email_address]
       assert invalid_changeset.errors[:short_description]
+      assert invalid_changeset.errors[:city]
+      assert invalid_changeset.errors[:titles]
     end
 
     test "formats twitter" do

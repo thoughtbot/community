@@ -10,6 +10,7 @@ defmodule Community.Organization do
     field :twitter, :string
     field :upcoming_meetups_url, :string
     field :city, :string
+    field :titles, :string
     field :logo_url, :string
 
     timestamps()
@@ -20,6 +21,7 @@ defmodule Community.Organization do
     city
     logo_url
     name
+    titles
     no_reply_email_address
     short_description
   )a
@@ -60,6 +62,7 @@ defmodule Community.Organization do
       name: "Sample Organization",
       no_reply_email_address: "no-reply@example.com",
       short_description: "A great resource for local groups to organize events and people",
+      titles: "User Experience, User Interface, and visual designers",
       twitter: "raleighdesignio",
       upcoming_meetups_url: "https://api.meetup.com/self/calendar?photo-host=public&page=20&sig_id=205839672&sig=57e1d519c30c3e5f331d36feab8bebab7fbe494e",
     }
