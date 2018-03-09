@@ -2,7 +2,7 @@
   <div class="section-description">
     <h4>Recent Dribbbles</h4>
     <p>
-      Show and tell from the <%= @organization.name %> community.
+      Show and tell from the <%= organization().name %> community.
       <%= link(
           "Add yourself to the directory", to:
           member_path(@conn, :new)

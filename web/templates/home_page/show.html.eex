@@ -1,10 +1,10 @@
 <p class="page-description">
-  <%= @organization.short_description %>
+  <%= organization().short_description %>
   Follow along on twitter, <%= twitter_link() %>.
 </p>
 
-<%= render "recent_jobs.html", jobs: @jobs, conn: @conn, organization: @organization %>
+<%= render "recent_jobs.html", jobs: @jobs, conn: @conn %>
 
-<%= render "recent_dribbbles.html", conn: @conn, organization: @organization %>
+<%= render "recent_dribbbles.html", conn: @conn %>
 
-<%= render "recent_meetups.html", organization: @organization %>
+<%= render "recent_meetups.html" %>

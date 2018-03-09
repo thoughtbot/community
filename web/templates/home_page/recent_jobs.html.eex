@@ -2,7 +2,7 @@
   <div class="section-description">
     <h4>Recent Jobs</h4>
     <p>
-      Find <%= @organization.titles%> jobs local to <%= @organization.city %>.
+      Find <%= organization().titles%> jobs local to <%= organization().city %>.
     </p>
     <p>Jobs are free to post, and will stay online for 30 days.</p>
     <%= link(
