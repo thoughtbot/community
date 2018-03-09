@@ -23,7 +23,7 @@ defmodule Community.MemberController do
     changeset = Member.changeset(%Member{}, member_params)
     case Repo.insert(changeset) do
       {:ok, member} ->
-        send_emails(member)
+        send_emails(member, conn.assigns[:organization])
         conn
         |> put_flash(:info, "Thanks for signing up! An admin will approve your
         account shortly. We've sent you an email with details.")
@@ -35,13 +35,13 @@ defmodule Community.MemberController do
     end
   end
 
-  def send_emails(member) do
+  def send_emails(member, organization) do
     member
-    |> Community.Email.member_added
+    |> Community.Email.member_added(organization)
     |> Community.Mailer.deliver_later
 
     member
-    |> Community.Email.admin_member_added
+    |> Community.Email.admin_member_added(organization)
     |> Community.Mailer.deliver_later
   end
 
