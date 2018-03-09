@@ -22,25 +22,23 @@ function formatDateTime(epochTime) {
 
 $(function() {
   const meetupUrl = $("[data-meetup-url]").data("meetupUrl");
-  if (meetupUrl) {
-    const $basicElement = $("[data-role=meetup]");
-    const $list = $("[data-role=meetup-list]");
-    let groupNames = [];
+  const $basicElement = $("[data-role=meetup]");
+  const $list = $("[data-role=meetup-list]");
+  let groupNames = [];
 
-    $.ajax({
-      url: meetupUrl,
-      contentType: "application/json",
-      dataType: "jsonp",
-    }).done(function(data) {
-      $.each(data.data, function(index, meetup) {
-        let groupName = meetup.group.name;
-        if ($.inArray(groupName, groupNames) === -1) {
-          groupNames.push(groupName);
-          let meetupElement = composeMeetup($basicElement, meetup);
-          meetupElement.css("display", "flex");
-          $list.append(meetupElement);
-        }
-      });
+  $.ajax({
+    url: meetupUrl,
+    contentType: "application/json",
+    dataType: "jsonp",
+  }).done(function(data) {
+    $.each(data.data, function(index, meetup) {
+      let groupName = meetup.group.name;
+      if ($.inArray(groupName, groupNames) === -1) {
+        groupNames.push(groupName);
+        let meetupElement = composeMeetup($basicElement, meetup);
+        meetupElement.css("display", "flex");
+        $list.append(meetupElement);
+      }
     });
-  }
+  });
 });

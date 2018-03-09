@@ -19,23 +19,20 @@ function composeDribbbleShot(originalElement, url, imageUrl) {
 $(function() {
   const $list = $("[data-role=dribbble-list]");
   const accessToken = $list.data("accessToken");
+  const $basicElement = $("[data-role=dribbble-shot]");
+  const bucketId = $list.data("bucketId");
+  const count = $list.data("count");
 
-  if(accessToken) {
-    const $basicElement = $("[data-role=dribbble-shot]");
-    const bucketId = $list.data("bucketId");
-    const count = $list.data("count");
-
-    $.ajax({
-      url: dribbleBucketUrl({bucket: bucketId, token: accessToken, count: count}),
-      context: document.body
-    }).done(function(data) {
-      $.each(data, function(index, shot) {
-        console.log(shot);
-        let shotElement = composeDribbbleShot($basicElement, shot.html_url, shot.images.hidpi);
-        shotElement.show();
-        $list.append(shotElement);
-      });
+  $.ajax({
+    url: dribbleBucketUrl({bucket: bucketId, token: accessToken, count: count}),
+    context: document.body
+  }).done(function(data) {
+    $.each(data, function(index, shot) {
+      console.log(shot);
+      let shotElement = composeDribbbleShot($basicElement, shot.html_url, shot.images.hidpi);
+      shotElement.show();
+      $list.append(shotElement);
     });
-    $basicElement.remove();
-  }
+  });
+  $basicElement.remove();
 });
