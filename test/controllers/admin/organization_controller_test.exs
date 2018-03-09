@@ -14,6 +14,7 @@ defmodule Community.Admin.OrganizationControllerTest do
     test "updates the organization", %{conn: conn, organization: organization} do
       form = %{
         admin_email_address: "admin_email_updated@example.com",
+        city: "city_updated",
         logo_url: "https://example.com/logo_url_updated",
         name: "name_updated",
         no_reply_email_address: "no_reply_updated@example.com",

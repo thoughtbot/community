@@ -7,4 +7,4 @@
 
 <%= render "recent_dribbbles.html", conn: @conn, organization: @organization %>
 
-<%= render "upcoming_meetups.html", organization: @organization %>
+<%= render "recent_meetups.html", organization: @organization %>

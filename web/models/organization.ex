@@ -9,6 +9,7 @@ defmodule Community.Organization do
     field :short_description, :string
     field :twitter, :string
     field :upcoming_meetups_url, :string
+    field :city, :string
     field :logo_url, :string
 
     timestamps()
@@ -16,6 +17,7 @@ defmodule Community.Organization do
 
   @required_fields ~w(
     admin_email_address
+    city
     logo_url
     name
     no_reply_email_address
@@ -47,13 +49,13 @@ defmodule Community.Organization do
         formatted_twitter = String.replace(twitter, "@", "", global: true)
         changeset
         |> put_change(:twitter, formatted_twitter)
-
     end
   end
 
   def placeholder_organization do
     %{
       admin_email_address: "admin@example.com",
+      city: "Raleigh",
       logo_url: "https://raw.githubusercontent.com/thoughtbot/community/master/web/static/assets/images/logo.png",
       name: "Sample Organization",
       no_reply_email_address: "no-reply@example.com",

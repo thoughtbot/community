@@ -4,6 +4,7 @@ defmodule Community.Factory do
   def organization_factory do
     %Community.Organization{
       admin_email_address: "admin@example.com,admin@raleighdesign.io",
+      city: "Raleigh",
       logo_url: "https://raw.githubusercontent.com/thoughtbot/community/master/web/static/assets/images/logo.png",
       name: "Raleigh Design",
       no_reply_email_address: "noreply@raleighdesign.io",

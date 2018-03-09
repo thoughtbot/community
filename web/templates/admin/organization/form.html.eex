@@ -14,6 +14,10 @@
   </div>
 
   <div class="form-group">
+    <%= input form, :city %>
+  </div>
+
+  <div class="form-group">
     <%= input form, :logo_url %>
   </div>
 
