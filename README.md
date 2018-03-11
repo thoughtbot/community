@@ -30,8 +30,27 @@ a lot of "features" are handled manually.
 
 ## Usage
 
-Clone the repo and change `config/organization.exs` to suit your
-community.
+Fork this repo, clone your forked repo locally, and change
+`config/organization.exs` to suit your community. If you'd like to keep
+up with upstream changes, then add an upstream remote and rebase from
+the upstream remote periodically when you want to update. At this point,
+it's easy to deploy to Heroku or any other hosting solution.
+
+For example:
+
+    % git clone your_forked_community_repo
+    % git remote add upstream git@github.com:thoughtbot/community.git
+
+    #...some time later...
+
+    % git rebase upstream/master
+    # You may have to reconcile any changes in 'config/organization.exs'
+    % git push --force-with-lease
+
+    # To deploy with heroku
+
+    % heroku git:remote -a your-heroku-app -r production
+    % git push production master
 
 ## Development and Contribuing
 
