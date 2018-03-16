@@ -3,7 +3,7 @@ defmodule Community.OrganizationViewTest do
   alias Community.OrganizationView
 
   describe "twitter_link/1" do
-    test "outputs a link to the organization's twitter", %{organization: organization} do
+    test "outputs a link to the twitter handle", %{organization: organization} do
       link =
         organization.twitter
         |> OrganizationView.twitter_link
