@@ -5,6 +5,10 @@
     "deploy": "brunch build --production",
     "watch": "brunch watch --stdin"
   },
+  "engines": {
+    "node": "9.2.0",
+    "npm": "5.5.1"
+  },
   "dependencies": {
     "blueimp-md5": "^2.3.0",
     "bourbon": "5.0.0-beta.6",
