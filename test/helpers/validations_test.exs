@@ -83,5 +83,24 @@ defmodule Community.Helpers.ValidationsTest do
       refute changeset.valid?
       assert changeset.errors[:name] == {"test message", []}
     end
+
+    test "validates twitter handle" do
+      valid_params = %{twitter: "example"}
+      invalid_params = %{twitter: "@example"}
+
+      valid_changeset =
+        %SampleSchema{}
+        |> SampleSchema.changeset(valid_params)
+        |> Validations.twitter_handle(:twitter)
+
+      invalid_changeset =
+        %SampleSchema{}
+        |> SampleSchema.changeset(invalid_params)
+        |> Validations.twitter_handle(:twitter)
+
+      assert valid_changeset.valid?
+      refute invalid_changeset.valid?
+      assert invalid_changeset.errors[:twitter]
+    end
   end
 end

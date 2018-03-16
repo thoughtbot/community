@@ -27,17 +27,5 @@ defmodule Community.OrganizationTest do
       assert invalid_changeset.errors[:city]
       assert invalid_changeset.errors[:titles]
     end
-
-    test "validates twitter" do
-      invalid_params = params_for(:organization, twitter: "@example")
-      valid_params = params_for(:organization, twitter: "example")
-
-      valid_changeset = Organization.changeset(valid_params)
-      invalid_changeset = Organization.changeset(invalid_params)
-
-      assert valid_changeset.valid?
-      refute invalid_changeset.valid?
-      assert invalid_changeset.errors[:twitter]
-    end
   end
 end

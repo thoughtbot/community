@@ -29,6 +29,19 @@ defmodule Community.Validations do
     end
   end
 
+  def twitter_handle(changeset, field) do
+    case get_field(changeset, field) do
+      nil ->
+        changeset
+
+      "@" <> _twitter ->
+        changeset
+        |> add_error(field, "Twitter handle doesn't need to contain @ symbol")
+      _twitter ->
+        changeset
+    end
+  end
+
   defp any_field_present?(changeset, fields) do
     Enum.any? fields, fn (field) ->
       changeset |> get_field(field) |> present?

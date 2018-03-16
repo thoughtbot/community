@@ -53,26 +53,11 @@ defmodule Community.Organization do
   def changeset(params) do
     %__MODULE__{}
     |> cast(params, @required_fields ++ @optional_fields)
-    |> validate_twitter(:twitter)
     |> validate_required(@required_fields)
+    |> Validations.twitter_handle(:twitter)
     |> Validations.email_format(:no_reply_email_address)
     |> Validations.email_format(:admin_email_address)
     |> Validations.url_format(:logo_url)
     |> Validations.url_format(:upcoming_meetups_url)
-  end
-
-  defp validate_twitter(changeset, field) do
-    case get_field(changeset, field) do
-      nil ->
-        changeset
-
-      twitter ->
-        if String.contains?(twitter, "@") do
-          changeset
-          |> add_error(field, "Twitter handle doesn't need to contain @ symbol")
-        else
-          changeset
-        end
-    end
   end
 end
