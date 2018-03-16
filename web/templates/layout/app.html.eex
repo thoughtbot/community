@@ -24,7 +24,7 @@
       </header>
 
       <%= render @view_module, @view_template, assigns %>
-      <%= render "_footer.html" %>
+      <%= render "_footer.html", organization: @conn.assigns[:organization] %>
     </div>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>

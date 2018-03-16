@@ -5,7 +5,7 @@ defmodule Community.OrganizationViewTest do
   describe "twitter_link/1" do
     test "outputs a link to the organization's twitter", %{organization: organization} do
       link =
-        organization
+        organization.twitter
         |> OrganizationView.twitter_link
         |> safe_to_string
 

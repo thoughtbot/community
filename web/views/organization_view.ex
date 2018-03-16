@@ -1,10 +1,10 @@
 defmodule Community.OrganizationView do
   use Phoenix.HTML
 
-  def twitter_link(organization) do
+  def twitter_link(twitter) do
     link(
-      "@#{organization.twitter}",
-      to: "https://twitter.com/#{organization.twitter}"
+      "@#{twitter}",
+      to: "https://twitter.com/#{twitter}"
     )
   end
 

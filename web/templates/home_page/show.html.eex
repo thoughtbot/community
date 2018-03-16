@@ -1,7 +1,7 @@
 <% organization = @conn.assigns[:organization] %>
 <p class="page-description">
   <%= organization.short_description %>
-  Follow along on twitter, <%= twitter_link(organization) %>.
+  Follow along on twitter, <%= twitter_link(organization.twitter) %>.
 </p>
 
 <%= render "recent_jobs.html", conn: @conn, jobs: @jobs %>

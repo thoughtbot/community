@@ -7,6 +7,7 @@ config :community, :organization, %{
   name: "Sample Organization",
   no_reply_email_address: "no-reply@example.com",
   short_description: "A great resource for local groups to organize events and people.",
+  sponsers: "thoughtbot",
   titles: "User Experience, User Interface, and visual designers",
   twitter: "raleighdesignio",
   upcoming_meetups_url: "https://api.meetup.com/self/calendar?photo-host=public&page=20&sig_id=205839672&sig=57e1d519c30c3e5f331d36feab8bebab7fbe494e",

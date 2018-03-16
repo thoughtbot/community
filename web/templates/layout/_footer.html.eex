@@ -1,11 +1,11 @@
 <footer class="site-footer">
   <p>
-    Raleigh Design is maintained by
-    <a href="http://twitter.com/jchreu">@jchreu</a>, and supported
-    by&nbsp;<a href="http://thoughtbot.com/raleigh">thoughtbot</a>.
+    <%= @organization.name %> is designed by
+    <a href="http://twitter.com/jchreu">@jchreu</a> and supported
+    by <%= @organization.sponsers %>.
   </p>
   <p>
     Need some help? Email
-    <a href="mailto:christian@raleighdesign.io">christian@raleighdesign.io</a>.
+    <a href="mailto:<%= @organization.admin_email_address %>"><%= @organization.admin_email_address %></a>.
   </p>
 </footer>
