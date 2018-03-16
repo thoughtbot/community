@@ -1,3 +1,4 @@
+<% organization = @conn.assigns[:organization] %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Raleigh Design</title>
+    <title><%= organization.name %></title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -16,7 +17,7 @@
     <div class="container">
       <header class="site-header">
         <h1 class="site-header-title">
-          <a href="/" class="site-header-title-link" style="background-image: url('<%= @conn.assigns[:organization].logo_url %>')">Raleigh Design</a>
+          <a href="/" class="site-header-title-link" style="background-image: url('<%= organization.logo_url %>')"><%= organization.name %></a>
         </h1>
         <nav role="navigation" class="site-navigation">
           <%= render Community.SharedView, "_navigation.html", conn: @conn %>
@@ -24,7 +25,7 @@
       </header>
 
       <%= render @view_module, @view_template, assigns %>
-      <%= render "_footer.html", organization: @conn.assigns[:organization] %>
+      <%= render "_footer.html", organization: organization %>
     </div>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
