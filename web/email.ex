@@ -36,11 +36,12 @@ defmodule Community.Email do
   end
 
   def contact_form(data) do
+    organization = organization()
     new_email()
     |> to(data[:to])
-    |> from(organization().no_reply_email_address)
+    |> from(organization.no_reply_email_address)
     |> put_header("Reply-To", data.from)
-    |> subject("Raleigh Design Contact Form - #{data.subject}")
+    |> subject("#{organization.name} Contact Form - #{data.subject}")
     |> render("contact_form.text", body: data.body, from: data.from)
   end
 

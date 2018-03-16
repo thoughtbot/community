@@ -1,4 +1,4 @@
-Someone sent you a message from the Raleigh Design contact form!
+Someone sent you a message from the Community contact form!
 
 Sent from: <%= @from %>
 
