@@ -3,7 +3,7 @@ defmodule Community.Feature.MemberTest do
   alias Community.Member
   use Bamboo.Test, shared: true
 
-  test "register a new member", %{organization: _organization} do
+  test "register a new member" do
     navigate_to "/"
     click_on "Member Directory"
     click_on "Add yourself to the directory"
@@ -31,7 +31,7 @@ defmodule Community.Feature.MemberTest do
     assert_delivered_email Community.Email.admin_member_added(last_member)
   end
 
-  test "contacts a member that is available for hire", %{organization: _organization} do
+  test "contacts a member that is available for hire" do
     member = insert(:member, available_for_hire: true, approved: true)
     navigate_to "/members"
 
