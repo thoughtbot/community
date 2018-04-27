@@ -23,22 +23,10 @@ else
   fi
 fi
 
-if [ -z "$CI" ]; then
-  echo "Removing previous build artifacts"
-  rm -rf node_modules
-  rm -rf deps _build
-  asdf install
-else
-  [[ ! -d ~/.asdf ]] && git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.1
-  . $HOME/.asdf/asdf.sh
-  echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc
-  if ! grep -E nodejs <(asdf plugin-list) > /dev/null; then
-    asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-    bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-    # shellcheck disable=SC2046
-    asdf install $(grep nodejs .tool-versions)
-  fi
-fi
+echo "Removing previous build artifacts"
+rm -rf node_modules
+rm -rf deps _build
+asdf install
 
 echo "Installing dependencies and compiling"
 mix local.hex --force
@@ -49,9 +37,7 @@ mix compile
 echo "Setting up the database"
 mix ecto.reset
 MIX_ENV="test" mix ecto.reset
-if [ -z "$CI" ]; then
-  mix development_seeds
-fi
+mix development_seeds
 
 echo "Installing npm dependencies"
 npm install --progress=false
