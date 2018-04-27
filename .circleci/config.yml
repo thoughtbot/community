@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/elixir:1.6.4-browsers
+      - image: circleci/elixir:1.6.4-node-browsers
         environment:
           PHANTOMJS_VERSION: 2.1.1
       - image: circleci/postgres:10.3-alpine-ram
@@ -24,7 +24,7 @@ jobs:
           - npm-cache-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
           - npm-cache-{{ arch }}-{{ .Branch }}
           - npm-cache-{{ arch }}
-      - run: mix local.hex --force && mix local.rebar --force && mix deps.get
+      - run: mix local.hex --force && mix local.rebar --force && mix deps.get && npm i
       - save_cache:
           key: asdf-node-cache-{{ arch }}-{{ checksum ".tool-versions" }}
           paths: "~/.asdf"
