@@ -1,5 +1,5 @@
 %{
-  "bamboo": {:git, "https://github.com/thoughtbot/bamboo.git", "1fb08f138ee376482229bd7f63cbddcbb46fdfa5", []},
+  "bamboo": {:git, "https://github.com/thoughtbot/bamboo.git", "12d15a428933b10d63ef91cd20e304a70670d28a", []},
   "brady": {:hex, :brady, "0.0.7", "39f3892197f67c0b38d64e239a671b60e8cb0968801f40072405fe1fe2a7519e", [:mix], [{:floki, "~> 0.13", [hex: :floki, repo: "hexpm", optional: false]}, {:phoenix, "~> 1.2", [hex: :phoenix, repo: "hexpm", optional: false]}], "hexpm"},
   "certifi": {:hex, :certifi, "2.0.0", "a0c0e475107135f76b8c1d5bc7efb33cd3815cb3cf3dea7aefdd174dabead064", [:rebar3], [], "hexpm"},
   "connection": {:hex, :connection, "1.0.4", "a1cae72211f0eef17705aaededacac3eb30e6625b04a6117c1b2db6ace7d5976", [:mix], [], "hexpm"},
