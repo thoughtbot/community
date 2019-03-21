@@ -42,7 +42,7 @@ defmodule Community.Mixfile do
       {:ex_spec, "~> 2.0", only: :test},
       {:formulator, "~> 0.1"},
       {:gettext, "~> 0.11"},
-      {:hound, "~> 1.0.2"},
+      {:hound, "~> 1.1.0"},
       {:html_sanitize_ex, "~> 1.3"},
       {:phoenix, "~> 1.2"},
       {:phoenix_ecto, "~> 3.1"},
